@@ -125,20 +125,15 @@ Wazuh Dashboard
 
 ---
 
-# 🛰️ Agentes
+### 📸 Evidência — Agentes monitorados
 
-Os agentes permitem que o Wazuh receba informações dos ativos monitorados.
+<p align="center">
+  <img src="../images/wazuh/wazuh-agents.png" alt="Agentes monitorados pelo Wazuh" width="100%">
+</p>
 
-No CyberLab foram utilizados agentes em sistemas Linux e Windows.
-
-Exemplos de ativos integrados ao ambiente:
-
-```text
-GG_LN05-HONEYPOT
-OPNsense
-Servidores Windows
-Endpoints do laboratório
-```
+<p align="center">
+  <i>Visão dos agentes integrados ao Wazuh no ambiente GG CyberLab.</i>
+</p>
 
 ---
 
