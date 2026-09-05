@@ -14,16 +14,12 @@
     --panel:#0b1423;
     --panel2:#0f1a2d;
     --border:#22314a;
-
     --text:#edf5ff;
     --muted:#8da1bc;
-
     --blue:#31b6ff;
     --blue2:#7bdcff;
-
     --red:#ff425d;
     --red2:#ff8797;
-
     --green:#34e59a;
     --orange:#ffb34d;
 }
@@ -38,78 +34,45 @@ html{
 
 body{
     margin:0;
-
     color:var(--text);
-
-    font-family:
-    Inter,
-    Arial,
-    Helvetica,
-    sans-serif;
+    font-family:Inter,Arial,Helvetica,sans-serif;
 
     background:
-    radial-gradient(
-        circle at 50% -10%,
-        #142640 0,
-        transparent 32%
-    ),
-    #050913;
+        radial-gradient(circle at 50% -10%,#142640 0,transparent 32%),
+        #050913;
 
-    transition:
-    background .5s ease;
+    transition:background .5s ease;
 }
 
-
-/* =========================================================
-   ESTADOS GLOBAIS
-========================================================= */
-
 body.attack{
-
     background:
-
-    radial-gradient(
-        circle at 50% 20%,
-        rgba(255,66,93,.18),
-        transparent 35%
-    ),
-
-    #07080e;
-
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255,66,93,.18),
+            transparent 35%
+        ),
+        #07080e;
 }
 
 body.defense{
-
     background:
-
-    radial-gradient(
-        circle at 50% 20%,
-        rgba(49,182,255,.14),
-        transparent 35%
-    ),
-
-    #050b14;
-
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(49,182,255,.14),
+            transparent 35%
+        ),
+        #050b14;
 }
-
 
 a{
     color:inherit;
     text-decoration:none;
 }
 
-
 .container{
-
-    width:min(
-        1180px,
-        92%
-    );
-
+    width:min(1180px,92%);
     margin:auto;
-
 }
-
 
 
 /* =========================================================
@@ -117,97 +80,55 @@ a{
 ========================================================= */
 
 nav{
-
     position:sticky;
-
     top:0;
-
     z-index:500;
 
-    border-bottom:
-    1px solid var(--border);
+    border-bottom:1px solid var(--border);
 
-    backdrop-filter:
-    blur(14px);
+    backdrop-filter:blur(14px);
 
-    background:
-    rgba(5,9,19,.88);
-
+    background:rgba(5,9,19,.90);
 }
-
 
 .nav-wrap{
-
-    width:min(
-        1180px,
-        92%
-    );
-
+    width:min(1180px,92%);
     margin:auto;
 
-    padding:
-    17px 0;
+    padding:17px 0;
 
     display:flex;
-
     align-items:center;
-
-    justify-content:
-    space-between;
-
+    justify-content:space-between;
     gap:20px;
-
 }
-
 
 .logo{
-
     font-size:18px;
-
     font-weight:900;
-
     letter-spacing:3px;
-
     white-space:nowrap;
-
 }
-
 
 .logo span{
-
     color:var(--blue);
-
 }
-
 
 .nav-links{
-
     display:flex;
-
     align-items:center;
-
     gap:24px;
-
 }
-
 
 .nav-links a{
-
     font-size:14px;
-
     color:var(--muted);
-
     transition:.2s;
-
 }
-
 
 .nav-links a:hover{
-
     color:white;
-
 }
-
 
 
 /* =========================================================
@@ -215,96 +136,54 @@ nav{
 ========================================================= */
 
 .hero{
-
-    min-height:
-    84vh;
+    min-height:84vh;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     text-align:center;
 
-    padding:
-    80px 0 50px;
-
+    padding:80px 0 50px;
 }
-
 
 .kicker{
+    color:var(--blue2);
 
-    color:
-    var(--blue2);
-
-    font-family:
-    monospace;
-
-    letter-spacing:
-    4px;
-
-    font-size:
-    13px;
-
+    font-family:monospace;
+    letter-spacing:4px;
+    font-size:13px;
 }
-
 
 h1{
+    margin:18px 0;
 
-    margin:
-    18px 0;
-
-    font-size:
-    clamp(
-        48px,
-        9vw,
-        96px
-    );
-
-    line-height:
-    .95;
-
+    font-size:clamp(48px,9vw,96px);
+    line-height:.95;
 }
-
 
 .gradient{
-
     background:
-    linear-gradient(
-        90deg,
-        #ffffff,
-        var(--blue2)
-    );
+        linear-gradient(
+            90deg,
+            #ffffff,
+            var(--blue2)
+        );
 
-    -webkit-background-clip:
-    text;
-
-    color:
-    transparent;
-
+    -webkit-background-clip:text;
+    color:transparent;
 }
-
 
 .hero p{
+    max-width:760px;
 
-    max-width:
-    760px;
+    margin:25px auto;
 
-    margin:
-    25px auto;
+    color:var(--muted);
 
-    color:
-    var(--muted);
-
-    font-size:
-    18px;
-
-    line-height:
-    1.7;
-
+    font-size:18px;
+    line-height:1.7;
 }
-
 
 
 /* =========================================================
@@ -312,98 +191,52 @@ h1{
 ========================================================= */
 
 .section{
-
-    padding:
-    82px 0;
-
+    padding:82px 0;
 }
-
 
 .section-title{
+    margin:0 0 10px;
 
-    margin:
-    0 0 10px;
-
-    font-size:
-    clamp(
-        30px,
-        4vw,
-        42px
-    );
-
+    font-size:clamp(30px,4vw,42px);
 }
-
 
 .section-sub{
+    max-width:900px;
 
-    max-width:
-    900px;
+    margin:0 0 38px;
 
-    margin:
-    0 0 38px;
+    color:var(--muted);
 
-    color:
-    var(--muted);
-
-    line-height:
-    1.7;
-
+    line-height:1.7;
 }
-
 
 .btn{
+    padding:14px 22px;
 
-    padding:
-    14px 22px;
+    border:1px solid var(--border);
+    border-radius:12px;
 
-    border:
-    1px solid var(--border);
+    background:var(--panel);
 
-    border-radius:
-    12px;
+    color:white;
 
-    background:
-    var(--panel);
+    font-weight:800;
 
-    color:
-    white;
+    cursor:pointer;
 
-    font-weight:
-    800;
-
-    cursor:
-    pointer;
-
-    transition:
-    .2s;
-
+    transition:.2s;
 }
-
 
 .btn:hover{
-
-    transform:
-    translateY(-2px);
-
-    border-color:
-    var(--blue);
-
+    transform:translateY(-2px);
+    border-color:var(--blue);
 }
-
 
 .btn.primary{
-
-    background:
-    var(--blue);
-
-    color:
-    #00131e;
-
-    border-color:
-    var(--blue);
-
+    background:var(--blue);
+    color:#00131e;
+    border-color:var(--blue);
 }
-
 
 
 /* =========================================================
@@ -411,147 +244,80 @@ h1{
 ========================================================= */
 
 .about-grid{
-
     display:grid;
 
-    grid-template-columns:
-    .8fr 1.2fr;
+    grid-template-columns:.8fr 1.2fr;
 
-    gap:
-    28px;
+    gap:28px;
 
-    align-items:
-    center;
-
+    align-items:center;
 }
-
 
 .about-info{
+    padding:34px;
 
-    padding:
-    34px;
+    border:1px solid var(--border);
+    border-radius:22px;
 
-    border:
-    1px solid var(--border);
-
-    border-radius:
-    22px;
-
-    background:
-    rgba(
-        11,
-        20,
-        35,
-        .85
-    );
-
+    background:rgba(11,20,35,.85);
 }
-
 
 .about-info p{
-
-    color:
-    var(--muted);
-
-    line-height:
-    1.8;
-
+    color:var(--muted);
+    line-height:1.8;
 }
-
 
 .about-info strong{
-
     color:white;
-
 }
-
 
 .about-tags{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:8px;
 
-    margin:
-    24px 0;
-
+    margin:24px 0;
 }
-
 
 .about-tags span{
+    padding:8px 10px;
 
-    padding:
-    8px 10px;
+    border:1px solid var(--border);
+    border-radius:9px;
 
-    border:
-    1px solid var(--border);
+    font-family:monospace;
+    font-size:12px;
 
-    border-radius:
-    9px;
-
-    font-family:
-    monospace;
-
-    font-size:
-    12px;
-
-    color:
-    #bfe7fb;
-
+    color:#bfe7fb;
 }
-
 
 .about-topology{
-
     overflow:hidden;
 
-    border:
-    1px solid var(--border);
+    border:1px solid var(--border);
+    border-radius:22px;
 
-    border-radius:
-    22px;
-
-    background:
-    #050a11;
-
+    background:#050a11;
 }
 
-
 .about-topology img{
-
     display:block;
 
     width:100%;
-
     height:auto;
-
 }
-
 
 .topology-label{
+    padding:14px 18px;
 
-    padding:
-    14px 18px;
+    border-bottom:1px solid var(--border);
 
-    border-bottom:
-    1px solid var(--border);
+    color:var(--blue2);
 
-    color:
-    var(--blue2);
-
-    font-family:
-    monospace;
-
-    font-size:
-    12px;
-
-    letter-spacing:
-    2px;
-
+    font-family:monospace;
+    font-size:12px;
+    letter-spacing:2px;
 }
-
 
 
 /* =========================================================
@@ -559,443 +325,250 @@ h1{
 ========================================================= */
 
 .timeline{
-
     display:flex;
 
     gap:10px;
 
     overflow-x:auto;
 
-    padding-bottom:
-    10px;
+    padding-bottom:10px;
 
-    margin-bottom:
-    22px;
+    margin-bottom:22px;
 
-    scrollbar-width:
-    thin;
-
+    scrollbar-width:none;
 }
 
+.timeline::-webkit-scrollbar{
+    display:none;
+}
 
 .timeline button{
+    min-width:135px;
 
-    min-width:
-    135px;
+    padding:12px;
 
-    padding:
-    12px;
+    border:1px solid var(--border);
+    border-radius:11px;
 
-    border:
-    1px solid var(--border);
+    background:var(--panel);
 
-    border-radius:
-    11px;
-
-    background:
-    var(--panel);
-
-    color:
-    var(--muted);
+    color:var(--muted);
 
     cursor:pointer;
 
-    font-size:
-    12px;
-
-    line-height:
-    1.5;
-
+    font-size:12px;
+    line-height:1.5;
 }
-
 
 .timeline button.active{
-
     color:white;
 
-    border-color:
-    var(--blue);
+    border-color:var(--blue);
 
     box-shadow:
-    0 0 24px
-    rgba(
-        49,
-        182,
-        255,
-        .15
-    );
-
+        0 0 24px
+        rgba(49,182,255,.15);
 }
-
 
 .journey-card{
-
     overflow:hidden;
 
-    border:
-    1px solid var(--border);
+    border:1px solid var(--border);
+    border-radius:22px;
 
-    border-radius:
-    22px;
+    background:rgba(11,20,35,.9);
 
-    background:
-    rgba(
-        11,
-        20,
-        35,
-        .9
-    );
-
-    transition:
-    .3s;
-
+    transition:.3s;
 }
-
 
 .journey-card.attack-card{
-
-    border-color:
-    rgba(
-        255,
-        66,
-        93,
-        .65
-    );
+    border-color:rgba(255,66,93,.65);
 
     box-shadow:
-    0 0 50px
-    rgba(
-        255,
-        66,
-        93,
-        .10
-    );
-
+        0 0 50px
+        rgba(255,66,93,.10);
 }
-
 
 .journey-card.defense-card{
-
-    border-color:
-    rgba(
-        49,
-        182,
-        255,
-        .55
-    );
+    border-color:rgba(49,182,255,.55);
 
     box-shadow:
-    0 0 50px
-    rgba(
-        49,
-        182,
-        255,
-        .08
-    );
-
+        0 0 50px
+        rgba(49,182,255,.08);
 }
-
 
 .journey-grid{
-
     display:grid;
 
-    grid-template-columns:
-    1fr 1.1fr;
+    grid-template-columns:1fr 1.1fr;
 
-    min-height:
-    520px;
-
+    min-height:520px;
 }
-
 
 .journey-info{
-
-    padding:
-    42px;
+    padding:42px;
 
     display:flex;
 
-    flex-direction:
-    column;
-
-    justify-content:
-    center;
-
+    flex-direction:column;
+    justify-content:center;
 }
-
 
 .step{
+    color:var(--blue2);
 
-    color:
-    var(--blue2);
+    font-family:monospace;
 
-    font-family:
-    monospace;
+    letter-spacing:2px;
 
-    letter-spacing:
-    2px;
-
-    font-size:
-    13px;
-
+    font-size:13px;
 }
-
 
 #journeyTitle{
+    margin:12px 0;
 
-    margin:
-    12px 0;
-
-    font-size:
-    clamp(
-        36px,
-        5vw,
-        48px
-    );
-
+    font-size:clamp(36px,5vw,48px);
 }
-
 
 #journeyDescription{
+    color:var(--muted);
 
-    color:
-    var(--muted);
+    font-size:17px;
 
-    font-size:
-    17px;
-
-    line-height:
-    1.8;
-
+    line-height:1.8;
 }
 
-
 .tags{
-
     display:flex;
-
     flex-wrap:wrap;
 
     gap:8px;
 
-    margin:
-    22px 0;
-
+    margin:22px 0;
 }
-
 
 .tag{
+    padding:8px 10px;
 
-    padding:
-    8px 10px;
+    border:1px solid var(--border);
+    border-radius:9px;
 
-    border:
-    1px solid var(--border);
+    font-size:12px;
+    font-family:monospace;
 
-    border-radius:
-    9px;
-
-    font-size:
-    12px;
-
-    font-family:
-    monospace;
-
-    color:
-    #badcf1;
-
+    color:#badcf1;
 }
 
-
 .attack-status{
-
     display:none;
 
     align-items:center;
 
     gap:10px;
 
-    margin-bottom:
-    18px;
+    margin-bottom:18px;
 
-    color:
-    var(--red2);
+    color:var(--red2);
 
-    font-family:
-    monospace;
+    font-family:monospace;
 
-    font-weight:
-    bold;
-
+    font-weight:bold;
 }
 
-
-.attack-card
-.attack-status{
-
+.attack-card .attack-status{
     display:flex;
-
 }
-
 
 .attack-dot{
+    width:10px;
+    height:10px;
 
-    width:
-    10px;
+    border-radius:50%;
 
-    height:
-    10px;
-
-    border-radius:
-    50%;
-
-    background:
-    var(--red);
+    background:var(--red);
 
     box-shadow:
-    0 0 15px
-    var(--red);
+        0 0 15px var(--red);
 
-    animation:
-    pulse
-    1s
-    infinite;
-
+    animation:pulse 1s infinite;
 }
-
 
 @keyframes pulse{
-
     50%{
-
         opacity:.3;
-
     }
-
 }
 
-
 .journey-controls{
-
     display:flex;
 
     flex-wrap:wrap;
 
     gap:10px;
-
 }
 
-
 .journey-media{
-
     position:relative;
 
-    min-height:
-    520px;
+    min-height:520px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     overflow:hidden;
 
-    background:
-    #04070c;
-
+    background:#04070c;
 }
 
-
 .journey-media img{
-
     display:block;
 
     width:100%;
-
     height:100%;
 
-    max-height:
-    560px;
+    max-height:560px;
 
-    object-fit:
-    contain;
-
+    object-fit:contain;
 }
 
-
 .media-overlay{
-
     position:absolute;
-
     inset:0;
 
     opacity:0;
 
     pointer-events:none;
-
 }
 
-
-.attack-card
-.media-overlay{
-
+.attack-card .media-overlay{
     opacity:1;
 
     background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,66,93,.17),
+            transparent
+        );
 
-    linear-gradient(
-
-        90deg,
-
-        transparent,
-
-        rgba(
-            255,
-            66,
-            93,
-            .17
-        ),
-
-        transparent
-
-    );
-
-    animation:
-    scan
-    2.2s
-    linear
-    infinite;
-
+    animation:scan 2.2s linear infinite;
 }
-
 
 @keyframes scan{
 
     from{
-
-        transform:
-        translateX(
-            -70%
-        );
-
+        transform:translateX(-70%);
     }
 
     to{
-
-        transform:
-        translateX(
-            70%
-        );
-
+        transform:translateX(70%);
     }
 
 }
 
-
 .attack-banner{
-
     display:none;
 
     position:absolute;
@@ -1003,82 +576,307 @@ h1{
     z-index:10;
 
     top:18px;
-
     left:18px;
 
-    padding:
-    10px 12px;
+    padding:10px 12px;
 
     border:
-    1px solid
-    rgba(
-        255,
-        66,
-        93,
-        .45
-    );
+        1px solid
+        rgba(255,66,93,.45);
 
-    border-radius:
-    10px;
+    border-radius:10px;
 
     background:
-    rgba(
-        255,
-        66,
-        93,
-        .12
-    );
+        rgba(255,66,93,.12);
 
-    color:
-    #ffd5db;
+    color:#ffd5db;
 
-    font-family:
-    monospace;
-
-    font-size:
-    12px;
-
+    font-family:monospace;
+    font-size:12px;
 }
 
-
-.attack-card
-.attack-banner{
-
+.attack-card .attack-banner{
     display:block;
-
 }
-
 
 .image-placeholder{
-
-    padding:
-    30px;
+    padding:30px;
 
     text-align:center;
 
-    color:
-    var(--muted);
+    color:var(--muted);
 
-    line-height:
-    1.7;
-
+    line-height:1.7;
 }
 
 
-.image-placeholder code{
+/* =========================================================
+   PAINÉIS CUSTOMIZADOS JOURNEY
+========================================================= */
 
+.journey-custom{
+    display:none;
+
+    width:100%;
+    min-height:520px;
+
+    padding:38px;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.custom-panel{
+    width:min(610px,100%);
+
+    padding:30px;
+
+    border:1px solid var(--border);
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,26,45,.97),
+            rgba(6,12,22,.97)
+        );
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.28);
+}
+
+
+/* AD */
+
+.ad-header{
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:25px;
+}
+
+.ad-icon{
+    width:58px;
+    height:58px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:1px solid rgba(49,182,255,.4);
+    border-radius:16px;
+
+    background:rgba(49,182,255,.08);
+
+    font-size:29px;
+}
+
+.ad-title small{
     display:block;
 
-    margin-top:
-    12px;
+    margin-bottom:5px;
 
-    color:white;
+    color:var(--blue2);
 
-    word-break:
-    break-word;
+    font-family:monospace;
 
+    letter-spacing:2px;
+
+    font-size:11px;
 }
 
+.ad-title strong{
+    font-size:25px;
+}
+
+.ad-domain{
+    margin-bottom:22px;
+
+    padding:17px;
+
+    border:
+        1px solid
+        rgba(49,182,255,.28);
+
+    border-radius:14px;
+
+    background:
+        rgba(49,182,255,.05);
+
+    font-family:monospace;
+}
+
+.ad-tree{
+    display:grid;
+
+    gap:10px;
+}
+
+.ad-row{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding:12px 14px;
+
+    border:1px solid var(--border);
+    border-radius:11px;
+
+    background:rgba(255,255,255,.015);
+}
+
+.ad-row span:first-child{
+    color:#dcecff;
+}
+
+.ad-row span:last-child{
+    color:var(--muted);
+
+    font-family:monospace;
+
+    font-size:12px;
+}
+
+.ad-note{
+    margin-top:20px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.6;
+}
+
+
+/* CONCLUSÃO */
+
+.complete-panel{
+    text-align:center;
+
+    border-color:
+        rgba(52,229,154,.45);
+
+    background:
+        radial-gradient(
+            circle at 50% 5%,
+            rgba(52,229,154,.11),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #0d1c20,
+            #071016
+        );
+}
+
+.complete-check{
+    width:82px;
+    height:82px;
+
+    margin:
+        0 auto 20px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid
+        rgba(52,229,154,.65);
+
+    border-radius:50%;
+
+    background:
+        rgba(52,229,154,.08);
+
+    color:var(--green);
+
+    font-size:43px;
+
+    box-shadow:
+        0 0 40px
+        rgba(52,229,154,.13);
+}
+
+.complete-panel h3{
+    margin:
+        0 0 8px;
+
+    font-size:29px;
+}
+
+.complete-sub{
+    color:var(--green);
+
+    font-family:monospace;
+
+    font-size:13px;
+}
+
+.complete-host{
+    margin:
+        25px 0;
+
+    padding:15px;
+
+    border:
+        1px solid
+        rgba(52,229,154,.3);
+
+    border-radius:13px;
+
+    background:
+        rgba(52,229,154,.04);
+
+    font-family:monospace;
+}
+
+.complete-list{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:10px;
+
+    text-align:left;
+}
+
+.complete-item{
+    padding:11px;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    color:#cde3da;
+
+    font-size:13px;
+}
+
+.complete-item::before{
+    content:"✓";
+
+    margin-right:8px;
+
+    color:var(--green);
+}
+
+.complete-footer{
+    margin-top:23px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    line-height:1.6;
+}
 
 
 /* =========================================================
@@ -1086,118 +884,65 @@ h1{
 ========================================================= */
 
 .incident-box{
+    padding:28px;
 
-    padding:
-    28px;
+    border:1px solid var(--border);
+    border-radius:20px;
 
-    border:
-    1px solid var(--border);
-
-    border-radius:
-    20px;
-
-    background:
-    var(--panel);
-
+    background:var(--panel);
 }
 
-
 .incident-flow{
-
     display:flex;
 
     align-items:center;
-
-    justify-content:
-    center;
+    justify-content:center;
 
     flex-wrap:wrap;
 
     gap:12px;
-
 }
 
-
 .flow-node{
+    min-width:130px;
 
-    min-width:
-    130px;
-
-    padding:
-    16px;
+    padding:16px;
 
     text-align:center;
 
-    border:
-    1px solid var(--border);
+    border:1px solid var(--border);
+    border-radius:12px;
 
-    border-radius:
-    12px;
-
-    background:
-    var(--panel2);
-
+    background:var(--panel2);
 }
-
 
 .flow-node.attack{
+    border-color:rgba(255,66,93,.55);
 
-    border-color:
-    rgba(
-        255,
-        66,
-        93,
-        .55
-    );
-
-    color:
-    #ffacb7;
-
+    color:#ffacb7;
 }
-
 
 .flow-node.defense{
+    border-color:rgba(49,182,255,.55);
 
-    border-color:
-    rgba(
-        49,
-        182,
-        255,
-        .55
-    );
-
-    color:
-    #a1e5ff;
-
+    color:#a1e5ff;
 }
-
 
 .flow-node small{
-
     display:block;
 
-    margin-top:
-    5px;
+    margin-top:5px;
 
-    color:
-    var(--muted);
+    color:var(--muted);
 
-    font-size:
-    12px;
-
+    font-size:12px;
 }
-
 
 .flow-arrow{
+    color:var(--muted);
 
-    color:
-    var(--muted);
-
-    font-size:
-    18px;
-
+    font-size:18px;
 }
-
 
 
 /* =========================================================
@@ -1205,737 +950,439 @@ h1{
 ========================================================= */
 
 .builder{
-
     display:grid;
 
-    grid-template-columns:
-    1.15fr .85fr;
+    grid-template-columns:1.15fr .85fr;
 
-    gap:
-    24px;
-
+    gap:24px;
 }
-
 
 .network-panel,
 .controls-panel{
+    padding:26px;
 
-    padding:
-    26px;
+    border:1px solid var(--border);
+    border-radius:22px;
 
-    border:
-    1px solid var(--border);
-
-    border-radius:
-    22px;
-
-    background:
-    rgba(
-        11,
-        20,
-        35,
-        .92
-    );
-
+    background:rgba(11,20,35,.92);
 }
 
-
 .network-head{
-
     display:flex;
 
     align-items:center;
-
-    justify-content:
-    space-between;
+    justify-content:space-between;
 
     flex-wrap:wrap;
 
     gap:15px;
-
 }
-
 
 .risk{
-
-    padding:
-    8px 12px;
+    padding:8px 12px;
 
     border:
-    1px solid
-    rgba(
-        255,
-        66,
-        93,
-        .55
-    );
+        1px solid
+        rgba(255,66,93,.55);
 
-    border-radius:
-    10px;
+    border-radius:10px;
 
-    color:
-    #ff9baa;
+    color:#ff9baa;
 
-    font-family:
-    monospace;
-
+    font-family:monospace;
 }
-
 
 .topology-wrap{
-
     overflow-x:auto;
 
-    margin-top:
-    20px;
-
+    margin-top:20px;
 }
-
 
 .lab-topology{
-
     position:relative;
 
-    width:
-    820px;
-
-    height:
-    560px;
+    width:820px;
+    height:560px;
 
     margin:auto;
-
 }
 
-
 .lab-svg{
-
     position:absolute;
 
     inset:0;
 
     width:100%;
-
     height:100%;
 
     z-index:1;
-
 }
-
 
 .netline{
-
     fill:none;
 
-    stroke-width:
-    3;
+    stroke-width:3;
 
-    transition:
-    .35s;
-
+    transition:.35s;
 }
-
 
 .danger-line{
+    stroke:var(--red);
 
-    stroke:
-    var(--red);
-
-    stroke-dasharray:
-    8 8;
+    stroke-dasharray:8 8;
 
     filter:
-    drop-shadow(
-        0 0 6px
-        rgba(
-            255,
-            66,
-            93,
-            .32
-        )
-    );
-
+        drop-shadow(
+            0 0 6px
+            rgba(255,66,93,.32)
+        );
 }
-
 
 .safe-line{
-
-    stroke:
-    var(--blue2);
+    stroke:var(--blue2);
 
     filter:
-    drop-shadow(
-        0 0 6px
-        rgba(
-            49,
-            182,
-            255,
-            .25
-        )
-    );
-
+        drop-shadow(
+            0 0 6px
+            rgba(49,182,255,.25)
+        );
 }
-
 
 .monitor-line{
-
-    stroke:
-    var(--green);
+    stroke:var(--green);
 
     filter:
-    drop-shadow(
-        0 0 6px
-        rgba(
-            52,
-            229,
-            154,
-            .25
-        )
-    );
-
+        drop-shadow(
+            0 0 6px
+            rgba(52,229,154,.25)
+        );
 }
-
 
 .line-hidden{
-
     opacity:0;
-
 }
 
-
 .lab-node{
-
     position:absolute;
 
     z-index:3;
 
     transform:
-    translate(
-        -50%,
-        -50%
-    );
+        translate(-50%,-50%);
 
-    width:
-    174px;
+    width:174px;
 
-    padding:
-    15px 12px;
+    padding:15px 12px;
 
-    border:
-    1px solid var(--border);
+    border:1px solid var(--border);
+    border-radius:15px;
 
-    border-radius:
-    15px;
-
-    background:
-    #091322;
+    background:#091322;
 
     text-align:center;
 
-    transition:
-    .25s;
+    transition:.25s;
 
     outline:none;
-
 }
-
 
 .lab-node strong{
-
     display:block;
 
-    margin-bottom:
-    4px;
-
+    margin-bottom:4px;
 }
-
 
 .lab-node small{
-
     display:block;
 
-    color:
-    var(--muted);
+    color:var(--muted);
 
-    font-size:
-    12px;
+    font-size:12px;
 
-    line-height:
-    1.4;
-
+    line-height:1.4;
 }
-
 
 .lab-node.disabled{
+    opacity:.38;
 
-    opacity:
-    .38;
-
-    border-style:
-    dashed;
-
+    border-style:dashed;
 }
-
 
 .lab-node.active{
-
     opacity:1;
-
 }
-
 
 .lab-node.vulnerable{
-
     border-color:
-    rgba(
-        255,
-        66,
-        93,
-        .6
-    );
+        rgba(255,66,93,.6);
 
     box-shadow:
-    0 0 24px
-    rgba(
-        255,
-        66,
-        93,
-        .12
-    );
-
+        0 0 24px
+        rgba(255,66,93,.12);
 }
-
 
 .lab-node.protected{
-
     border-color:
-    rgba(
-        52,
-        229,
-        154,
-        .65
-    );
+        rgba(52,229,154,.65);
 
     box-shadow:
-    0 0 24px
-    rgba(
-        52,
-        229,
-        154,
-        .10
-    );
-
+        0 0 24px
+        rgba(52,229,154,.10);
 }
-
 
 .lab-node:hover{
-
-    border-color:
-    var(--blue2);
-
+    border-color:var(--blue2);
 }
 
 
-.tooltip{
+/* TOOLTIP */
 
+.tooltip{
     position:absolute;
 
     left:50%;
 
-    bottom:
-    calc(
-        100% + 12px
-    );
+    bottom:calc(100% + 12px);
 
     transform:
-    translateX(
-        -50%
-    );
+        translateX(-50%);
 
-    width:
-    235px;
+    width:235px;
 
-    padding:
-    13px;
+    padding:13px;
 
     opacity:0;
 
     pointer-events:none;
 
-    border:
-    1px solid var(--border);
+    border:1px solid var(--border);
+    border-radius:12px;
 
-    border-radius:
-    12px;
+    background:#07101d;
 
-    background:
-    #07101d;
-
-    color:
-    #dcecff;
+    color:#dcecff;
 
     text-align:left;
 
-    line-height:
-    1.55;
+    line-height:1.55;
 
-    font-size:
-    12px;
+    font-size:12px;
 
     box-shadow:
-    0 15px 35px
-    rgba(
-        0,
-        0,
-        0,
-        .35
-    );
-
+        0 15px 35px
+        rgba(0,0,0,.35);
 }
-
 
 .tooltip strong{
-
     color:white;
-
 }
 
-
-.lab-node:hover
-.tooltip,
-
-.lab-node:focus
-.tooltip,
-
-.lab-node.show-tip
-.tooltip{
-
+.lab-node:hover .tooltip,
+.lab-node:focus .tooltip,
+.lab-node.show-tip .tooltip{
     opacity:1;
-
 }
 
+
+/* SÍMBOLOS */
 
 .attack-symbol{
-
     position:absolute;
 
     z-index:6;
 
-    padding:
-    7px 10px;
+    padding:7px 10px;
 
     border:
-    1px solid
-    rgba(
-        255,
-        66,
-        93,
-        .55
-    );
+        1px solid
+        rgba(255,66,93,.55);
 
-    border-radius:
-    999px;
+    border-radius:999px;
 
     background:
-    rgba(
-        255,
-        66,
-        93,
-        .10
-    );
+        rgba(255,66,93,.10);
 
-    color:
-    #ffd0d7;
+    color:#ffd0d7;
 
-    font-family:
-    monospace;
+    font-family:monospace;
 
-    font-size:
-    12px;
+    font-size:12px;
 
-    animation:
-    pulse
-    1.2s
-    infinite;
-
+    animation:pulse 1.2s infinite;
 }
-
 
 .hidden{
-
     display:none !important;
-
 }
 
 
-/* posições */
+/* POSIÇÕES */
 
 .n-internet{
-
     left:410px;
     top:55px;
-
 }
 
 .n-firewall{
-
     left:410px;
     top:160px;
-
 }
 
 .n-web{
-
     left:410px;
     top:285px;
-
 }
 
 .n-wazuh{
-
     left:140px;
     top:285px;
-
 }
 
 .n-cowrie{
-
     left:680px;
     top:285px;
-
 }
 
 .n-iris{
-
     left:140px;
     top:430px;
-
 }
 
 .n-velociraptor{
-
     left:680px;
     top:430px;
-
 }
 
 .n-attacker{
-
     left:410px;
     top:510px;
-
 }
-
 
 #openPath{
-
     left:455px;
     top:105px;
-
 }
-
 
 #webRisk{
-
     left:470px;
     top:230px;
-
 }
-
 
 #attackerRisk{
-
     left:470px;
     top:470px;
-
 }
-
 
 
 /* =========================================================
-   BUILDER BUTTONS
+   CONTROLES BUILDER
 ========================================================= */
 
 .controls-panel h3{
-
     margin-top:0;
 
-    font-size:
-    25px;
-
+    font-size:25px;
 }
-
 
 .builder-buttons{
-
     display:grid;
 
-    gap:
-    11px;
-
+    gap:11px;
 }
 
-
 .protect-btn{
-
     display:flex;
 
-    justify-content:
-    space-between;
-
+    justify-content:space-between;
     align-items:center;
 
     width:100%;
 
-    padding:
-    15px;
+    padding:15px;
 
     border:
-    1px solid
-    rgba(
-        49,
-        182,
-        255,
-        .35
-    );
+        1px solid
+        rgba(49,182,255,.35);
 
-    border-radius:
-    13px;
+    border-radius:13px;
 
-    background:
-    transparent;
+    background:transparent;
 
-    color:
-    #bcdbef;
+    color:#bcdbef;
 
     cursor:pointer;
 
-    transition:
-    .2s;
-
+    transition:.2s;
 }
-
 
 .protect-btn:hover{
-
-    border-color:
-    var(--blue);
-
+    border-color:var(--blue);
 }
-
 
 .protect-btn.done{
-
     border-color:
-    rgba(
-        52,
-        229,
-        154,
-        .65
-    );
+        rgba(52,229,154,.65);
 
-    color:
-    var(--green);
-
+    color:var(--green);
 }
-
 
 .progress-box{
-
-    margin-top:
-    25px;
-
+    margin-top:25px;
 }
 
-
 .progress{
-
-    height:
-    11px;
+    height:11px;
 
     overflow:hidden;
 
-    border-radius:
-    999px;
+    border-radius:999px;
 
-    background:
-    #182538;
-
+    background:#182538;
 }
-
 
 .progress div{
-
-    width:
-    5%;
-
-    height:
-    100%;
+    width:5%;
+    height:100%;
 
     background:
-    linear-gradient(
-        90deg,
-        var(--red),
-        var(--orange),
-        var(--green)
-    );
+        linear-gradient(
+            90deg,
+            var(--red),
+            var(--orange),
+            var(--green)
+        );
 
-    transition:
-    .4s;
-
+    transition:.4s;
 }
-
 
 .score-row{
-
     display:flex;
 
-    justify-content:
-    space-between;
+    justify-content:space-between;
 
-    margin-top:
-    10px;
+    margin-top:10px;
 
-    color:
-    var(--muted);
-
+    color:var(--muted);
 }
-
 
 .final-message{
-
     display:none;
 
-    margin-top:
-    22px;
+    margin-top:22px;
 
-    padding:
-    18px;
+    padding:18px;
 
     border:
-    1px solid
-    rgba(
-        52,
-        229,
-        154,
-        .55
-    );
+        1px solid
+        rgba(52,229,154,.55);
 
-    border-radius:
-    13px;
+    border-radius:13px;
 
     background:
-    rgba(
-        52,
-        229,
-        154,
-        .08
-    );
+        rgba(52,229,154,.08);
 
-    color:
-    var(--green);
-
+    color:var(--green);
 }
-
 
 
 /* =========================================================
@@ -1943,24 +1390,18 @@ h1{
 ========================================================= */
 
 footer{
-
-    padding:
-    55px 20px;
+    padding:55px 20px;
 
     text-align:center;
 
-    color:
-    var(--muted);
+    color:var(--muted);
 
-    border-top:
-    1px solid var(--border);
-
+    border-top:1px solid var(--border);
 }
 
 
-
 /* =========================================================
-   RESPONSIVO
+   MOBILE
 ========================================================= */
 
 @media(max-width:980px){
@@ -1968,182 +1409,130 @@ footer{
     .about-grid,
     .journey-grid,
     .builder{
-
-        grid-template-columns:
-        1fr;
-
+        grid-template-columns:1fr;
     }
 
-
-    .journey-media{
-
-        min-height:
-        400px;
-
+    .journey-media,
+    .journey-custom{
+        min-height:400px;
     }
 
 }
 
-
 @media(max-width:720px){
 
     .nav-wrap{
+        align-items:flex-start;
 
-        align-items:
-        flex-start;
-
-        flex-direction:
-        column;
-
+        flex-direction:column;
     }
 
-
     .nav-links{
-
         width:100%;
 
         overflow-x:auto;
 
         gap:16px;
 
-        padding-bottom:
-        4px;
-
+        padding-bottom:4px;
     }
-
 
     .hero{
-
         min-height:auto;
 
-        padding:
-        90px 0 45px;
-
+        padding:90px 0 45px;
     }
-
 
     .hero p{
-
-        font-size:
-        16px;
-
+        font-size:16px;
     }
-
 
     .section{
-
-        padding:
-        58px 0;
-
+        padding:58px 0;
     }
-
 
     .journey-info{
-
-        padding:
-        26px;
-
+        padding:26px;
     }
 
-
-    .journey-media{
-
-        min-height:
-        300px;
-
+    .journey-media,
+    .journey-custom{
+        min-height:330px;
     }
-
 
     .incident-flow{
-
-        flex-direction:
-        column;
-
+        flex-direction:column;
     }
-
 
     .flow-arrow{
-
-        transform:
-        rotate(
-            90deg
-        );
-
+        transform:rotate(90deg);
     }
 
-
     .about-info{
+        padding:25px;
+    }
 
-        padding:
-        25px;
+    .complete-list{
+        grid-template-columns:1fr;
+    }
 
+    .custom-panel{
+        padding:22px;
     }
 
 }
 
-
 @media(max-width:520px){
 
     .btn{
-
         width:100%;
-
     }
 
-
-    .journey-controls
-    .btn{
-
+    .journey-controls .btn{
         width:auto;
 
         flex:1;
-
     }
-
 
     .network-panel,
     .controls-panel{
-
-        padding:
-        18px;
-
+        padding:18px;
     }
-
 
     .lab-topology{
+        transform:scale(.78);
 
-        transform:
-        scale(.78);
+        transform-origin:top left;
 
-        transform-origin:
-        top left;
+        margin-left:0;
 
-        margin-left:
-        0;
-
-        height:
-        440px;
-
+        height:440px;
     }
-
 
     .topology-wrap{
-
         overflow:hidden;
-
     }
 
-
     .tooltip{
+        width:200px;
+    }
 
-        width:
-        200px;
+    .journey-custom{
+        padding:17px;
+    }
 
+    .ad-row{
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:5px;
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -2187,7 +1576,9 @@ Build Your Defense
 href="https://github.com/geovanniandrade/gg-cyberlab#readme"
 target="_blank"
 rel="noopener">
+
 Docs
+
 </a>
 
 </div>
@@ -2292,9 +1683,7 @@ GG CyberLab
 Laboratório autoral desenvolvido por
 
 <strong>
-
 Geovanni Andrade
-
 </strong>
 
 com foco em Blue Team, SOC, DFIR,
@@ -2327,33 +1716,13 @@ Prevent → Detect → Respond → Investigate
 
 <div class="about-tags">
 
-<span>
-Blue Team
-</span>
-
-<span>
-SOC
-</span>
-
-<span>
-DFIR
-</span>
-
-<span>
-Incident Response
-</span>
-
-<span>
-Active Directory
-</span>
-
-<span>
-Network Security
-</span>
-
-<span>
-DevSecOps
-</span>
+<span>Blue Team</span>
+<span>SOC</span>
+<span>DFIR</span>
+<span>Incident Response</span>
+<span>Active Directory</span>
+<span>Network Security</span>
+<span>DevSecOps</span>
 
 </div>
 
@@ -2419,10 +1788,12 @@ CyberLab Journey
 
 <p class="section-sub">
 
-A apresentação roda continuamente em loop.
-Quando a atividade ofensiva começa, a interface muda
-para vermelho. Durante detecção, resposta e DFIR,
-o ambiente muda para azul.
+A apresentação percorre automaticamente as principais
+etapas do projeto.
+
+Durante a atividade ofensiva, a interface muda para
+vermelho. Na fase de detecção, resposta e investigação,
+a experiência muda para azul.
 
 </p>
 
@@ -2467,8 +1838,7 @@ id="journeyTags">
 
 <div class="attack-status">
 
-<span class="attack-dot">
-</span>
+<span class="attack-dot"></span>
 
 SECURITY EVENT IN PROGRESS
 
@@ -2538,7 +1908,12 @@ alt="Evidência GG CyberLab">
 class="image-placeholder"
 id="imagePlaceholder"
 style="display:none">
+</div>
 
+
+<div
+class="journey-custom"
+id="journeyCustom">
 </div>
 
 
@@ -2556,13 +1931,12 @@ style="display:none">
 
 
 <!-- =====================================================
-INCIDENT
+INCIDENT STORY
 ===================================================== -->
 
 <section
 class="section"
 id="incident">
-
 
 <div class="container">
 
@@ -2706,9 +2080,11 @@ Build Your Defense
 <p class="section-sub">
 
 O ambiente começa com um serviço exposto e um caminho
-direto de ataque. Adicione controles e veja a arquitetura
-se transformar em um ambiente segmentado, monitorado e
-preparado para resposta a incidentes.
+direto de ataque.
+
+Adicione controles e veja a arquitetura evoluir para
+um ambiente segmentado, monitorado e preparado para
+resposta a incidentes.
 
 Passe o mouse ou toque nos ativos para visualizar
 informações técnicas resumidas.
@@ -2720,9 +2096,7 @@ informações técnicas resumidas.
 <div class="builder">
 
 
-<!-- =====================================================
-TOPOLOGIA
-===================================================== -->
+<!-- TOPOLOGIA -->
 
 <div class="network-panel">
 
@@ -2762,8 +2136,7 @@ class="lab-svg"
 viewBox="0 0 820 560">
 
 
-
-<!-- internet -> web vulnerável -->
+<!-- INTERNET DIRETO PARA WEB -->
 
 <line
 id="directAttack"
@@ -2775,8 +2148,7 @@ class="netline danger-line">
 </line>
 
 
-
-<!-- internet -> firewall -->
+<!-- INTERNET -> FIREWALL -->
 
 <line
 id="internetFirewall"
@@ -2788,8 +2160,7 @@ class="netline safe-line line-hidden">
 </line>
 
 
-
-<!-- firewall -> web -->
+<!-- FIREWALL -> WEB -->
 
 <line
 id="firewallWeb"
@@ -2801,8 +2172,7 @@ class="netline safe-line line-hidden">
 </line>
 
 
-
-<!-- web -> wazuh -->
+<!-- WEB -> WAZUH -->
 
 <line
 id="webWazuh"
@@ -2814,8 +2184,7 @@ class="netline monitor-line line-hidden">
 </line>
 
 
-
-<!-- wazuh -> iris -->
+<!-- WAZUH -> IRIS -->
 
 <line
 id="wazuhIris"
@@ -2827,8 +2196,7 @@ class="netline monitor-line line-hidden">
 </line>
 
 
-
-<!-- web -> cowrie -->
+<!-- WEB -> COWRIE -->
 
 <line
 id="webCowrie"
@@ -2840,8 +2208,7 @@ class="netline safe-line line-hidden">
 </line>
 
 
-
-<!-- cowrie -> wazuh -->
+<!-- COWRIE -> WAZUH -->
 
 <path
 id="cowrieWazuh"
@@ -2855,8 +2222,7 @@ class="netline monitor-line line-hidden">
 </path>
 
 
-
-<!-- iris -> velociraptor -->
+<!-- IRIS -> VELOCIRAPTOR -->
 
 <path
 id="irisVelociraptor"
@@ -2870,8 +2236,7 @@ class="netline monitor-line line-hidden">
 </path>
 
 
-
-<!-- velociraptor -> web -->
+<!-- VELOCIRAPTOR -> WEB -->
 
 <path
 id="dfirWeb"
@@ -2885,8 +2250,7 @@ class="netline monitor-line line-hidden">
 </path>
 
 
-
-<!-- attacker -> web -->
+<!-- KALI -> WEB -->
 
 <line
 id="attackerWeb"
@@ -2961,12 +2325,10 @@ Internet
 
 Entrada externa do ambiente.
 
-<br>
+<br><br>
 
 <b>
-
 Risco inicial:
-
 </b>
 
 acesso direto ao serviço publicado.
@@ -3010,16 +2372,16 @@ OPNsense
 
 Firewall e roteador central.
 
-<br>
+<br><br>
 
 <b>
-
 Funções:
-
 </b>
 
-VLANs, regras de firewall,
-roteamento e segmentação.
+VLANs,
+regras de firewall,
+roteamento
+e segmentação.
 
 </div>
 
@@ -3058,9 +2420,10 @@ GG_LN05 — DMZ
 
 </strong>
 
-IP: 10.10.50.10
+IP:
+10.10.50.10
 
-<br>
+<br><br>
 
 Nginx:
 <b>80/tcp</b>
@@ -3097,7 +2460,7 @@ tabindex="0">
 </strong>
 
 
-<small id="wazuhStatus">
+<small>
 
 GG_LN01
 
@@ -3115,15 +2478,13 @@ Wazuh SIEM / XDR
 IP:
 10.10.30.10
 
-<br>
+<br><br>
 
 VLAN 30 — SOC
 
-<br>
+<br><br>
 
-Funções:
-
-monitoramento,
+Monitoramento,
 correlação,
 Threat Hunting
 e regras customizadas.
@@ -3150,7 +2511,7 @@ tabindex="0">
 </strong>
 
 
-<small id="cowrieStatus">
+<small>
 
 Honeypot
 
@@ -3167,7 +2528,7 @@ Cowrie Honeypot
 
 Executado no GG_LN05.
 
-<br>
+<br><br>
 
 IP:
 10.10.50.10
@@ -3226,12 +2587,12 @@ GG_LN03
 IP:
 10.10.30.30
 
-<br>
+<br><br>
 
-HTTPS do laboratório:
+HTTPS:
 <b>8444 → 443</b>
 
-<br>
+<br><br>
 
 Case Management,
 IOC,
@@ -3283,12 +2644,12 @@ GG_LN02
 IP:
 10.10.30.20
 
-<br>
+<br><br>
 
 GUI via tunnel:
 <b>8889</b>
 
-<br>
+<br><br>
 
 Coleta de artefatos
 e investigação DFIR.
@@ -3300,7 +2661,7 @@ e investigação DFIR.
 
 
 
-<!-- ATTACKER -->
+<!-- KALI -->
 
 <div
 class="lab-node active vulnerable n-attacker"
@@ -3332,12 +2693,12 @@ Attack Lab
 
 VLAN 99
 
-<br>
+<br><br>
 
 IP observado:
 10.10.99.161
 
-<br>
+<br><br>
 
 Utilizado exclusivamente
 para testes controlados
@@ -3349,7 +2710,6 @@ contra o CyberLab.
 </div>
 
 
-
 </div>
 
 </div>
@@ -3358,9 +2718,7 @@ contra o CyberLab.
 
 
 
-<!-- =====================================================
-CONTROLES
-===================================================== -->
+<!-- CONTROLES -->
 
 <div class="controls-panel">
 
@@ -3383,12 +2741,9 @@ data-control="firewall">
 🔥 Adicionar Firewall
 </span>
 
-<span>
-+
-</span>
+<span>+</span>
 
 </button>
-
 
 
 <button
@@ -3399,12 +2754,9 @@ data-control="vlans">
 🔀 Adicionar VLANs
 </span>
 
-<span>
-+
-</span>
+<span>+</span>
 
 </button>
-
 
 
 <button
@@ -3415,12 +2767,9 @@ data-control="dmz">
 🌐 Criar DMZ
 </span>
 
-<span>
-+
-</span>
+<span>+</span>
 
 </button>
-
 
 
 <button
@@ -3431,12 +2780,9 @@ data-control="wazuh">
 📊 Adicionar Wazuh
 </span>
 
-<span>
-+
-</span>
+<span>+</span>
 
 </button>
-
 
 
 <button
@@ -3447,12 +2793,9 @@ data-control="honeypot">
 🍯 Adicionar Honeypot
 </span>
 
-<span>
-+
-</span>
+<span>+</span>
 
 </button>
-
 
 
 <button
@@ -3463,12 +2806,9 @@ data-control="iris">
 🚨 Adicionar IRIS
 </span>
 
-<span>
-+
-</span>
+<span>+</span>
 
 </button>
-
 
 
 <button
@@ -3479,9 +2819,7 @@ data-control="dfir">
 🔎 Adicionar Velociraptor
 </span>
 
-<span>
-+
-</span>
+<span>+</span>
 
 </button>
 
@@ -3502,7 +2840,6 @@ data-control="dfir">
 
 
 <div class="score-row">
-
 
 <span>
 
@@ -3532,7 +2869,6 @@ id="finalMessage">
 para detecção, resposta e investigação.
 
 </div>
-
 
 
 <div style="margin-top:18px">
@@ -3583,7 +2919,6 @@ Geovanni Andrade
 
 <script>
 
-
 /* =========================================================
 JOURNEY
 ========================================================= */
@@ -3591,258 +2926,204 @@ JOURNEY
 
 const stages = [
 
-
 {
+    title:"Arquitetura",
 
-title:
-"Arquitetura",
+    description:
+    "Construção da base do GG CyberLab com VirtualBox, OPNsense, Open vSwitch e segmentação lógica.",
 
-description:
-"Construção da base do GG CyberLab com VirtualBox, OPNsense, Open vSwitch e segmentação lógica.",
+    tags:[
+        "VirtualBox",
+        "OPNsense",
+        "VLANs",
+        "Network Security"
+    ],
 
-tags:[
-"VirtualBox",
-"OPNsense",
-"VLANs",
-"Network Security"
-],
+    image:
+    "images/topologia-gg-cyberlab.png",
 
-image:
-"images/topologia-gg-cyberlab.png",
-
-mode:
-"normal"
-
+    mode:"normal"
 },
 
 
-
 {
+    title:"Active Directory",
 
-title:
-"Active Directory",
+    description:
+    "Implementação do domínio gglab.corp e da camada corporativa de identidade, autenticação, DNS e servidores Windows.",
 
-description:
-"Implementação do domínio gglab.corp e da camada corporativa de identidade, autenticação, DNS e servidores Windows.",
+    tags:[
+        "Active Directory",
+        "Windows Server",
+        "DNS",
+        "Identity"
+    ],
 
-tags:[
-"Active Directory",
-"Windows Server",
-"DNS",
-"Identity"
-],
+    panel:"active-directory",
 
-image:
-"images/active-directory/windows-servers-wazuh-agents.png",
-
-mode:
-"normal"
-
+    mode:"normal"
 },
 
 
-
 {
+    title:"SOC & Detection",
 
-title:
-"SOC & Detection",
+    description:
+    "O Wazuh centraliza a telemetria dos ativos e atua como núcleo do SOC para monitoramento, correlação e Threat Hunting.",
 
-description:
-"O Wazuh centraliza a telemetria dos ativos e atua como núcleo do SOC para monitoramento, correlação e Threat Hunting.",
+    tags:[
+        "Wazuh",
+        "SIEM",
+        "XDR",
+        "Threat Hunting"
+    ],
 
-tags:[
-"Wazuh",
-"SIEM",
-"XDR",
-"Threat Hunting"
-],
+    image:
+    "images/wazuh/wazuh-agents.png",
 
-image:
-"images/wazuh/wazuh-agents.png",
-
-mode:
-"defense"
-
+    mode:"defense"
 },
 
 
-
 {
+    title:"Honeypot",
 
-title:
-"Honeypot",
+    description:
+    "O Cowrie é executado no GG_LN05 para simular um serviço SSH e registrar atividades controladas contra o ambiente.",
 
-description:
-"O Cowrie é executado no GG_LN05 para simular um serviço SSH e registrar atividades controladas contra o ambiente.",
+    tags:[
+        "Cowrie",
+        "SSH",
+        "Honeypot",
+        "DMZ"
+    ],
 
-tags:[
-"Cowrie",
-"SSH",
-"Honeypot",
-"DMZ"
-],
+    image:
+    "images/honeypot/cowrie-event-details-wazuh.png",
 
-image:
-"images/honeypot/cowrie-event-details-wazuh.png",
-
-mode:
-"normal"
-
+    mode:"normal"
 },
 
 
-
 {
+    title:"Web Security",
 
-title:
-"Web Security",
+    description:
+    "Nginx atua como reverse proxy enquanto o OWASP Juice Shop permanece no backend local do servidor.",
 
-description:
-"Nginx atua como reverse proxy enquanto o OWASP Juice Shop permanece no backend local do servidor.",
+    tags:[
+        "Nginx",
+        "Juice Shop",
+        "Docker",
+        "Web Security"
+    ],
 
-tags:[
-"Nginx",
-"Juice Shop",
-"Docker",
-"Web Security"
-],
+    image:
+    "images/web-security/nginx-http-200.png",
 
-image:
-"images/web-security/nginx-http-200.png",
-
-mode:
-"normal"
-
+    mode:"normal"
 },
 
 
-
 {
+    title:"ATTACK DETECTED",
 
-title:
-"ATTACK DETECTED",
+    description:
+    "A máquina Kali 10.10.99.161 gera uma tentativa controlada de autenticação SSH contra o Cowrie. O Wazuh detecta o evento através da Rule 100200.",
 
-description:
-"A máquina Kali 10.10.99.161 gera uma tentativa controlada de autenticação SSH contra o Cowrie. O Wazuh detecta o evento através da Rule 100200.",
+    tags:[
+        "Kali",
+        "10.10.99.161",
+        "SSH Attempt",
+        "Rule 100200"
+    ],
 
-tags:[
-"Kali",
-"10.10.99.161",
-"SSH Attempt",
-"Rule 100200"
-],
+    image:
+    "images/wazuh/wazuh-rule-100200.png",
 
-image:
-"images/wazuh/wazuh-rule-100200.png",
-
-mode:
-"attack"
-
+    mode:"attack"
 },
 
 
-
 {
+    title:"Incident Response",
 
-title:
-"Incident Response",
+    description:
+    "O alerta do Wazuh é convertido em um caso estruturado no DFIR-IRIS com IOC, Asset, evidências, tarefas e timeline.",
 
-description:
-"O alerta do Wazuh é convertido em um caso estruturado no DFIR-IRIS com IOC, Asset, evidências, tarefas e timeline.",
+    tags:[
+        "DFIR-IRIS",
+        "Case #5",
+        "IOC",
+        "Incident Response"
+    ],
 
-tags:[
-"DFIR-IRIS",
-"Case #5",
-"IOC",
-"Incident Response"
-],
+    image:
+    "images/incident-response/iris-case-5-summary.png",
 
-image:
-"images/incident-response/iris-case-5-summary.png",
-
-mode:
-"defense"
-
+    mode:"defense"
 },
 
 
-
 {
+    title:"DFIR Investigation",
 
-title:
-"DFIR Investigation",
+    description:
+    "O Velociraptor coleta artefatos do GG_LN05 para analisar processos, conexões, persistência, usuários e autenticações.",
 
-description:
-"O Velociraptor coleta artefatos do GG_LN05 para analisar processos, conexões, persistência, usuários e autenticações.",
+    tags:[
+        "Velociraptor",
+        "DFIR",
+        "Artifacts",
+        "Investigation"
+    ],
 
-tags:[
-"Velociraptor",
-"DFIR",
-"Artifacts",
-"Investigation"
-],
+    image:
+    "images/velociraptor/velociraptor-dfir-analysis.png",
 
-image:
-"images/velociraptor/velociraptor-dfir-analysis.png",
-
-mode:
-"defense"
-
+    mode:"defense"
 },
 
 
-
 {
+    title:"Investigation Complete ✓",
 
-title:
-"Investigation Complete ✓",
+    description:
+    "A investigação foi concluída e nenhum indicador de comprometimento foi identificado nos artefatos coletados pelo Velociraptor.",
 
-description:
-"Nenhum indicador de comprometimento foi identificado nos artefatos coletados. A atividade permaneceu restrita ao honeypot.",
+    tags:[
+        "Analysis Complete",
+        "No IOC Identified",
+        "Blue Team",
+        "Resolved"
+    ],
 
-tags:[
-"Analysis Complete",
-"No IOC",
-"Blue Team",
-"Resolved"
-],
+    panel:"investigation-complete",
 
-image:
-"images/velociraptor/velociraptor-dfir-analysis.png",
-
-mode:
-"success"
-
+    mode:"success"
 },
 
 
-
 {
+    title:"DevSecOps",
 
-title:
-"DevSecOps",
+    description:
+    "Gitea, pipeline, act_runner e Trivy adicionam segurança preventiva ao ciclo de desenvolvimento.",
 
-description:
-"Gitea, pipeline, act_runner e Trivy adicionam segurança preventiva ao ciclo de desenvolvimento.",
+    tags:[
+        "Gitea",
+        "Trivy",
+        "Pipeline",
+        "Shift Left"
+    ],
 
-tags:[
-"Gitea",
-"Trivy",
-"Pipeline",
-"Shift Left"
-],
+    image:
+    "images/devsecops/gitea-repository.png",
 
-image:
-"images/devsecops/gitea-repository.png",
-
-mode:
-"normal"
-
+    mode:"normal"
 }
 
-
 ];
-
 
 
 let currentStep = 0;
@@ -3852,257 +3133,535 @@ let playing = true;
 let timer = null;
 
 
-
 const timeline =
-document.getElementById(
-"timeline"
-);
+document.getElementById("timeline");
 
 
 const journeyCard =
-document.getElementById(
-"journeyCard"
-);
+document.getElementById("journeyCard");
 
 
 const journeyImage =
-document.getElementById(
-"journeyImage"
-);
+document.getElementById("journeyImage");
+
+
+const journeyCustom =
+document.getElementById("journeyCustom");
 
 
 const imagePlaceholder =
-document.getElementById(
-"imagePlaceholder"
-);
+document.getElementById("imagePlaceholder");
 
 
 const playBtn =
-document.getElementById(
-"playBtn"
-);
+document.getElementById("playBtn");
 
 
 
-stages.forEach(
-(stage,index)=>{
+stages.forEach((stage,index)=>{
+
+    const button =
+    document.createElement("button");
 
 
-const button =
-document.createElement(
-"button"
-);
+    button.innerHTML =
+    `${String(index+1).padStart(2,"0")}<br>${stage.title}`;
 
 
-button.innerHTML =
-`${String(index+1).padStart(2,"0")}<br>${stage.title}`;
+    button.addEventListener(
+        "click",
+        ()=>{
+
+            showStep(index);
+
+        }
+    );
 
 
-button.addEventListener(
-"click",
-()=>{
+    timeline.appendChild(button);
 
-showStep(index);
+});
+
+
+
+function activeDirectoryPanel(){
+
+return `
+
+<div class="custom-panel">
+
+    <div class="ad-header">
+
+        <div class="ad-icon">
+            🪟
+        </div>
+
+        <div class="ad-title">
+
+            <small>
+                IDENTITY SERVICES
+            </small>
+
+            <strong>
+                Active Directory
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="ad-domain">
+
+        DOMAIN
+
+        <br><br>
+
+        <strong>
+            gglab.corp
+        </strong>
+
+    </div>
+
+
+    <div class="ad-tree">
+
+        <div class="ad-row">
+
+            <span>
+                🖥️ GG_WS01
+            </span>
+
+            <span>
+                10.10.20.10
+            </span>
+
+        </div>
+
+
+        <div class="ad-row">
+
+            <span>
+                🔐 AD DS
+            </span>
+
+            <span>
+                Domain Controller
+            </span>
+
+        </div>
+
+
+        <div class="ad-row">
+
+            <span>
+                🌐 DNS
+            </span>
+
+            <span>
+                gglab.corp
+            </span>
+
+        </div>
+
+
+        <div class="ad-row">
+
+            <span>
+                👥 Users & Groups
+            </span>
+
+            <span>
+                Identity
+            </span>
+
+        </div>
+
+
+        <div class="ad-row">
+
+            <span>
+                🗄️ GG_WS02
+            </span>
+
+            <span>
+                File Server
+            </span>
+
+        </div>
+
+
+        <div class="ad-row">
+
+            <span>
+                🖥️ Windows Infrastructure
+            </span>
+
+            <span>
+                VLAN 20
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="ad-note">
+
+        Representação visual da camada de identidade implementada
+        no laboratório. Não representa uma captura atual das VMs.
+
+    </div>
+
+</div>
+
+`;
 
 }
 
-);
 
 
-timeline.appendChild(
-button
-);
+function investigationCompletePanel(){
 
+return `
+
+<div class="custom-panel complete-panel">
+
+
+    <div class="complete-check">
+
+        ✓
+
+    </div>
+
+
+    <h3>
+
+        INVESTIGATION COMPLETE
+
+    </h3>
+
+
+    <div class="complete-sub">
+
+        DFIR ANALYSIS FINISHED
+
+    </div>
+
+
+    <div class="complete-host">
+
+        GG_LN05-HONEYPOT
+
+        <br><br>
+
+        10.10.50.10
+
+    </div>
+
+
+    <div class="complete-list">
+
+
+        <div class="complete-item">
+            Processes reviewed
+        </div>
+
+
+        <div class="complete-item">
+            Network connections reviewed
+        </div>
+
+
+        <div class="complete-item">
+            Privileged users reviewed
+        </div>
+
+
+        <div class="complete-item">
+            Scheduled tasks reviewed
+        </div>
+
+
+        <div class="complete-item">
+            Authentication reviewed
+        </div>
+
+
+        <div class="complete-item">
+            Persistence reviewed
+        </div>
+
+
+    </div>
+
+
+    <div class="complete-footer">
+
+        Nenhum indicador de comprometimento foi identificado
+        nos artefatos coletados durante a investigação.
+
+        <br><br>
+
+        A atividade observada permaneceu consistente com o
+        cenário controlado do honeypot Cowrie.
+
+    </div>
+
+
+</div>
+
+`;
 
 }
-
-);
 
 
 
 function showStep(index){
 
 
-currentStep =
-index;
+    currentStep =
+    index;
 
 
-const stage =
-stages[index];
+    const stage =
+    stages[index];
 
 
-document.getElementById(
-"stepNumber"
-).textContent =
+    document.getElementById(
+        "stepNumber"
+    ).textContent =
 
-`STEP ${String(index+1).padStart(2,"0")} / ${String(stages.length).padStart(2,"0")}`;
+    `STEP ${String(index+1).padStart(2,"0")} / ${String(stages.length).padStart(2,"0")}`;
 
 
+    document.getElementById(
+        "journeyTitle"
+    ).textContent =
+    stage.title;
 
-document.getElementById(
-"journeyTitle"
-).textContent =
-stage.title;
 
+    document.getElementById(
+        "journeyDescription"
+    ).textContent =
+    stage.description;
 
 
-document.getElementById(
-"journeyDescription"
-).textContent =
-stage.description;
+    const tagsBox =
+    document.getElementById(
+        "journeyTags"
+    );
 
 
+    tagsBox.innerHTML =
+    "";
 
-const tagsBox =
-document.getElementById(
-"journeyTags"
-);
 
+    stage.tags.forEach(tag=>{
 
-tagsBox.innerHTML =
-"";
+        const el =
+        document.createElement(
+            "span"
+        );
 
 
-stage.tags.forEach(
-tag=>{
+        el.className =
+        "tag";
 
 
-const el =
-document.createElement(
-"span"
-);
+        el.textContent =
+        tag;
 
 
-el.className =
-"tag";
+        tagsBox.appendChild(el);
 
+    });
 
-el.textContent =
-tag;
 
 
-tagsBox.appendChild(
-el
-);
+    /* RESET MEDIA */
 
+    journeyImage.style.display =
+    "none";
 
-}
 
-);
+    journeyCustom.style.display =
+    "none";
 
 
+    imagePlaceholder.style.display =
+    "none";
 
-journeyImage.style.display =
-"block";
 
+    journeyCustom.innerHTML =
+    "";
 
-imagePlaceholder.style.display =
-"none";
 
 
-journeyImage.src =
-stage.image;
+    /* PAINEL CUSTOMIZADO */
 
+    if(
+        stage.panel ===
+        "active-directory"
+    ){
 
+        journeyCustom.style.display =
+        "flex";
 
-journeyImage.onerror =
-()=>{
 
+        journeyCustom.innerHTML =
+        activeDirectoryPanel();
 
-journeyImage.style.display =
-"none";
+    }
 
 
-imagePlaceholder.style.display =
-"block";
+    else if(
+        stage.panel ===
+        "investigation-complete"
+    ){
 
+        journeyCustom.style.display =
+        "flex";
 
-imagePlaceholder.innerHTML =
 
-`
-<strong>${stage.title}</strong>
+        journeyCustom.innerHTML =
+        investigationCompletePanel();
 
-Arquivo não encontrado:
+    }
 
-<code>${stage.image}</code>
-`;
 
+    /* IMAGEM REAL */
 
-};
+    else if(stage.image){
 
+        journeyImage.style.display =
+        "block";
 
 
-document.body.classList.remove(
-"attack",
-"defense"
-);
+        journeyImage.src =
+        stage.image;
 
 
-journeyCard.classList.remove(
-"attack-card",
-"defense-card"
-);
+        journeyImage.onerror =
+        ()=>{
 
+            journeyImage.style.display =
+            "none";
 
 
-if(
-stage.mode ===
-"attack"
-){
+            imagePlaceholder.style.display =
+            "block";
 
 
-document.body.classList.add(
-"attack"
-);
+            imagePlaceholder.innerHTML =
 
+            `
+            <strong>
+                ${stage.title}
+            </strong>
 
-journeyCard.classList.add(
-"attack-card"
-);
+            <br><br>
 
+            Evidência não encontrada.
 
-}
+            <br><br>
 
+            <code>
+                ${stage.image}
+            </code>
+            `;
 
-else if(
-stage.mode ===
-"defense"
-||
-stage.mode ===
-"success"
-){
+        };
 
+    }
 
-document.body.classList.add(
-"defense"
-);
 
 
-journeyCard.classList.add(
-"defense-card"
-);
+    /* CORES DA EXPERIÊNCIA */
 
+    document.body.classList.remove(
+        "attack",
+        "defense"
+    );
 
-}
 
+    journeyCard.classList.remove(
+        "attack-card",
+        "defense-card"
+    );
 
 
-[
-...timeline.children
-].forEach(
-(btn,i)=>{
+    if(
+        stage.mode ===
+        "attack"
+    ){
 
+        document.body.classList.add(
+            "attack"
+        );
 
-btn.classList.toggle(
-"active",
-i === index
-);
 
+        journeyCard.classList.add(
+            "attack-card"
+        );
 
-}
+    }
 
-);
 
+    else if(
+        stage.mode ===
+        "defense"
+        ||
+        stage.mode ===
+        "success"
+    ){
+
+        document.body.classList.add(
+            "defense"
+        );
+
+
+        journeyCard.classList.add(
+            "defense-card"
+        );
+
+    }
+
+
+
+    const buttons =
+    [...timeline.children];
+
+
+    buttons.forEach(
+        (btn,i)=>{
+
+            btn.classList.toggle(
+                "active",
+                i === index
+            );
+
+        }
+    );
+
+
+    const activeButton =
+    buttons[index];
+
+
+    if(activeButton){
+
+        activeButton.scrollIntoView({
+
+            behavior:"smooth",
+
+            inline:"center",
+
+            block:"nearest"
+
+        });
+
+    }
 
 }
 
@@ -4110,13 +3669,13 @@ i === index
 
 function nextStep(){
 
+    showStep(
 
-showStep(
-(currentStep + 1)
-%
-stages.length
-);
+        (currentStep + 1)
+        %
+        stages.length
 
+    );
 
 }
 
@@ -4124,21 +3683,19 @@ stages.length
 
 function previousStep(){
 
+    showStep(
 
-showStep(
+        currentStep === 0
 
-currentStep === 0
+        ?
 
-?
+        stages.length - 1
 
-stages.length - 1
+        :
 
-:
+        currentStep - 1
 
-currentStep - 1
-
-);
-
+    );
 
 }
 
@@ -4146,32 +3703,26 @@ currentStep - 1
 
 function startPlay(){
 
-
-playing =
-true;
-
-
-playBtn.textContent =
-"⏸ Pause";
+    playing =
+    true;
 
 
-clearInterval(
-timer
-);
+    playBtn.textContent =
+    "⏸ Pause";
 
 
-timer =
-setInterval(
-()=>{
+    clearInterval(timer);
 
 
-nextStep();
+    timer =
+    setInterval(
+        ()=>{
 
+            nextStep();
 
-},
-4500
-);
-
+        },
+        4500
+    );
 
 }
 
@@ -4179,19 +3730,15 @@ nextStep();
 
 function stopPlay(){
 
-
-playing =
-false;
-
-
-playBtn.textContent =
-"▶ Play";
+    playing =
+    false;
 
 
-clearInterval(
-timer
-);
+    playBtn.textContent =
+    "▶ Play";
 
+
+    clearInterval(timer);
 
 }
 
@@ -4199,26 +3746,17 @@ timer
 
 function togglePlay(){
 
+    if(playing){
 
-if(
-playing
-){
+        stopPlay();
 
+    }
 
-stopPlay();
+    else{
 
+        startPlay();
 
-}
-
-
-else{
-
-
-startPlay();
-
-
-}
-
+    }
 
 }
 
@@ -4226,30 +3764,26 @@ startPlay();
 
 function startJourney(){
 
+    document.getElementById(
+        "journey"
+    ).scrollIntoView({
 
-document.getElementById(
-"journey"
-).scrollIntoView(
-{
-behavior:"smooth"
-}
-);
+        behavior:"smooth"
 
-
-showStep(
-0
-);
+    });
 
 
-startPlay();
+    showStep(0);
 
+
+    startPlay();
 
 }
 
 
 
 /* =========================================================
-BUILDER
+BUILD YOUR DEFENSE
 ========================================================= */
 
 
@@ -4257,34 +3791,23 @@ const activeControls =
 new Set();
 
 
-
 const scores = {
 
-firewall:15,
-
-vlans:15,
-
-dmz:15,
-
-wazuh:15,
-
-honeypot:10,
-
-iris:10,
-
-dfir:15
+    firewall:15,
+    vlans:15,
+    dmz:15,
+    wazuh:15,
+    honeypot:10,
+    iris:10,
+    dfir:15
 
 };
 
 
 
-function $(
-id
-){
+function $(id){
 
-return document.getElementById(
-id
-);
+    return document.getElementById(id);
 
 }
 
@@ -4292,23 +3815,17 @@ id
 
 const nodes = {
 
-firewall:
-$("firewallNode"),
+    firewall:$("firewallNode"),
 
-web:
-$("webNode"),
+    web:$("webNode"),
 
-wazuh:
-$("wazuhNode"),
+    wazuh:$("wazuhNode"),
 
-cowrie:
-$("cowrieNode"),
+    cowrie:$("cowrieNode"),
 
-iris:
-$("irisNode"),
+    iris:$("irisNode"),
 
-velociraptor:
-$("velociraptorNode")
+    velociraptor:$("velociraptorNode")
 
 };
 
@@ -4316,465 +3833,420 @@ $("velociraptorNode")
 
 const lines = {
 
-directAttack:
-$("directAttack"),
+    directAttack:$("directAttack"),
 
-internetFirewall:
-$("internetFirewall"),
+    internetFirewall:$("internetFirewall"),
 
-firewallWeb:
-$("firewallWeb"),
+    firewallWeb:$("firewallWeb"),
 
-webWazuh:
-$("webWazuh"),
+    webWazuh:$("webWazuh"),
 
-wazuhIris:
-$("wazuhIris"),
+    wazuhIris:$("wazuhIris"),
 
-webCowrie:
-$("webCowrie"),
+    webCowrie:$("webCowrie"),
 
-cowrieWazuh:
-$("cowrieWazuh"),
+    cowrieWazuh:$("cowrieWazuh"),
 
-irisVelociraptor:
-$("irisVelociraptor"),
+    irisVelociraptor:$("irisVelociraptor"),
 
-dfirWeb:
-$("dfirWeb"),
+    dfirWeb:$("dfirWeb"),
 
-attackerWeb:
-$("attackerWeb")
+    attackerWeb:$("attackerWeb")
 
 };
 
 
 
-function activateNode(
-node
-){
+function activateNode(node){
+
+    node.classList.remove(
+        "disabled"
+    );
 
 
-node.classList.remove(
-"disabled"
-);
-
-
-node.classList.add(
-"active"
-);
-
+    node.classList.add(
+        "active"
+    );
 
 }
 
 
 
-function showLine(
-line
-){
+function showLine(line){
 
-
-line.classList.remove(
-"line-hidden"
-);
-
+    line.classList.remove(
+        "line-hidden"
+    );
 
 }
 
 
 
-function hideLine(
-line
-){
+function hideLine(line){
 
-
-line.classList.add(
-"line-hidden"
-);
-
+    line.classList.add(
+        "line-hidden"
+    );
 
 }
 
 
 
-/* tooltip toque mobile */
+/* =========================================================
+TOOLTIP MOBILE
+========================================================= */
 
 
 document.querySelectorAll(
-".lab-node"
-).forEach(
-node=>{
+    ".lab-node"
+).forEach(node=>{
 
 
-node.addEventListener(
-"click",
-event=>{
+    node.addEventListener(
+        "click",
+        event=>{
 
 
-event.stopPropagation();
+            event.stopPropagation();
 
 
-document.querySelectorAll(
-".lab-node"
-).forEach(
-other=>{
+            document.querySelectorAll(
+                ".lab-node"
+            ).forEach(other=>{
 
 
-if(
-other !== node
-){
+                if(
+                    other !== node
+                ){
+
+                    other.classList.remove(
+                        "show-tip"
+                    );
+
+                }
 
 
-other.classList.remove(
-"show-tip"
-);
+            });
 
 
-}
+            node.classList.toggle(
+                "show-tip"
+            );
 
 
-}
-
-);
-
-
-node.classList.toggle(
-"show-tip"
-);
+        }
+    );
 
 
-}
-
-);
-
-
-}
-
-);
+});
 
 
 
 document.addEventListener(
-"click",
-()=>{
+    "click",
+    ()=>{
+
+
+        document.querySelectorAll(
+            ".lab-node"
+        ).forEach(node=>{
+
+
+            node.classList.remove(
+                "show-tip"
+            );
+
+
+        });
+
+
+    }
+);
+
+
+
+/* =========================================================
+BOTÕES DE DEFESA
+========================================================= */
 
 
 document.querySelectorAll(
-".lab-node"
-).forEach(
-node=>{
+    ".protect-btn"
+).forEach(button=>{
 
 
-node.classList.remove(
-"show-tip"
-);
+    button.addEventListener(
+        "click",
+        ()=>{
 
 
-}
+            const control =
+            button.dataset.control;
 
-);
 
+            if(
+                activeControls.has(
+                    control
+                )
+            ){
 
-}
+                return;
 
-);
+            }
 
 
+            activeControls.add(
+                control
+            );
 
-document.querySelectorAll(
-".protect-btn"
-).forEach(
-button=>{
 
+            button.classList.add(
+                "done"
+            );
 
-button.addEventListener(
-"click",
-()=>{
 
+            button.lastElementChild.textContent =
+            "✓";
 
-const control =
-button.dataset.control;
 
+            applyProtection(
+                control
+            );
 
-if(
-activeControls.has(
-control
-)
-){
 
-return;
+            updateScore();
 
-}
 
+        }
+    );
 
-activeControls.add(
-control
-);
 
+});
 
-button.classList.add(
-"done"
-);
 
 
-button.lastElementChild.textContent =
-"✓";
+function applyProtection(control){
 
 
-applyProtection(
-control
-);
+    if(
+        control ===
+        "firewall"
+    ){
 
+        activateNode(
+            nodes.firewall
+        );
 
-updateScore();
 
+        hideLine(
+            lines.directAttack
+        );
 
-}
 
-);
+        showLine(
+            lines.internetFirewall
+        );
 
 
-}
+        showLine(
+            lines.firewallWeb
+        );
 
-);
 
+        $("openPath").classList.add(
+            "hidden"
+        );
 
+    }
 
-function applyProtection(
-control
-){
 
 
+    if(
+        control ===
+        "vlans"
+    ){
 
-if(
-control ===
-"firewall"
-){
+        $("webStatus").textContent =
+        "VLAN 50";
 
+    }
 
-activateNode(
-nodes.firewall
-);
 
 
-hideLine(
-lines.directAttack
-);
+    if(
+        control ===
+        "dmz"
+    ){
 
+        $("webStatus").textContent =
+        "DMZ • VLAN 50";
 
-showLine(
-lines.internetFirewall
-);
 
+        $("webRisk").classList.add(
+            "hidden"
+        );
 
-showLine(
-lines.firewallWeb
-);
+    }
 
 
-$("openPath").classList.add(
-"hidden"
-);
 
+    if(
+        control ===
+        "wazuh"
+    ){
 
-}
+        activateNode(
+            nodes.wazuh
+        );
 
 
+        showLine(
+            lines.webWazuh
+        );
 
-if(
-control ===
-"vlans"
-){
+    }
 
 
-$("webStatus").textContent =
-"VLAN 50";
 
+    if(
+        control ===
+        "honeypot"
+    ){
 
-}
+        activateNode(
+            nodes.cowrie
+        );
 
 
+        showLine(
+            lines.webCowrie
+        );
 
-if(
-control ===
-"dmz"
-){
 
+        if(
+            activeControls.has(
+                "wazuh"
+            )
+        ){
 
-$("webStatus").textContent =
-"DMZ • VLAN 50";
+            showLine(
+                lines.cowrieWazuh
+            );
 
+        }
 
-$("webRisk").classList.add(
-"hidden"
-);
+    }
 
 
-}
 
+    if(
+        control ===
+        "iris"
+    ){
 
+        activateNode(
+            nodes.iris
+        );
 
-if(
-control ===
-"wazuh"
-){
 
+        if(
+            activeControls.has(
+                "wazuh"
+            )
+        ){
 
-activateNode(
-nodes.wazuh
-);
+            showLine(
+                lines.wazuhIris
+            );
 
+        }
 
-showLine(
-lines.webWazuh
-);
+    }
 
 
-}
 
+    if(
+        control ===
+        "dfir"
+    ){
 
+        activateNode(
+            nodes.velociraptor
+        );
 
-if(
-control ===
-"honeypot"
-){
 
+        showLine(
+            lines.dfirWeb
+        );
 
-activateNode(
-nodes.cowrie
-);
 
+        if(
+            activeControls.has(
+                "iris"
+            )
+        ){
 
-showLine(
-lines.webCowrie
-);
+            showLine(
+                lines.irisVelociraptor
+            );
 
+        }
 
-if(
-activeControls.has(
-"wazuh"
-)
-){
+    }
 
 
-showLine(
-lines.cowrieWazuh
-);
 
+    if(
+        activeControls.has(
+            "wazuh"
+        )
+        &&
+        activeControls.has(
+            "honeypot"
+        )
+    ){
 
-}
+        showLine(
+            lines.cowrieWazuh
+        );
 
+    }
 
-}
 
 
+    if(
+        activeControls.has(
+            "wazuh"
+        )
+        &&
+        activeControls.has(
+            "iris"
+        )
+    ){
 
-if(
-control ===
-"iris"
-){
+        showLine(
+            lines.wazuhIris
+        );
 
+    }
 
-activateNode(
-nodes.iris
-);
 
 
-if(
-activeControls.has(
-"wazuh"
-)
-){
+    if(
+        activeControls.has(
+            "iris"
+        )
+        &&
+        activeControls.has(
+            "dfir"
+        )
+    ){
 
+        showLine(
+            lines.irisVelociraptor
+        );
 
-showLine(
-lines.wazuhIris
-);
-
-
-}
-
-
-}
-
-
-
-if(
-control ===
-"dfir"
-){
-
-
-activateNode(
-nodes.velociraptor
-);
-
-
-showLine(
-lines.dfirWeb
-);
-
-
-if(
-activeControls.has(
-"iris"
-)
-){
-
-
-showLine(
-lines.irisVelociraptor
-);
-
-
-}
-
-
-}
-
-
-
-/* reavaliar dependências */
-
-
-if(
-activeControls.has("wazuh")
-&&
-activeControls.has("honeypot")
-){
-
-showLine(
-lines.cowrieWazuh
-);
-
-}
-
-
-if(
-activeControls.has("wazuh")
-&&
-activeControls.has("iris")
-){
-
-showLine(
-lines.wazuhIris
-);
-
-}
-
-
-if(
-activeControls.has("iris")
-&&
-activeControls.has("dfir")
-){
-
-showLine(
-lines.irisVelociraptor
-);
-
-}
-
+    }
 
 }
 
@@ -4783,122 +4255,111 @@ lines.irisVelociraptor
 function updateScore(){
 
 
-let score =
-5;
+    let score =
+    5;
 
 
-activeControls.forEach(
-control=>{
+    activeControls.forEach(
+        control=>{
+
+            score +=
+            scores[control];
+
+        }
+    );
 
 
-score +=
-scores[
-control
-];
+    score =
+    Math.min(
+        score,
+        100
+    );
 
 
-}
-
-);
-
-
-score =
-Math.min(
-score,
-100
-);
+    $("securityProgress").style.width =
+    score + "%";
 
 
-
-$("securityProgress").style.width =
-score + "%";
-
-
-$("securityScore").textContent =
-score + "%";
+    $("securityScore").textContent =
+    score + "%";
 
 
 
-if(
-score < 35
-){
+    if(
+        score < 35
+    ){
+
+        $("riskLabel").textContent =
+        "RISK: CRITICAL";
 
 
-$("riskLabel").textContent =
-"RISK: CRITICAL";
+        $("riskLabel").style.color =
+        "#ff9baa";
+
+    }
 
 
-}
+    else if(
+        score < 70
+    ){
+
+        $("riskLabel").textContent =
+        "RISK: MEDIUM";
 
 
-else if(
-score < 70
-){
+        $("riskLabel").style.color =
+        "var(--orange)";
+
+    }
 
 
-$("riskLabel").textContent =
-"RISK: MEDIUM";
+    else{
+
+        $("riskLabel").textContent =
+        "RISK: CONTROLLED";
 
 
-$("riskLabel").style.color =
-"var(--orange)";
+        $("riskLabel").style.color =
+        "var(--green)";
 
 
-}
+        nodes.web.classList.remove(
+            "vulnerable"
+        );
 
 
-else{
+        nodes.web.classList.add(
+            "protected"
+        );
 
 
-$("riskLabel").textContent =
-"RISK: CONTROLLED";
+        $("webRisk").classList.add(
+            "hidden"
+        );
 
 
-$("riskLabel").style.color =
-"var(--green)";
+        $("attackerRisk").classList.add(
+            "hidden"
+        );
 
 
-nodes.web.classList.remove(
-"vulnerable"
-);
+        hideLine(
+            lines.attackerWeb
+        );
 
-
-nodes.web.classList.add(
-"protected"
-);
-
-
-$("webRisk").classList.add(
-"hidden"
-);
-
-
-$("attackerRisk").classList.add(
-"hidden"
-);
-
-
-hideLine(
-lines.attackerWeb
-);
-
-
-}
+    }
 
 
 
-if(
-activeControls.size ===
-7
-){
+    if(
+        activeControls.size ===
+        7
+    ){
 
+        $("finalMessage").style.display =
+        "block";
 
-$("finalMessage").style.display =
-"block";
-
-
-}
-
+    }
 
 }
 
@@ -4907,160 +4368,149 @@ $("finalMessage").style.display =
 function resetBuilder(){
 
 
-activeControls.clear();
+    activeControls.clear();
 
 
 
-document.querySelectorAll(
-".protect-btn"
-).forEach(
-button=>{
+    document.querySelectorAll(
+        ".protect-btn"
+    ).forEach(button=>{
 
 
-button.classList.remove(
-"done"
-);
+        button.classList.remove(
+            "done"
+        );
 
 
-button.lastElementChild.textContent =
-"+";
+        button.lastElementChild.textContent =
+        "+";
 
 
-}
+    });
 
-);
 
 
+    [
+        nodes.firewall,
+        nodes.wazuh,
+        nodes.cowrie,
+        nodes.iris,
+        nodes.velociraptor
+    ]
+    .forEach(node=>{
 
-[
-nodes.firewall,
-nodes.wazuh,
-nodes.cowrie,
-nodes.iris,
-nodes.velociraptor
-].forEach(
-node=>{
 
+        node.classList.remove(
+            "active"
+        );
 
-node.classList.remove(
-"active"
-);
 
+        node.classList.add(
+            "disabled"
+        );
 
-node.classList.add(
-"disabled"
-);
 
+    });
 
-}
 
-);
 
+    nodes.web.classList.add(
+        "vulnerable"
+    );
 
 
-nodes.web.classList.add(
-"vulnerable"
-);
+    nodes.web.classList.remove(
+        "protected"
+    );
 
 
-nodes.web.classList.remove(
-"protected"
-);
+    $("webStatus").textContent =
+    "Web Server • Exposed";
 
 
+    showLine(
+        lines.directAttack
+    );
 
-$("webStatus").textContent =
-"Web Server • Exposed";
 
+    showLine(
+        lines.attackerWeb
+    );
 
 
-showLine(
-lines.directAttack
-);
+    hideLine(
+        lines.internetFirewall
+    );
 
 
-showLine(
-lines.attackerWeb
-);
+    hideLine(
+        lines.firewallWeb
+    );
 
 
+    hideLine(
+        lines.webWazuh
+    );
 
-hideLine(
-lines.internetFirewall
-);
 
+    hideLine(
+        lines.wazuhIris
+    );
 
-hideLine(
-lines.firewallWeb
-);
 
+    hideLine(
+        lines.webCowrie
+    );
 
-hideLine(
-lines.webWazuh
-);
 
+    hideLine(
+        lines.cowrieWazuh
+    );
 
-hideLine(
-lines.wazuhIris
-);
 
+    hideLine(
+        lines.irisVelociraptor
+    );
 
-hideLine(
-lines.webCowrie
-);
 
+    hideLine(
+        lines.dfirWeb
+    );
 
-hideLine(
-lines.cowrieWazuh
-);
 
+    $("openPath").classList.remove(
+        "hidden"
+    );
 
-hideLine(
-lines.irisVelociraptor
-);
 
+    $("webRisk").classList.remove(
+        "hidden"
+    );
 
-hideLine(
-lines.dfirWeb
-);
 
+    $("attackerRisk").classList.remove(
+        "hidden"
+    );
 
 
-$("openPath").classList.remove(
-"hidden"
-);
+    $("securityProgress").style.width =
+    "5%";
 
 
-$("webRisk").classList.remove(
-"hidden"
-);
+    $("securityScore").textContent =
+    "5%";
 
 
-$("attackerRisk").classList.remove(
-"hidden"
-);
+    $("riskLabel").textContent =
+    "RISK: CRITICAL";
 
 
+    $("riskLabel").style.color =
+    "#ff9baa";
 
-$("securityProgress").style.width =
-"5%";
 
-
-$("securityScore").textContent =
-"5%";
-
-
-$("riskLabel").textContent =
-"RISK: CRITICAL";
-
-
-$("riskLabel").style.color =
-"#ff9baa";
-
-
-$("finalMessage").style.display =
-"none";
-
+    $("finalMessage").style.display =
+    "none";
 
 }
 
@@ -5071,10 +4521,7 @@ START
 ========================================================= */
 
 
-showStep(
-0
-);
-
+showStep(0);
 
 startPlay();
 
