@@ -132,18 +132,15 @@ Isso permite que:
 
 ---
 
-# 🔎 Eventos do Cowrie
+### 📸 Evidência — Evento do Cowrie correlacionado no Wazuh
 
-O Cowrie registra diferentes tipos de eventos relacionados às sessões SSH.
+<p align="center">
+  <img src="../images/honeypot/cowrie-event-details-wazuh.png" alt="Evento do Cowrie analisado no Wazuh" width="100%">
+</p>
 
-Durante os testes foram observados eventos como:
-
-```text
-cowrie.login.failed
-cowrie.session.closed
-```
-
-Esses eventos são gravados em formato JSON e posteriormente coletados pelo Wazuh Agent.
+<p align="center">
+  <i>Detalhes do evento gerado pelo Cowrie e recebido pelo Wazuh, incluindo agente, IP de origem, porta de destino e identificador da sessão.</i>
+</p>
 
 ---
 
