@@ -64,7 +64,15 @@ Open vSwitch
    ├── VLAN 50
    └── VLAN 99
 ```
+### 📸 Evidência — Interfaces e VLANs no OPNsense
 
+<p align="center">
+  <img src="../images/network/opnsense-interfaces-vlans.png" alt="OPNsense VLANs" width="100%">
+</p>
+
+<p align="center">
+  <i>Configuração das interfaces e segmentos de rede utilizados no GG CyberLab.</i>
+</p>
 ---
 
 # 🔀 Switch Virtual
