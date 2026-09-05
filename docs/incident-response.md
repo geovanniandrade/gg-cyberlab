@@ -189,7 +189,15 @@ ssh
 honeypot
 wazuh
 ```
+### 📸 Evidência — IOC
 
+<p align="center">
+  <img src="../images/incident-response/iris-ioc-10.10.99.161.png" alt="IOC IRIS" width="100%">
+</p>
+
+<p align="center">
+  <i>Registro do endereço 10.10.99.161 como IOC associado à tentativa de autenticação SSH.</i>
+</p>
 ---
 
 # 🖥️ Asset
@@ -223,6 +231,15 @@ O ativo foi relacionado ao IOC:
 ```text
 10.10.99.161
 ```
+### 📸 Evidência — Ativo investigado
+
+<p align="center">
+  <img src="../images/incident-response/iris-asset-gg-ln05.png" alt="Asset GG LN05" width="100%">
+</p>
+
+<p align="center">
+  <i>Ativo GG_LN05-HONEYPOT relacionado ao incidente e à investigação DFIR.</i>
+</p>
 
 ---
 
