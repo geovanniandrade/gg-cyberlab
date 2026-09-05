@@ -75,13 +75,13 @@ Endereço:
 10.10.30.10
 ```
 
-O servidor pertence à:
+Segmento:
 
 ```text
 VLAN 30 - SOC
 ```
 
-A VLAN SOC foi criada especificamente para concentrar as ferramentas responsáveis por:
+A VLAN SOC foi criada para concentrar as ferramentas responsáveis por:
 
 - monitoramento;
 - correlação;
@@ -125,6 +125,22 @@ Wazuh Dashboard
 
 ---
 
+# 🛰️ Agentes
+
+Os agentes permitem que o Wazuh receba informações dos ativos monitorados.
+
+No CyberLab foram utilizados agentes em sistemas Linux e Windows.
+
+Exemplos de ativos integrados:
+
+```text
+GG_LN05-HONEYPOT
+OPNsense
+GG_WS01
+GG_WS02
+GG_WS03
+```
+
 ### 📸 Evidência — Agentes monitorados
 
 <p align="center">
@@ -166,7 +182,7 @@ O agente associado ao servidor apareceu no Wazuh como:
 GG-LN05-HONEYPOT
 ```
 
-Durante os testes, o agente permaneceu ativo e enviou os eventos gerados pelo Cowrie para o Wazuh Manager.
+Durante os testes, o agente enviou ao Wazuh os eventos gerados pelo Cowrie.
 
 ---
 
@@ -213,7 +229,7 @@ Security Alert
 
 A máquina Kali localizada na VLAN 99 foi utilizada para gerar uma tentativa controlada de autenticação SSH.
 
-Origem:
+### Origem
 
 ```text
 IP: 10.10.99.161
@@ -221,7 +237,7 @@ VLAN: 99
 Segmento: ATTACK LAB
 ```
 
-Destino:
+### Destino
 
 ```text
 IP: 10.10.50.10
@@ -255,7 +271,7 @@ Alerta observado:
 HONEYPOT: Tentativa de login SSH falhou
 ```
 
-O alerta também identificou o endereço IP de origem:
+Endereço IP de origem identificado:
 
 ```text
 10.10.99.161
@@ -273,8 +289,18 @@ Wazuh
 Rule 100200
         │
         ▼
-Alert
+Security Alert
 ```
+
+### 📸 Evidência — Rule 100200
+
+<p align="center">
+  <img src="../images/wazuh/wazuh-rule-100200.png" alt="Wazuh Rule 100200" width="100%">
+</p>
+
+<p align="center">
+  <i>Detecção de tentativa de autenticação SSH no Cowrie correlacionada pela regra customizada 100200 do Wazuh.</i>
+</p>
 
 ---
 
@@ -307,7 +333,7 @@ cowrie.session.closed
 
 Os eventos foram analisados através da interface de **Threat Hunting** do Wazuh.
 
-Durante os testes, os alertas gerados permitiram identificar:
+Durante os testes, os alertas permitiram identificar:
 
 - agente responsável pelo evento;
 - endereço IP de origem;
@@ -392,21 +418,22 @@ DFIR-IRIS
    ▼
 Incident Case
    │
-   ▼
-IOC + Asset + Evidence
-   │
-   ▼
-Velociraptor
-   │
-   ▼
-DFIR Investigation
+   ├── IOC
+   ├── Asset
+   ├── Evidence
+   ├── Tasks
+   └── Timeline
+         │
+         ▼
+   Velociraptor
+         │
+         ▼
+  DFIR Investigation
 ```
 
 ---
 
 # 📋 Informações transferidas para o IRIS
-
-O alerta forneceu informações utilizadas durante a investigação.
 
 ### Regra
 
@@ -420,7 +447,7 @@ O alerta forneceu informações utilizadas durante a investigação.
 10.10.99.161
 ```
 
-### Ativo afetado
+### Ativo relacionado
 
 ```text
 GG_LN05-HONEYPOT
@@ -435,7 +462,7 @@ Tentativa de autenticação SSH
 
 ---
 
-# 🪟 Monitoramento de Active Directory
+# 🪟 Monitoramento do Active Directory
 
 O ambiente também possui servidores Windows integrados à arquitetura de monitoramento.
 
@@ -452,7 +479,7 @@ Domínio:
 gglab.corp
 ```
 
-O objetivo dessa integração é permitir a coleta e análise de eventos relacionados a:
+A integração permite trabalhar com eventos relacionados a:
 
 - autenticação;
 - falhas de login;
@@ -461,7 +488,7 @@ O objetivo dessa integração é permitir a coleta e análise de eventos relacio
 - alterações administrativas;
 - eventos de segurança do Windows.
 
-> O cenário de detecção detalhado neste documento corresponde principalmente ao fluxo Cowrie → Wazuh, que foi utilizado como caso prático de validação do SOC.
+> O cenário de detecção detalhado neste documento corresponde principalmente ao fluxo Cowrie → Wazuh, utilizado como caso prático de validação do SOC.
 
 ---
 
@@ -485,7 +512,7 @@ Ele conecta a telemetria dos ativos ao processo de resposta a incidentes.
 
 ---
 
-# 🛡️ Fluxo completo de segurança
+# 🛡️ Fluxo Completo de Segurança
 
 ```text
            TELEMETRIA
@@ -538,36 +565,35 @@ IRIS
 Velociraptor
 ```
 
-O Wazuh conseguiu identificar os eventos gerados pelo honeypot e transformá-los em alertas utilizáveis durante o processo de resposta a incidentes.
+O Wazuh identificou os eventos gerados pelo honeypot e os transformou em alertas utilizados durante o processo de resposta a incidentes.
 
 ---
 
-# 📸 Evidências
+# 📸 Evidências Utilizadas
 
-As evidências visuais do laboratório podem ser organizadas futuramente em:
+As evidências deste documento estão armazenadas em:
 
 ```text
 images/
 └── wazuh/
-    ├── agents.png
-    ├── rule-100200.png
-    ├── rule-100204.png
-    └── threat-hunting.png
+    ├── wazuh-agents.png
+    └── wazuh-rule-100200.png
 ```
 
-Essas imagens podem demonstrar:
+Essas evidências demonstram:
 
-- agentes ativos;
-- alerta da Rule 100200;
-- alerta da Rule 100204;
-- Threat Hunting;
-- detalhes do evento.
+- integração dos agentes;
+- monitoramento centralizado;
+- detecção do Cowrie;
+- regra customizada 100200;
+- eventos associados à Rule 100204;
+- funcionamento do Threat Hunting.
 
 ---
 
 # 📌 Resumo
 
-O Wazuh funciona como o centro de monitoramento do **GG CyberLab**, conectando os ativos do laboratório às etapas posteriores de resposta e investigação.
+O Wazuh funciona como o centro de monitoramento do **GG CyberLab**.
 
 ```text
 Logs
@@ -584,6 +610,8 @@ Velociraptor
   ↓
 Investigation
 ```
+
+Com isso, o CyberLab demonstra um fluxo completo de **coleta, detecção, correlação, resposta e investigação**.
 
 ---
 
