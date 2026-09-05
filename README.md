@@ -48,38 +48,15 @@ Conclusão
 
 # 🏗️ Arquitetura
 
-```text
-                         INTERNET
-                            │
-                            ▼
-                       OPNsense
-                    Firewall / Router
-                            │
-        ┌───────────────────┼─────────────────────┐
-        │                   │                     │
-        ▼                   ▼                     ▼
-    USERS               SERVERS               SECURITY
-   VLAN 10              VLAN 20                VLAN 30
-10.10.10.0/24        10.10.20.0/24          10.10.30.0/24
-                           │                     │
-                           │              ┌──────┼──────┐
-                           │              │      │      │
-                           ▼              ▼      ▼      ▼
-                         AD/DNS         Wazuh  IRIS  Velociraptor
+A infraestrutura do **GG CyberLab** foi projetada com segmentação por VLANs, separando usuários, servidores, SOC, DevSecOps, DMZ e o ambiente de ataque.
 
-        ┌──────────────────────────────────────────────────┐
-        │                                                  │
-        ▼                                                  ▼
-       DMZ                                             ATTACK LAB
-     VLAN 50                                             VLAN 99
- 10.10.50.0/24                                      10.10.99.0/24
-        │                                                  │
- ┌──────┼───────┐                                          ▼
- │      │       │                                      Kali Linux
- ▼      ▼       ▼
-Nginx Juice   Cowrie
-      Shop   Honeypot
-```
+<p align="center">
+  <img src="images/topologia-gg-cyberlab.png" alt="Topologia do GG CyberLab" width="100%">
+</p>
+
+<p align="center">
+  <i>Topologia lógica do ambiente GG CyberLab.</i>
+</p>
 
 ---
 
