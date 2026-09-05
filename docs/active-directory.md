@@ -242,7 +242,15 @@ Wazuh Manager
       ▼
 SOC
 ```
+### 📸 Evidência — Servidores Windows integrados ao Wazuh
 
+<p align="center">
+  <img src="../images/active-directory/windows-servers-wazuh-agents.png" alt="Servidores Windows no Wazuh" width="100%">
+</p>
+
+<p align="center">
+  <i>Servidores Windows registrados na plataforma de monitoramento do GG CyberLab.</i>
+</p>
 ---
 
 # 🔎 Eventos de Segurança
