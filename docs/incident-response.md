@@ -78,6 +78,15 @@ Tentativa de acesso SSH detectada no Honeypot
 
 O evento teve origem na detecção realizada pelo Wazuh.
 
+### 📸 Evidência — Case #5
+
+<p align="center">
+  <img src="../images/incident-response/iris-case-5-summary.png" alt="IRIS Case 5" width="100%">
+</p>
+
+<p align="center">
+  <i>Caso de resposta a incidentes criado no DFIR-IRIS a partir da detecção realizada pelo Wazuh.</i>
+</p>
 ---
 
 # 📊 Origem do Alerta
