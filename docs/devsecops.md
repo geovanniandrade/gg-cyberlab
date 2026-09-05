@@ -89,7 +89,15 @@ No CyberLab, ele representa a camada de:
 ```text
 Source Code Management
 ```
+### 📸 Evidência — Repositório Gitea
 
+<p align="center">
+  <img src="../images/devsecops/gitea-repository.png" alt="Gitea Repository" width="100%">
+</p>
+
+<p align="center">
+  <i>Repositório Git interno utilizado pelo ambiente DevSecOps do CyberLab.</i>
+</p>
 ---
 
 # 🔄 Pipeline
@@ -229,7 +237,25 @@ Trivy Scan
 ```
 
 Esse modelo representa um **Security Gate**.
+### 📸 Evidência — Security Gate aprovado
 
+<p align="center">
+  <img src="../images/devsecops/trivy-security-gate-success.png" alt="Trivy Security Gate Success" width="100%">
+</p>
+
+<p align="center">
+  <i>Execução do pipeline de segurança com validação concluída com sucesso.</i>
+</p>
+
+### 📸 Evidência — Security Gate bloqueando vulnerabilidade
+
+<p align="center">
+  <img src="../images/devsecops/trivy-security-gate-block.png" alt="Trivy Security Gate Block" width="100%">
+</p>
+
+<p align="center">
+  <i>Exemplo de execução em que o Security Gate interrompe o processo devido aos critérios de segurança definidos.</i>
+</p>
 ---
 
 # 🔐 Shift Left Security
