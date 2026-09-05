@@ -1,1487 +1,5084 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GG // CyberLab Experience</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root{
-      --bg:#050913;
-      --bg2:#091121;
-      --panel:#0b1423;
-      --panel2:#0f1a2d;
-      --border:#22314a;
-      --text:#eaf2ff;
-      --muted:#8ca0bb;
-      --blue:#33b6ff;
-      --blue-soft:#7edcff;
-      --red:#ff4b63;
-      --red-soft:#ff8b9a;
-      --green:#34e59a;
-      --orange:#ffb14b;
-      --shadow:0 0 30px rgba(0,0,0,.28);
+<title>GG // CyberLab Experience</title>
+
+<style>
+
+:root{
+    --bg:#050913;
+    --panel:#0b1423;
+    --panel2:#0f1a2d;
+    --border:#22314a;
+
+    --text:#edf5ff;
+    --muted:#8da1bc;
+
+    --blue:#31b6ff;
+    --blue2:#7bdcff;
+
+    --red:#ff425d;
+    --red2:#ff8797;
+
+    --green:#34e59a;
+    --orange:#ffb34d;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+
+    color:var(--text);
+
+    font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:
+    radial-gradient(
+        circle at 50% -10%,
+        #142640 0,
+        transparent 32%
+    ),
+    #050913;
+
+    transition:
+    background .5s ease;
+}
+
+
+/* =========================================================
+   ESTADOS GLOBAIS
+========================================================= */
+
+body.attack{
+
+    background:
+
+    radial-gradient(
+        circle at 50% 20%,
+        rgba(255,66,93,.18),
+        transparent 35%
+    ),
+
+    #07080e;
+
+}
+
+body.defense{
+
+    background:
+
+    radial-gradient(
+        circle at 50% 20%,
+        rgba(49,182,255,.14),
+        transparent 35%
+    ),
+
+    #050b14;
+
+}
+
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+.container{
+
+    width:min(
+        1180px,
+        92%
+    );
+
+    margin:auto;
+
+}
+
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+nav{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:500;
+
+    border-bottom:
+    1px solid var(--border);
+
+    backdrop-filter:
+    blur(14px);
+
+    background:
+    rgba(5,9,19,.88);
+
+}
+
+
+.nav-wrap{
+
+    width:min(
+        1180px,
+        92%
+    );
+
+    margin:auto;
+
+    padding:
+    17px 0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+    space-between;
+
+    gap:20px;
+
+}
+
+
+.logo{
+
+    font-size:18px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    white-space:nowrap;
+
+}
+
+
+.logo span{
+
+    color:var(--blue);
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+}
+
+
+.nav-links a{
+
+    font-size:14px;
+
+    color:var(--muted);
+
+    transition:.2s;
+
+}
+
+
+.nav-links a:hover{
+
+    color:white;
+
+}
+
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:
+    84vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+    80px 0 50px;
+
+}
+
+
+.kicker{
+
+    color:
+    var(--blue2);
+
+    font-family:
+    monospace;
+
+    letter-spacing:
+    4px;
+
+    font-size:
+    13px;
+
+}
+
+
+h1{
+
+    margin:
+    18px 0;
+
+    font-size:
+    clamp(
+        48px,
+        9vw,
+        96px
+    );
+
+    line-height:
+    .95;
+
+}
+
+
+.gradient{
+
+    background:
+    linear-gradient(
+        90deg,
+        #ffffff,
+        var(--blue2)
+    );
+
+    -webkit-background-clip:
+    text;
+
+    color:
+    transparent;
+
+}
+
+
+.hero p{
+
+    max-width:
+    760px;
+
+    margin:
+    25px auto;
+
+    color:
+    var(--muted);
+
+    font-size:
+    18px;
+
+    line-height:
+    1.7;
+
+}
+
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.section{
+
+    padding:
+    82px 0;
+
+}
+
+
+.section-title{
+
+    margin:
+    0 0 10px;
+
+    font-size:
+    clamp(
+        30px,
+        4vw,
+        42px
+    );
+
+}
+
+
+.section-sub{
+
+    max-width:
+    900px;
+
+    margin:
+    0 0 38px;
+
+    color:
+    var(--muted);
+
+    line-height:
+    1.7;
+
+}
+
+
+.btn{
+
+    padding:
+    14px 22px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    12px;
+
+    background:
+    var(--panel);
+
+    color:
+    white;
+
+    font-weight:
+    800;
+
+    cursor:
+    pointer;
+
+    transition:
+    .2s;
+
+}
+
+
+.btn:hover{
+
+    transform:
+    translateY(-2px);
+
+    border-color:
+    var(--blue);
+
+}
+
+
+.btn.primary{
+
+    background:
+    var(--blue);
+
+    color:
+    #00131e;
+
+    border-color:
+    var(--blue);
+
+}
+
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    .8fr 1.2fr;
+
+    gap:
+    28px;
+
+    align-items:
+    center;
+
+}
+
+
+.about-info{
+
+    padding:
+    34px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    22px;
+
+    background:
+    rgba(
+        11,
+        20,
+        35,
+        .85
+    );
+
+}
+
+
+.about-info p{
+
+    color:
+    var(--muted);
+
+    line-height:
+    1.8;
+
+}
+
+
+.about-info strong{
+
+    color:white;
+
+}
+
+
+.about-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:
+    24px 0;
+
+}
+
+
+.about-tags span{
+
+    padding:
+    8px 10px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    9px;
+
+    font-family:
+    monospace;
+
+    font-size:
+    12px;
+
+    color:
+    #bfe7fb;
+
+}
+
+
+.about-topology{
+
+    overflow:hidden;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    22px;
+
+    background:
+    #050a11;
+
+}
+
+
+.about-topology img{
+
+    display:block;
+
+    width:100%;
+
+    height:auto;
+
+}
+
+
+.topology-label{
+
+    padding:
+    14px 18px;
+
+    border-bottom:
+    1px solid var(--border);
+
+    color:
+    var(--blue2);
+
+    font-family:
+    monospace;
+
+    font-size:
+    12px;
+
+    letter-spacing:
+    2px;
+
+}
+
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.timeline{
+
+    display:flex;
+
+    gap:10px;
+
+    overflow-x:auto;
+
+    padding-bottom:
+    10px;
+
+    margin-bottom:
+    22px;
+
+    scrollbar-width:
+    thin;
+
+}
+
+
+.timeline button{
+
+    min-width:
+    135px;
+
+    padding:
+    12px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    11px;
+
+    background:
+    var(--panel);
+
+    color:
+    var(--muted);
+
+    cursor:pointer;
+
+    font-size:
+    12px;
+
+    line-height:
+    1.5;
+
+}
+
+
+.timeline button.active{
+
+    color:white;
+
+    border-color:
+    var(--blue);
+
+    box-shadow:
+    0 0 24px
+    rgba(
+        49,
+        182,
+        255,
+        .15
+    );
+
+}
+
+
+.journey-card{
+
+    overflow:hidden;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    22px;
+
+    background:
+    rgba(
+        11,
+        20,
+        35,
+        .9
+    );
+
+    transition:
+    .3s;
+
+}
+
+
+.journey-card.attack-card{
+
+    border-color:
+    rgba(
+        255,
+        66,
+        93,
+        .65
+    );
+
+    box-shadow:
+    0 0 50px
+    rgba(
+        255,
+        66,
+        93,
+        .10
+    );
+
+}
+
+
+.journey-card.defense-card{
+
+    border-color:
+    rgba(
+        49,
+        182,
+        255,
+        .55
+    );
+
+    box-shadow:
+    0 0 50px
+    rgba(
+        49,
+        182,
+        255,
+        .08
+    );
+
+}
+
+
+.journey-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1.1fr;
+
+    min-height:
+    520px;
+
+}
+
+
+.journey-info{
+
+    padding:
+    42px;
+
+    display:flex;
+
+    flex-direction:
+    column;
+
+    justify-content:
+    center;
+
+}
+
+
+.step{
+
+    color:
+    var(--blue2);
+
+    font-family:
+    monospace;
+
+    letter-spacing:
+    2px;
+
+    font-size:
+    13px;
+
+}
+
+
+#journeyTitle{
+
+    margin:
+    12px 0;
+
+    font-size:
+    clamp(
+        36px,
+        5vw,
+        48px
+    );
+
+}
+
+
+#journeyDescription{
+
+    color:
+    var(--muted);
+
+    font-size:
+    17px;
+
+    line-height:
+    1.8;
+
+}
+
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin:
+    22px 0;
+
+}
+
+
+.tag{
+
+    padding:
+    8px 10px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    9px;
+
+    font-size:
+    12px;
+
+    font-family:
+    monospace;
+
+    color:
+    #badcf1;
+
+}
+
+
+.attack-status{
+
+    display:none;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:
+    18px;
+
+    color:
+    var(--red2);
+
+    font-family:
+    monospace;
+
+    font-weight:
+    bold;
+
+}
+
+
+.attack-card
+.attack-status{
+
+    display:flex;
+
+}
+
+
+.attack-dot{
+
+    width:
+    10px;
+
+    height:
+    10px;
+
+    border-radius:
+    50%;
+
+    background:
+    var(--red);
+
+    box-shadow:
+    0 0 15px
+    var(--red);
+
+    animation:
+    pulse
+    1s
+    infinite;
+
+}
+
+
+@keyframes pulse{
+
+    50%{
+
+        opacity:.3;
+
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--text);
-      font-family:Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 50% -10%, #13233a 0, transparent 30%),
-        linear-gradient(180deg, #050913 0, #08101d 100%);
-      transition:background .5s ease;
+}
+
+
+.journey-controls{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+
+.journey-media{
+
+    position:relative;
+
+    min-height:
+    520px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+    #04070c;
+
+}
+
+
+.journey-media img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    max-height:
+    560px;
+
+    object-fit:
+    contain;
+
+}
+
+
+.media-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+.attack-card
+.media-overlay{
+
+    opacity:1;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(
+            255,
+            66,
+            93,
+            .17
+        ),
+
+        transparent
+
+    );
+
+    animation:
+    scan
+    2.2s
+    linear
+    infinite;
+
+}
+
+
+@keyframes scan{
+
+    from{
+
+        transform:
+        translateX(
+            -70%
+        );
+
     }
 
-    body.attack{
-      background:
-        radial-gradient(circle at 50% 18%, rgba(255,75,99,.16) 0, transparent 34%),
-        linear-gradient(180deg,#07070d 0,#0b0d16 100%);
+    to{
+
+        transform:
+        translateX(
+            70%
+        );
+
     }
 
-    body.defense{
-      background:
-        radial-gradient(circle at 50% 18%, rgba(51,182,255,.12) 0, transparent 34%),
-        linear-gradient(180deg,#06101a 0,#09111f 100%);
+}
+
+
+.attack-banner{
+
+    display:none;
+
+    position:absolute;
+
+    z-index:10;
+
+    top:18px;
+
+    left:18px;
+
+    padding:
+    10px 12px;
+
+    border:
+    1px solid
+    rgba(
+        255,
+        66,
+        93,
+        .45
+    );
+
+    border-radius:
+    10px;
+
+    background:
+    rgba(
+        255,
+        66,
+        93,
+        .12
+    );
+
+    color:
+    #ffd5db;
+
+    font-family:
+    monospace;
+
+    font-size:
+    12px;
+
+}
+
+
+.attack-card
+.attack-banner{
+
+    display:block;
+
+}
+
+
+.image-placeholder{
+
+    padding:
+    30px;
+
+    text-align:center;
+
+    color:
+    var(--muted);
+
+    line-height:
+    1.7;
+
+}
+
+
+.image-placeholder code{
+
+    display:block;
+
+    margin-top:
+    12px;
+
+    color:white;
+
+    word-break:
+    break-word;
+
+}
+
+
+
+/* =========================================================
+   INCIDENT STORY
+========================================================= */
+
+.incident-box{
+
+    padding:
+    28px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    20px;
+
+    background:
+    var(--panel);
+
+}
+
+
+.incident-flow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+    center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+
+.flow-node{
+
+    min-width:
+    130px;
+
+    padding:
+    16px;
+
+    text-align:center;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    12px;
+
+    background:
+    var(--panel2);
+
+}
+
+
+.flow-node.attack{
+
+    border-color:
+    rgba(
+        255,
+        66,
+        93,
+        .55
+    );
+
+    color:
+    #ffacb7;
+
+}
+
+
+.flow-node.defense{
+
+    border-color:
+    rgba(
+        49,
+        182,
+        255,
+        .55
+    );
+
+    color:
+    #a1e5ff;
+
+}
+
+
+.flow-node small{
+
+    display:block;
+
+    margin-top:
+    5px;
+
+    color:
+    var(--muted);
+
+    font-size:
+    12px;
+
+}
+
+
+.flow-arrow{
+
+    color:
+    var(--muted);
+
+    font-size:
+    18px;
+
+}
+
+
+
+/* =========================================================
+   BUILDER
+========================================================= */
+
+.builder{
+
+    display:grid;
+
+    grid-template-columns:
+    1.15fr .85fr;
+
+    gap:
+    24px;
+
+}
+
+
+.network-panel,
+.controls-panel{
+
+    padding:
+    26px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    22px;
+
+    background:
+    rgba(
+        11,
+        20,
+        35,
+        .92
+    );
+
+}
+
+
+.network-head{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+    space-between;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+
+.risk{
+
+    padding:
+    8px 12px;
+
+    border:
+    1px solid
+    rgba(
+        255,
+        66,
+        93,
+        .55
+    );
+
+    border-radius:
+    10px;
+
+    color:
+    #ff9baa;
+
+    font-family:
+    monospace;
+
+}
+
+
+.topology-wrap{
+
+    overflow-x:auto;
+
+    margin-top:
+    20px;
+
+}
+
+
+.lab-topology{
+
+    position:relative;
+
+    width:
+    820px;
+
+    height:
+    560px;
+
+    margin:auto;
+
+}
+
+
+.lab-svg{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:1;
+
+}
+
+
+.netline{
+
+    fill:none;
+
+    stroke-width:
+    3;
+
+    transition:
+    .35s;
+
+}
+
+
+.danger-line{
+
+    stroke:
+    var(--red);
+
+    stroke-dasharray:
+    8 8;
+
+    filter:
+    drop-shadow(
+        0 0 6px
+        rgba(
+            255,
+            66,
+            93,
+            .32
+        )
+    );
+
+}
+
+
+.safe-line{
+
+    stroke:
+    var(--blue2);
+
+    filter:
+    drop-shadow(
+        0 0 6px
+        rgba(
+            49,
+            182,
+            255,
+            .25
+        )
+    );
+
+}
+
+
+.monitor-line{
+
+    stroke:
+    var(--green);
+
+    filter:
+    drop-shadow(
+        0 0 6px
+        rgba(
+            52,
+            229,
+            154,
+            .25
+        )
+    );
+
+}
+
+
+.line-hidden{
+
+    opacity:0;
+
+}
+
+
+.lab-node{
+
+    position:absolute;
+
+    z-index:3;
+
+    transform:
+    translate(
+        -50%,
+        -50%
+    );
+
+    width:
+    174px;
+
+    padding:
+    15px 12px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    15px;
+
+    background:
+    #091322;
+
+    text-align:center;
+
+    transition:
+    .25s;
+
+    outline:none;
+
+}
+
+
+.lab-node strong{
+
+    display:block;
+
+    margin-bottom:
+    4px;
+
+}
+
+
+.lab-node small{
+
+    display:block;
+
+    color:
+    var(--muted);
+
+    font-size:
+    12px;
+
+    line-height:
+    1.4;
+
+}
+
+
+.lab-node.disabled{
+
+    opacity:
+    .38;
+
+    border-style:
+    dashed;
+
+}
+
+
+.lab-node.active{
+
+    opacity:1;
+
+}
+
+
+.lab-node.vulnerable{
+
+    border-color:
+    rgba(
+        255,
+        66,
+        93,
+        .6
+    );
+
+    box-shadow:
+    0 0 24px
+    rgba(
+        255,
+        66,
+        93,
+        .12
+    );
+
+}
+
+
+.lab-node.protected{
+
+    border-color:
+    rgba(
+        52,
+        229,
+        154,
+        .65
+    );
+
+    box-shadow:
+    0 0 24px
+    rgba(
+        52,
+        229,
+        154,
+        .10
+    );
+
+}
+
+
+.lab-node:hover{
+
+    border-color:
+    var(--blue2);
+
+}
+
+
+.tooltip{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:
+    calc(
+        100% + 12px
+    );
+
+    transform:
+    translateX(
+        -50%
+    );
+
+    width:
+    235px;
+
+    padding:
+    13px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:
+    12px;
+
+    background:
+    #07101d;
+
+    color:
+    #dcecff;
+
+    text-align:left;
+
+    line-height:
+    1.55;
+
+    font-size:
+    12px;
+
+    box-shadow:
+    0 15px 35px
+    rgba(
+        0,
+        0,
+        0,
+        .35
+    );
+
+}
+
+
+.tooltip strong{
+
+    color:white;
+
+}
+
+
+.lab-node:hover
+.tooltip,
+
+.lab-node:focus
+.tooltip,
+
+.lab-node.show-tip
+.tooltip{
+
+    opacity:1;
+
+}
+
+
+.attack-symbol{
+
+    position:absolute;
+
+    z-index:6;
+
+    padding:
+    7px 10px;
+
+    border:
+    1px solid
+    rgba(
+        255,
+        66,
+        93,
+        .55
+    );
+
+    border-radius:
+    999px;
+
+    background:
+    rgba(
+        255,
+        66,
+        93,
+        .10
+    );
+
+    color:
+    #ffd0d7;
+
+    font-family:
+    monospace;
+
+    font-size:
+    12px;
+
+    animation:
+    pulse
+    1.2s
+    infinite;
+
+}
+
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* posições */
+
+.n-internet{
+
+    left:410px;
+    top:55px;
+
+}
+
+.n-firewall{
+
+    left:410px;
+    top:160px;
+
+}
+
+.n-web{
+
+    left:410px;
+    top:285px;
+
+}
+
+.n-wazuh{
+
+    left:140px;
+    top:285px;
+
+}
+
+.n-cowrie{
+
+    left:680px;
+    top:285px;
+
+}
+
+.n-iris{
+
+    left:140px;
+    top:430px;
+
+}
+
+.n-velociraptor{
+
+    left:680px;
+    top:430px;
+
+}
+
+.n-attacker{
+
+    left:410px;
+    top:510px;
+
+}
+
+
+#openPath{
+
+    left:455px;
+    top:105px;
+
+}
+
+
+#webRisk{
+
+    left:470px;
+    top:230px;
+
+}
+
+
+#attackerRisk{
+
+    left:470px;
+    top:470px;
+
+}
+
+
+
+/* =========================================================
+   BUILDER BUTTONS
+========================================================= */
+
+.controls-panel h3{
+
+    margin-top:0;
+
+    font-size:
+    25px;
+
+}
+
+
+.builder-buttons{
+
+    display:grid;
+
+    gap:
+    11px;
+
+}
+
+
+.protect-btn{
+
+    display:flex;
+
+    justify-content:
+    space-between;
+
+    align-items:center;
+
+    width:100%;
+
+    padding:
+    15px;
+
+    border:
+    1px solid
+    rgba(
+        49,
+        182,
+        255,
+        .35
+    );
+
+    border-radius:
+    13px;
+
+    background:
+    transparent;
+
+    color:
+    #bcdbef;
+
+    cursor:pointer;
+
+    transition:
+    .2s;
+
+}
+
+
+.protect-btn:hover{
+
+    border-color:
+    var(--blue);
+
+}
+
+
+.protect-btn.done{
+
+    border-color:
+    rgba(
+        52,
+        229,
+        154,
+        .65
+    );
+
+    color:
+    var(--green);
+
+}
+
+
+.progress-box{
+
+    margin-top:
+    25px;
+
+}
+
+
+.progress{
+
+    height:
+    11px;
+
+    overflow:hidden;
+
+    border-radius:
+    999px;
+
+    background:
+    #182538;
+
+}
+
+
+.progress div{
+
+    width:
+    5%;
+
+    height:
+    100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--red),
+        var(--orange),
+        var(--green)
+    );
+
+    transition:
+    .4s;
+
+}
+
+
+.score-row{
+
+    display:flex;
+
+    justify-content:
+    space-between;
+
+    margin-top:
+    10px;
+
+    color:
+    var(--muted);
+
+}
+
+
+.final-message{
+
+    display:none;
+
+    margin-top:
+    22px;
+
+    padding:
+    18px;
+
+    border:
+    1px solid
+    rgba(
+        52,
+        229,
+        154,
+        .55
+    );
+
+    border-radius:
+    13px;
+
+    background:
+    rgba(
+        52,
+        229,
+        154,
+        .08
+    );
+
+    color:
+    var(--green);
+
+}
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:
+    55px 20px;
+
+    text-align:center;
+
+    color:
+    var(--muted);
+
+    border-top:
+    1px solid var(--border);
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media(max-width:980px){
+
+    .about-grid,
+    .journey-grid,
+    .builder{
+
+        grid-template-columns:
+        1fr;
+
     }
 
-    a{color:inherit;text-decoration:none}
-
-    .container{
-      width:min(1180px,92%);
-      margin:auto;
-    }
-
-    nav{
-      position:sticky;
-      top:0;
-      z-index:200;
-      backdrop-filter:blur(12px);
-      background:rgba(5,9,19,.78);
-      border-bottom:1px solid var(--border);
-    }
-
-    .nav-wrap{
-      width:min(1180px,92%);
-      margin:auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:16px 0;
-    }
-
-    .logo{
-      font-size:18px;
-      font-weight:800;
-      letter-spacing:2px;
-      white-space:nowrap;
-    }
-
-    .logo span{color:var(--blue)}
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:22px;
-      flex-wrap:wrap;
-    }
-
-    .nav-links a{
-      color:var(--muted);
-      font-size:14px;
-      transition:.2s;
-    }
-
-    .nav-links a:hover{color:#fff}
-
-    .hero{
-      min-height:88vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:70px 0 30px;
-    }
-
-    .kicker{
-      color:var(--blue-soft);
-      font-family:monospace;
-      font-size:13px;
-      letter-spacing:4px;
-    }
-
-    h1{
-      margin:16px 0 14px;
-      line-height:.95;
-      font-size:clamp(46px,9vw,94px);
-    }
-
-    .gradient{
-      background:linear-gradient(90deg,#ffffff,#8fe2ff);
-      -webkit-background-clip:text;
-      color:transparent;
-    }
-
-    .hero p{
-      max-width:760px;
-      margin:0 auto 26px;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:18px;
-    }
-
-    .section{
-      padding:80px 0;
-    }
-
-    .section-title{
-      margin:0 0 10px;
-      font-size:38px;
-    }
-
-    .section-sub{
-      margin:0 0 34px;
-      color:var(--muted);
-      line-height:1.7;
-      max-width:900px;
-    }
-
-    .btn{
-      border:1px solid var(--border);
-      background:var(--panel);
-      color:#fff;
-      padding:14px 22px;
-      border-radius:12px;
-      cursor:pointer;
-      font-weight:700;
-      transition:.2s;
-      box-shadow:var(--shadow);
-    }
-
-    .btn:hover{transform:translateY(-2px)}
-    .btn.primary{
-      background:var(--blue);
-      border-color:var(--blue);
-      color:#04111c;
-    }
-
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:15px;
-    }
-
-    .stat{
-      background:rgba(11,20,35,.8);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:24px;
-    }
-
-    .stat b{
-      display:block;
-      font-size:36px;
-      color:var(--blue-soft);
-      margin-bottom:6px;
-    }
-
-    .stat span{
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.5;
-      display:block;
-    }
-
-    .timeline{
-      display:flex;
-      gap:10px;
-      overflow:auto;
-      padding-bottom:10px;
-      margin-bottom:22px;
-      scrollbar-width:thin;
-    }
-
-    .timeline button{
-      min-width:130px;
-      border:1px solid var(--border);
-      background:var(--panel);
-      color:var(--muted);
-      border-radius:12px;
-      padding:12px 10px;
-      cursor:pointer;
-      font-size:13px;
-      line-height:1.4;
-      transition:.2s;
-    }
-
-    .timeline button.active{
-      color:#fff;
-      border-color:var(--blue);
-      box-shadow:0 0 20px rgba(51,182,255,.16);
-    }
-
-    .journey-card{
-      border:1px solid var(--border);
-      border-radius:22px;
-      background:rgba(10,18,31,.9);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      transition:.3s;
-    }
-
-    .journey-card.attack-card{
-      border-color:rgba(255,75,99,.65);
-      box-shadow:0 0 40px rgba(255,75,99,.10);
-    }
-
-    .journey-card.defense-card{
-      border-color:rgba(51,182,255,.55);
-      box-shadow:0 0 40px rgba(51,182,255,.09);
-    }
-
-    .journey-grid{
-      display:grid;
-      grid-template-columns:1fr 1.12fr;
-      min-height:540px;
-    }
-
-    .journey-info{
-      padding:42px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-
-    .step{
-      color:var(--blue-soft);
-      font-family:monospace;
-      font-size:13px;
-      letter-spacing:2px;
-      margin-bottom:8px;
-    }
-
-    #journeyTitle{
-      font-size:46px;
-      margin:0 0 16px;
-    }
-
-    #journeyDescription{
-      margin:0;
-      color:var(--muted);
-      line-height:1.8;
-      font-size:17px;
-    }
-
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:22px 0 14px;
-    }
-
-    .tag{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.02);
-      color:#bfdaf0;
-      border-radius:10px;
-      padding:8px 11px;
-      font-size:12px;
-      font-family:monospace;
-    }
-
-    .status-line{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-height:28px;
-      margin:10px 0 20px;
-      color:var(--red-soft);
-      font-family:monospace;
-      font-weight:700;
-      letter-spacing:.5px;
-      opacity:0;
-      transition:.2s;
-    }
-
-    .journey-card.attack-card .status-line{opacity:1}
-
-    .status-dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:var(--red);
-      box-shadow:0 0 14px var(--red);
-      animation:pulse 1s infinite;
-    }
-
-    @keyframes pulse{
-      50%{opacity:.35}
-    }
-
-    .journey-controls{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:10px;
-    }
 
     .journey-media{
-      position:relative;
-      background:#05080d;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      min-height:540px;
+
+        min-height:
+        400px;
+
     }
 
-    .journey-media img{
-      width:100%;
-      height:100%;
-      max-height:560px;
-      object-fit:contain;
-      display:block;
+}
+
+
+@media(max-width:720px){
+
+    .nav-wrap{
+
+        align-items:
+        flex-start;
+
+        flex-direction:
+        column;
+
     }
 
-    .media-overlay{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      opacity:0;
+
+    .nav-links{
+
+        width:100%;
+
+        overflow-x:auto;
+
+        gap:16px;
+
+        padding-bottom:
+        4px;
+
     }
 
-    .journey-card.attack-card .media-overlay{
-      opacity:1;
-      background:
-        linear-gradient(90deg,transparent 0%,rgba(255,75,99,.03) 35%,rgba(255,75,99,.18) 50%,rgba(255,75,99,.03) 65%,transparent 100%);
-      animation:scan 2.2s linear infinite;
+
+    .hero{
+
+        min-height:auto;
+
+        padding:
+        90px 0 45px;
+
     }
 
-    @keyframes scan{
-      from{transform:translateX(-55%)}
-      to{transform:translateX(55%)}
+
+    .hero p{
+
+        font-size:
+        16px;
+
     }
 
-    .attack-banner{
-      position:absolute;
-      left:18px;
-      top:18px;
-      background:rgba(255,75,99,.14);
-      border:1px solid rgba(255,75,99,.45);
-      color:#ffd2d8;
-      padding:10px 12px;
-      border-radius:12px;
-      font-family:monospace;
-      font-size:12px;
-      display:none;
-      box-shadow:0 0 20px rgba(255,75,99,.12);
+
+    .section{
+
+        padding:
+        58px 0;
+
     }
 
-    .journey-card.attack-card .attack-banner{display:block}
 
-    .image-placeholder{
-      text-align:center;
-      color:var(--muted);
-      line-height:1.6;
-      padding:28px;
+    .journey-info{
+
+        padding:
+        26px;
+
     }
 
-    .image-placeholder code{
-      display:block;
-      margin-top:12px;
-      color:#fff;
-      word-break:break-word;
-      font-family:monospace;
+
+    .journey-media{
+
+        min-height:
+        300px;
+
     }
 
-    .incident-box{
-      border:1px solid var(--border);
-      background:rgba(11,20,35,.9);
-      border-radius:20px;
-      padding:28px;
-      box-shadow:var(--shadow);
-    }
 
     .incident-flow{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
+
+        flex-direction:
+        column;
+
     }
 
-    .flow-node{
-      min-width:126px;
-      text-align:center;
-      border-radius:12px;
-      padding:16px;
-      border:1px solid var(--border);
-      background:var(--panel2);
-    }
-
-    .flow-node.attack{
-      border-color:rgba(255,75,99,.5);
-      color:#ffb0bb;
-      box-shadow:0 0 20px rgba(255,75,99,.08);
-    }
-
-    .flow-node.defense{
-      border-color:rgba(51,182,255,.45);
-      color:#9fe6ff;
-      box-shadow:0 0 20px rgba(51,182,255,.08);
-    }
-
-    .flow-node small{
-      display:block;
-      margin-top:4px;
-      color:var(--muted);
-      font-size:12px;
-    }
 
     .flow-arrow{
-      color:var(--muted);
-      font-size:18px;
-      font-weight:bold;
+
+        transform:
+        rotate(
+            90deg
+        );
+
     }
 
-    .builder{
-      display:grid;
-      grid-template-columns:1.12fr .88fr;
-      gap:24px;
+
+    .about-info{
+
+        padding:
+        25px;
+
     }
 
-    .network-panel,.controls-panel{
-      border:1px solid var(--border);
-      border-radius:22px;
-      background:rgba(11,20,35,.92);
-      padding:26px;
-      box-shadow:var(--shadow);
+}
+
+
+@media(max-width:520px){
+
+    .btn{
+
+        width:100%;
+
     }
 
-    .network-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      flex-wrap:wrap;
+
+    .journey-controls
+    .btn{
+
+        width:auto;
+
+        flex:1;
+
     }
 
-    .risk{
-      padding:8px 12px;
-      border-radius:10px;
-      border:1px solid rgba(255,75,99,.5);
-      color:#ff9ca9;
-      font-family:monospace;
-      font-size:13px;
-      font-weight:700;
+
+    .network-panel,
+    .controls-panel{
+
+        padding:
+        18px;
+
     }
+
+
+    .lab-topology{
+
+        transform:
+        scale(.78);
+
+        transform-origin:
+        top left;
+
+        margin-left:
+        0;
+
+        height:
+        440px;
+
+    }
+
 
     .topology-wrap{
-      overflow:auto;
-      margin-top:18px;
-      border-radius:16px;
-      background:rgba(255,255,255,.01);
+
+        overflow:hidden;
+
     }
 
-    .topology{
-      position:relative;
-      width:800px;
-      height:480px;
-      margin:auto;
-    }
-
-    .topology-svg{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      z-index:1;
-    }
-
-    .netline{
-      fill:none;
-      stroke-width:3.5;
-      opacity:.95;
-      transition:.35s;
-    }
-
-    .danger-line{
-      stroke:var(--red);
-      stroke-dasharray:8 8;
-      filter:drop-shadow(0 0 6px rgba(255,75,99,.3));
-    }
-
-    .safe-line{
-      stroke:var(--blue-soft);
-      filter:drop-shadow(0 0 6px rgba(51,182,255,.22));
-    }
-
-    .monitor-line{
-      stroke:var(--green);
-      filter:drop-shadow(0 0 6px rgba(52,229,154,.22));
-    }
-
-    .line-hidden{opacity:0}
-
-    .topology-node{
-      position:absolute;
-      transform:translate(-50%,-50%);
-      width:168px;
-      padding:16px 14px;
-      text-align:center;
-      border-radius:16px;
-      border:1px solid var(--border);
-      background:#0a1322;
-      z-index:2;
-      transition:.25s;
-      box-shadow:var(--shadow);
-      outline:none;
-    }
-
-    .topology-node strong{
-      display:block;
-      font-size:16px;
-      margin-bottom:5px;
-    }
-
-    .topology-node small{
-      display:block;
-      color:var(--muted);
-      line-height:1.45;
-      font-size:12px;
-    }
-
-    .topology-node.disabled{
-      opacity:.45;
-      border-style:dashed;
-    }
-
-    .topology-node.active{
-      opacity:1;
-      border-color:rgba(51,182,255,.48);
-      box-shadow:0 0 18px rgba(51,182,255,.08);
-    }
-
-    .topology-node.vulnerable{
-      border-color:rgba(255,75,99,.55);
-      box-shadow:0 0 22px rgba(255,75,99,.12);
-    }
-
-    .topology-node.protected{
-      border-color:rgba(52,229,154,.55);
-      box-shadow:0 0 22px rgba(52,229,154,.10);
-    }
-
-    .topology-node:hover,
-    .topology-node:focus{
-      transform:translate(-50%,-50%) translateY(-2px);
-    }
 
     .tooltip{
-      position:absolute;
-      left:50%;
-      bottom:calc(100% + 12px);
-      transform:translateX(-50%);
-      width:220px;
-      padding:12px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:#09111f;
-      color:#d9e9fb;
-      box-shadow:var(--shadow);
-      font-size:12px;
-      line-height:1.5;
-      text-align:left;
-      opacity:0;
-      pointer-events:none;
-      transition:.18s;
+
+        width:
+        200px;
+
     }
 
-    .tooltip strong{
-      display:block;
-      margin-bottom:5px;
-      font-size:13px;
-    }
+}
 
-    .topology-node:hover .tooltip,
-    .topology-node:focus .tooltip{
-      opacity:1;
-    }
-
-    .attack-badge{
-      position:absolute;
-      padding:6px 10px;
-      font-size:12px;
-      border-radius:999px;
-      border:1px solid rgba(255,75,99,.45);
-      color:#ffd2d8;
-      background:rgba(255,75,99,.10);
-      font-family:monospace;
-      z-index:3;
-      box-shadow:0 0 16px rgba(255,75,99,.10);
-      animation:pulse 1.1s infinite;
-    }
-
-    .attack-badge.hidden{display:none}
-
-    #dangerWeb{left:490px;top:270px}
-    #dangerInternet{left:458px;top:94px}
-
-    .attack-path-dot{
-      position:absolute;
-      width:12px;
-      height:12px;
-      border-radius:50%;
-      background:var(--red);
-      box-shadow:0 0 16px var(--red);
-      left:394px;
-      top:82px;
-      z-index:3;
-      animation:travel 2.2s linear infinite;
-    }
-
-    .attack-path-dot.hidden{display:none}
-
-    @keyframes travel{
-      0%{top:82px;opacity:1}
-      100%{top:226px;opacity:.6}
-    }
-
-    .node-internet{left:400px;top:56px}
-    .node-firewall{left:400px;top:165px}
-    .node-web{left:400px;top:295px}
-    .node-soc{left:130px;top:295px}
-    .node-honeypot{left:670px;top:295px}
-    .node-iris{left:130px;top:410px}
-    .node-dfir{left:670px;top:410px}
-
-    .controls-panel h3{
-      margin:0 0 18px;
-      font-size:24px;
-    }
-
-    .builder-buttons{
-      display:grid;
-      gap:12px;
-    }
-
-    .protect-btn{
-      width:100%;
-      border-radius:14px;
-      border:1px solid rgba(51,182,255,.35);
-      background:transparent;
-      color:#7ff3c1;
-      padding:16px 14px;
-      font-size:15px;
-      text-align:left;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      cursor:pointer;
-      transition:.2s;
-    }
-
-    .protect-btn:hover{transform:translateY(-1px)}
-    .protect-btn.done{
-      border-color:rgba(52,229,154,.55);
-      color:var(--green);
-      box-shadow:0 0 14px rgba(52,229,154,.08);
-    }
-
-    .progress-box{
-      margin-top:24px;
-    }
-
-    .progress{
-      width:100%;
-      height:11px;
-      overflow:hidden;
-      border-radius:999px;
-      background:#1a2638;
-    }
-
-    .progress > div{
-      height:100%;
-      width:5%;
-      background:linear-gradient(90deg,var(--red),var(--orange),var(--green));
-      transition:.35s;
-    }
-
-    .score-row{
-      margin-top:10px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .final-message{
-      margin-top:22px;
-      border-radius:16px;
-      border:1px solid rgba(52,229,154,.45);
-      background:rgba(52,229,154,.08);
-      color:var(--green);
-      padding:20px;
-      font-size:18px;
-      display:none;
-    }
-
-    footer{
-      text-align:center;
-      color:var(--muted);
-      border-top:1px solid var(--border);
-      padding:46px 20px 56px;
-      margin-top:30px;
-    }
-
-    @media (max-width:980px){
-      .journey-grid,
-      .builder{
-        grid-template-columns:1fr;
-      }
-
-      .journey-media{
-        min-height:420px;
-      }
-
-      .stats{
-        grid-template-columns:repeat(2,1fr);
-      }
-    }
-
-    @media (max-width:760px){
-      .hero{
-        min-height:auto;
-        padding:100px 0 40px;
-      }
-
-      .nav-wrap{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-
-      .nav-links{
-        gap:14px;
-      }
-
-      .section{
-        padding:60px 0;
-      }
-
-      .section-title{
-        font-size:30px;
-      }
-
-      #journeyTitle{
-        font-size:34px;
-      }
-
-      .journey-info{
-        padding:28px;
-      }
-
-      .journey-media{
-        min-height:320px;
-      }
-
-      .stats{
-        grid-template-columns:1fr;
-      }
-
-      .incident-flow{
-        flex-direction:column;
-      }
-
-      .flow-arrow{
-        transform:rotate(90deg);
-      }
-
-      .controls-panel h3{
-        font-size:22px;
-      }
-
-      .protect-btn{
-        font-size:14px;
-        padding:14px 12px;
-      }
-
-      .topology-wrap{
-        overflow:auto;
-      }
-    }
-
-    @media (max-width:520px){
-      .logo{
-        font-size:16px;
-      }
-
-      .nav-links a{
-        font-size:13px;
-      }
-
-      .hero p{
-        font-size:16px;
-      }
-
-      .btn{
-        width:100%;
-      }
-
-      .journey-controls .btn{
-        width:auto;
-        flex:1;
-      }
-
-      .topology{
-        transform:scale(.85);
-        transform-origin:top center;
-        height:410px;
-        margin-bottom:-70px;
-      }
-    }
-  </style>
+</style>
 </head>
+
+
 <body>
 
-  <nav>
-    <div class="nav-wrap">
-      <div class="logo">GG //<span> CYBERLAB</span></div>
-      <div class="nav-links">
-        <a href="#journey">Journey</a>
-        <a href="#incident">Incident</a>
-        <a href="#builder">Build Your Defense</a>
-        <a href="README.md">Docs</a>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-
-    <section class="hero">
-      <div class="container">
-        <div class="kicker">BLUE TEAM / SOC / DFIR / DEVSECOPS</div>
-        <h1>ATTACK.<br><span class="gradient">DETECT. RESPOND.</span></h1>
-        <p>
-          Uma experiência interativa mostrando a evolução do GG CyberLab,
-          desde a arquitetura inicial até detecção, resposta a incidentes e investigação forense.
-        </p>
-        <button class="btn primary" onclick="startJourney()">▶ INICIAR JORNADA</button>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="stats">
-          <div class="stat"><b>6</b><span>VLANs principais implementadas no laboratório</span></div>
-          <div class="stat"><b>8+</b><span>Tecnologias integradas no ambiente</span></div>
-          <div class="stat"><b>2</b><span>Regras Wazuh validadas no cenário</span></div>
-          <div class="stat"><b>1</b><span>Incidente investigado de ponta a ponta</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="journey">
-      <div class="container">
-        <h2 class="section-title">CyberLab Journey</h2>
-        <p class="section-sub">
-          A jornada roda em loop e também pode ser navegada manualmente. Quando o ataque acontece,
-          a interface fica vermelha; quando o time responde, ela muda para azul.
-        </p>
-
-        <div class="timeline" id="timeline"></div>
-
-        <div class="journey-card" id="journeyCard">
-          <div class="journey-grid">
-
-            <div class="journey-info">
-              <div class="step" id="stepNumber"></div>
-              <h2 id="journeyTitle"></h2>
-              <p id="journeyDescription"></p>
-
-              <div class="tags" id="journeyTags"></div>
-
-              <div class="status-line" id="attackStatus">
-                <span class="status-dot"></span>
-                <span>SECURITY EVENT IN PROGRESS</span>
-              </div>
-
-              <div class="journey-controls">
-                <button class="btn" onclick="previousStep()">←</button>
-                <button class="btn primary" id="playBtn" onclick="togglePlay()">⏸ Pause</button>
-                <button class="btn" onclick="nextStep()">→</button>
-              </div>
-            </div>
-
-            <div class="journey-media">
-              <div class="media-overlay"></div>
-              <div class="attack-banner">SSH ATTEMPT DETECTED • SOURCE 10.10.99.161</div>
-              <img id="journeyImage" alt="Evidência do GG CyberLab">
-              <div class="image-placeholder" id="imagePlaceholder" style="display:none"></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="incident">
-      <div class="container">
-        <h2 class="section-title">Incident Story</h2>
-        <p class="section-sub">
-          Fluxo resumido do incidente validado no laboratório.
-        </p>
-
-        <div class="incident-box">
-          <div class="incident-flow">
-            <div class="flow-node attack">Kali<small>10.10.99.161</small></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-node attack">Cowrie<small>SSH / Honeypot</small></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-node defense">Wazuh<small>Rule 100200</small></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-node defense">IRIS<small>Case #5</small></div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-node defense">Velociraptor<small>DFIR</small></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="builder">
-      <div class="container">
-        <h2 class="section-title">Build Your Defense</h2>
-        <p class="section-sub">
-          A topologia começa exposta. Adicione os controles e veja o ambiente sair de um caminho de ataque aberto
-          para uma arquitetura monitorada e protegida.
-        </p>
-
-        <div class="builder">
-
-          <div class="network-panel">
-            <div class="network-head">
-              <strong>LAB NETWORK</strong>
-              <span class="risk" id="riskLabel">RISK: CRITICAL</span>
-            </div>
-
-            <div class="topology-wrap">
-              <div class="topology">
-
-                <svg class="topology-svg" viewBox="0 0 800 480" preserveAspectRatio="xMidYMid meet">
-                  <!-- caminho inseguro inicial -->
-                  <line id="lineDirectAttack" x1="400" y1="83" x2="400" y2="229" class="netline danger-line"></line>
-
-                  <!-- caminho protegido com firewall -->
-                  <line id="lineInternetFirewall" x1="400" y1="83" x2="400" y2="117" class="netline safe-line line-hidden"></line>
-                  <line id="lineFirewallWeb" x1="400" y1="213" x2="400" y2="229" class="netline safe-line line-hidden"></line>
-
-                  <!-- integrações -->
-                  <line id="lineWebSoc" x1="316" y1="295" x2="214" y2="295" class="netline monitor-line line-hidden"></line>
-                  <line id="lineSocIris" x1="130" y1="345" x2="130" y2="370" class="netline monitor-line line-hidden"></line>
-                  <line id="lineWebHoney" x1="484" y1="295" x2="586" y2="295" class="netline safe-line line-hidden"></line>
-                  <line id="lineHoneyDfir" x1="670" y1="345" x2="670" y2="370" class="netline monitor-line line-hidden"></line>
-                </svg>
-
-                <div id="dangerInternet" class="attack-badge">☠ Open path</div>
-                <div id="dangerWeb" class="attack-badge">⚠ Attackable service</div>
-                <div id="attackDot" class="attack-path-dot"></div>
-
-                <div class="topology-node active node-internet" tabindex="0">
-                  <strong>🌐 Internet</strong>
-                  <small>Entrada externa</small>
-                  <div class="tooltip">
-                    <strong>Internet</strong>
-                    Tráfego externo chegando ao ambiente.<br>
-                    <b>Risco:</b> acesso direto quando não há segmentação/controle.
-                  </div>
-                </div>
-
-                <div class="topology-node disabled node-firewall" id="firewallNode" tabindex="0">
-                  <strong>🔥 OPNsense</strong>
-                  <small>Firewall</small>
-                  <div class="tooltip">
-                    <strong>OPNsense</strong>
-                    Roteamento, filtragem e segmentação.<br>
-                    <b>Função:</b> controlar entrada/saída e VLANs.
-                  </div>
-                </div>
-
-                <div class="topology-node vulnerable active node-web" id="webNode" tabindex="0">
-                  <strong>🌐 Web Server</strong>
-                  <small id="webSmall">Exposed</small>
-                  <div class="tooltip" id="webTooltip">
-                    <strong>Web Server</strong>
-                    <b>Serviços:</b> Nginx + Juice Shop<br>
-                    <b>Portas:</b> 80 / 443<br>
-                    <b>Interno:</b> Juice Shop em 3000<br>
-                    <b>Status:</b> exposição direta
-                  </div>
-                </div>
-
-                <div class="topology-node disabled node-soc" id="socNode" tabindex="0">
-                  <strong>📊 Wazuh</strong>
-                  <small id="socSmall">SIEM</small>
-                  <div class="tooltip">
-                    <strong>Wazuh</strong>
-                    <b>Função:</b> SIEM / XDR / Threat Hunting<br>
-                    <b>Portas:</b> 1514 / 1515 / 55000 / 5601
-                  </div>
-                </div>
-
-                <div class="topology-node disabled node-honeypot" id="honeypotNode" tabindex="0">
-                  <strong>🍯 Cowrie</strong>
-                  <small id="honeySmall">Honeypot</small>
-                  <div class="tooltip">
-                    <strong>Cowrie Honeypot</strong>
-                    Simula serviço SSH para capturar tentativas.<br>
-                    <b>Porta:</b> 22<br>
-                    <b>Objetivo:</b> gerar telemetria e enganar o atacante.
-                  </div>
-                </div>
-
-                <div class="topology-node disabled node-iris" id="irisNode" tabindex="0">
-                  <strong>🚨 IRIS</strong>
-                  <small>Incident Response</small>
-                  <div class="tooltip">
-                    <strong>DFIR-IRIS</strong>
-                    Gestão de casos, IOC, evidências e timeline.<br>
-                    <b>Função:</b> resposta a incidentes.
-                  </div>
-                </div>
-
-                <div class="topology-node disabled node-dfir" id="dfirNode" tabindex="0">
-                  <strong>🔎 Velociraptor</strong>
-                  <small>DFIR</small>
-                  <div class="tooltip">
-                    <strong>Velociraptor</strong>
-                    Coleta e análise de artefatos forenses.<br>
-                    <b>Função:</b> investigação DFIR.
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="controls-panel">
-            <h3>Adicionar controles</h3>
-
-            <div class="builder-buttons">
-              <button class="protect-btn" data-control="firewall"><span>🔥 Adicionar Firewall</span><span>+</span></button>
-              <button class="protect-btn" data-control="vlans"><span>🔀 Adicionar VLANs</span><span>+</span></button>
-              <button class="protect-btn" data-control="dmz"><span>🌐 Criar DMZ</span><span>+</span></button>
-              <button class="protect-btn" data-control="wazuh"><span>📊 Adicionar Wazuh</span><span>+</span></button>
-              <button class="protect-btn" data-control="honeypot"><span>🍯 Adicionar Honeypot</span><span>+</span></button>
-              <button class="protect-btn" data-control="iris"><span>🚨 Adicionar IRIS</span><span>+</span></button>
-              <button class="protect-btn" data-control="dfir"><span>🔎 Adicionar Velociraptor</span><span>+</span></button>
-            </div>
-
-            <div class="progress-box">
-              <div class="progress"><div id="securityProgress"></div></div>
-              <div class="score-row">
-                <span>Security Maturity</span>
-                <strong id="securityScore">5%</strong>
-              </div>
-            </div>
-
-            <div class="final-message" id="finalMessage">
-              ✓ Ambiente segmentado, monitorado e preparado para resposta a incidentes.
-            </div>
-
-            <div style="margin-top:18px">
-              <button class="btn" onclick="resetBuilder()">↺ Resetar Ambiente</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    GG // CYBERLAB<br><br>
-    Detect • Investigate • Respond • Improve
-  </footer>
-
-  <script>
-    const stages = [
-      {
-        title:"Arquitetura",
-        description:"Construção da base do GG CyberLab com VirtualBox, OPNsense, segmentação lógica e organização da topologia do ambiente.",
-        tags:["VirtualBox","OPNsense","Arquitetura","Network Security"],
-        image:"images/topologia-gg-cyberlab.png",
-        mode:"normal"
-      },
-      {
-        title:"Active Directory",
-        description:"Implementação do domínio gglab.corp e da camada de identidade corporativa com servidores Windows, autenticação e DNS.",
-        tags:["Active Directory","Windows Server","DNS","Identity"],
-        image:"images/active-directory/windows-servers-wazuh-agents.png",
-        mode:"normal"
-      },
-      {
-        title:"SOC & Detection",
-        description:"O Wazuh centraliza a telemetria do laboratório e passa a operar como núcleo de monitoramento, correlação e threat hunting.",
-        tags:["Wazuh","SIEM","XDR","Threat Hunting"],
-        image:"images/wazuh/wazuh-agents.png",
-        mode:"defense"
-      },
-      {
-        title:"Honeypot",
-        description:"O Cowrie é implantado na DMZ para simular um SSH exposto e capturar tentativas controladas de autenticação.",
-        tags:["Cowrie","SSH","Honeypot","DMZ"],
-        image:"images/honeypot/cowrie-event-details-wazuh.png",
-        mode:"normal"
-      },
-      {
-        title:"Web Security",
-        description:"Nginx publica a camada Web enquanto o OWASP Juice Shop roda no backend do laboratório para testes controlados.",
-        tags:["Nginx","Juice Shop","Docker","Web Security"],
-        image:"images/web-security/nginx-http-200.png",
-        mode:"normal"
-      },
-      {
-        title:"ATTACK DETECTED",
-        description:"A máquina Kali 10.10.99.161 gera uma tentativa SSH contra o Cowrie. O evento é capturado e transformado em alerta pelo Wazuh.",
-        tags:["Kali","SSH Attempt","10.10.99.161","Rule 100200"],
-        image:"images/wazuh/wazuh-rule-100200.png",
-        mode:"attack"
-      },
-      {
-        title:"Incident Response",
-        description:"O alerta é convertido em um caso no DFIR-IRIS com IOC, ativo afetado, evidências e timeline da investigação.",
-        tags:["IRIS","Case #5","IOC","Incident Response"],
-        image:"images/incident-response/iris-case-5-summary.png",
-        mode:"defense"
-      },
-      {
-        title:"DFIR Investigation",
-        description:"Velociraptor coleta artefatos do GG_LN05 para investigar processos, conexões, persistência, autenticações e histórico da máquina.",
-        tags:["Velociraptor","Artifacts","DFIR","Investigation"],
-        image:"images/velociraptor/velociraptor-dfir-analysis.png",
-        mode:"defense"
-      },
-      {
-        title:"Investigation Complete ✓",
-        description:"Nenhum indicador de comprometimento foi identificado. A atividade observada permaneceu restrita ao honeypot e ao cenário controlado.",
-        tags:["No IOC","Analysis Complete","Resolved","Blue Team"],
-        image:"images/velociraptor/velociraptor-server-dashboard.png",
-        mode:"success"
-      },
-      {
-        title:"DevSecOps",
-        description:"Gitea, pipelines e Trivy adicionam segurança preventiva ao ciclo de desenvolvimento do laboratório.",
-        tags:["Gitea","Trivy","Pipeline","Shift Left"],
-        image:"images/devsecops/gitea-repository.png",
-        mode:"normal"
-      }
-    ];
-
-    let currentStep = 0;
-    let playing = true;
-    let timer = null;
-
-    const timeline = document.getElementById("timeline");
-    const journeyCard = document.getElementById("journeyCard");
-    const journeyImage = document.getElementById("journeyImage");
-    const imagePlaceholder = document.getElementById("imagePlaceholder");
-    const playBtn = document.getElementById("playBtn");
-
-    stages.forEach((stage,index)=>{
-      const button = document.createElement("button");
-      button.innerHTML = `${String(index+1).padStart(2,"0")}<br>${stage.title}`;
-      button.addEventListener("click", ()=>{
-        showStep(index);
-      });
-      timeline.appendChild(button);
-    });
-
-    function showStep(index){
-      currentStep = index;
-      const stage = stages[index];
-
-      document.getElementById("stepNumber").textContent =
-        `STEP ${String(index+1).padStart(2,"0")} / ${String(stages.length).padStart(2,"0")}`;
-
-      document.getElementById("journeyTitle").textContent = stage.title;
-      document.getElementById("journeyDescription").textContent = stage.description;
-
-      const tagsBox = document.getElementById("journeyTags");
-      tagsBox.innerHTML = "";
-      stage.tags.forEach(tag=>{
-        const el = document.createElement("span");
-        el.className = "tag";
-        el.textContent = tag;
-        tagsBox.appendChild(el);
-      });
-
-      journeyImage.style.display = "block";
-      imagePlaceholder.style.display = "none";
-      journeyImage.src = stage.image;
-
-      journeyImage.onerror = ()=>{
-        journeyImage.style.display = "none";
-        imagePlaceholder.style.display = "block";
-        imagePlaceholder.innerHTML = `
-          <strong>${stage.title}</strong><br>
-          Evidência não encontrada no caminho:
-          <code>${stage.image}</code>
-        `;
-      };
-
-      document.body.classList.remove("attack","defense");
-      journeyCard.classList.remove("attack-card","defense-card");
-
-      if(stage.mode === "attack"){
-        document.body.classList.add("attack");
-        journeyCard.classList.add("attack-card");
-      }else if(stage.mode === "defense"){
-        document.body.classList.add("defense");
-        journeyCard.classList.add("defense-card");
-      }else if(stage.mode === "success"){
-        document.body.classList.add("defense");
-        journeyCard.classList.add("defense-card");
-      }
-
-      [...timeline.children].forEach((btn,i)=>{
-        btn.classList.toggle("active", i === index);
-      });
-    }
-
-    function nextStep(){
-      const next = (currentStep + 1) % stages.length;
-      showStep(next);
-    }
-
-    function previousStep(){
-      const prev = currentStep === 0 ? stages.length - 1 : currentStep - 1;
-      showStep(prev);
-    }
-
-    function startPlay(){
-      playing = true;
-      playBtn.textContent = "⏸ Pause";
-      clearInterval(timer);
-      timer = setInterval(()=>{
-        nextStep();
-      }, 4500);
-    }
-
-    function stopPlay(){
-      playing = false;
-      playBtn.textContent = "▶ Play";
-      clearInterval(timer);
-    }
-
-    function togglePlay(){
-      if(playing){
-        stopPlay();
-      }else{
-        startPlay();
-      }
-    }
-
-    function startJourney(){
-      document.getElementById("journey").scrollIntoView({behavior:"smooth"});
-      showStep(0);
-      startPlay();
-    }
-
-    // Builder logic
-    const activeControls = new Set();
-
-    const controlScores = {
-      firewall:15,
-      vlans:15,
-      dmz:15,
-      wazuh:15,
-      honeypot:10,
-      iris:10,
-      dfir:15
-    };
-
-    const elements = {
-      firewallNode: document.getElementById("firewallNode"),
-      webNode: document.getElementById("webNode"),
-      socNode: document.getElementById("socNode"),
-      honeypotNode: document.getElementById("honeypotNode"),
-      irisNode: document.getElementById("irisNode"),
-      dfirNode: document.getElementById("dfirNode"),
-      webSmall: document.getElementById("webSmall"),
-      socSmall: document.getElementById("socSmall"),
-      honeySmall: document.getElementById("honeySmall"),
-      riskLabel: document.getElementById("riskLabel"),
-      securityProgress: document.getElementById("securityProgress"),
-      securityScore: document.getElementById("securityScore"),
-      finalMessage: document.getElementById("finalMessage"),
-      attackDot: document.getElementById("attackDot"),
-      dangerWeb: document.getElementById("dangerWeb"),
-      dangerInternet: document.getElementById("dangerInternet"),
-      lineDirectAttack: document.getElementById("lineDirectAttack"),
-      lineInternetFirewall: document.getElementById("lineInternetFirewall"),
-      lineFirewallWeb: document.getElementById("lineFirewallWeb"),
-      lineWebSoc: document.getElementById("lineWebSoc"),
-      lineSocIris: document.getElementById("lineSocIris"),
-      lineWebHoney: document.getElementById("lineWebHoney"),
-      lineHoneyDfir: document.getElementById("lineHoneyDfir")
-    };
-
-    function activateNode(node){
-      node.classList.remove("disabled");
-      node.classList.add("active");
-    }
-
-    function showLine(line){
-      line.classList.remove("line-hidden");
-    }
-
-    function hideLine(line){
-      line.classList.add("line-hidden");
-    }
-
-    document.querySelectorAll(".protect-btn").forEach(button=>{
-      button.addEventListener("click", ()=>{
-        const control = button.dataset.control;
-        if(activeControls.has(control)) return;
-
-        activeControls.add(control);
-        button.classList.add("done");
-        button.lastElementChild.textContent = "✓";
-        applyProtection(control);
-        updateScore();
-      });
-    });
-
-    function applyProtection(control){
-      if(control === "firewall"){
-        activateNode(elements.firewallNode);
-        hideLine(elements.lineDirectAttack);
-        showLine(elements.lineInternetFirewall);
-        showLine(elements.lineFirewallWeb);
-        elements.dangerInternet.classList.add("hidden");
-        elements.attackDot.classList.add("hidden");
-      }
-
-      if(control === "vlans"){
-        elements.webSmall.textContent = "VLAN 50";
-        if(activeControls.has("wazuh")) elements.socSmall.textContent = "SOC • VLAN 30";
-        if(activeControls.has("honeypot")) elements.honeySmall.textContent = "SSH • VLAN 60";
-      }
-
-      if(control === "dmz"){
-        elements.webSmall.textContent = activeControls.has("vlans") ? "DMZ • VLAN 50" : "DMZ";
-      }
-
-      if(control === "wazuh"){
-        activateNode(elements.socNode);
-        elements.socSmall.textContent = activeControls.has("vlans") ? "SOC • VLAN 30" : "SIEM";
-        showLine(elements.lineWebSoc);
-      }
-
-      if(control === "honeypot"){
-        activateNode(elements.honeypotNode);
-        elements.honeySmall.textContent = activeControls.has("vlans") ? "SSH • VLAN 60" : "Honeypot";
-        showLine(elements.lineWebHoney);
-      }
-
-      if(control === "iris"){
-        activateNode(elements.irisNode);
-        showLine(elements.lineSocIris);
-      }
-
-      if(control === "dfir"){
-        activateNode(elements.dfirNode);
-        showLine(elements.lineHoneyDfir);
-      }
-    }
-
-    function updateScore(){
-      let score = 5;
-      activeControls.forEach(control=>{
-        score += controlScores[control];
-      });
-      score = Math.min(score,100);
-
-      elements.securityProgress.style.width = score + "%";
-      elements.securityScore.textContent = score + "%";
-
-      if(score < 35){
-        elements.riskLabel.textContent = "RISK: CRITICAL";
-        elements.riskLabel.style.borderColor = "rgba(255,75,99,.5)";
-        elements.riskLabel.style.color = "#ff9ca9";
-        elements.dangerWeb.classList.remove("hidden");
-      }else if(score < 70){
-        elements.riskLabel.textContent = "RISK: MEDIUM";
-        elements.riskLabel.style.borderColor = "rgba(255,177,75,.55)";
-        elements.riskLabel.style.color = "var(--orange)";
-      }else{
-        elements.riskLabel.textContent = "RISK: CONTROLLED";
-        elements.riskLabel.style.borderColor = "rgba(52,229,154,.55)";
-        elements.riskLabel.style.color = "var(--green)";
-        elements.webNode.classList.remove("vulnerable");
-        elements.webNode.classList.add("protected");
-        elements.dangerWeb.classList.add("hidden");
-      }
-
-      if(activeControls.size === 7){
-        elements.finalMessage.style.display = "block";
-        elements.webNode.classList.remove("vulnerable");
-        elements.webNode.classList.add("protected");
-      }
-    }
-
-    function resetBuilder(){
-      activeControls.clear();
-
-      document.querySelectorAll(".protect-btn").forEach(button=>{
-        button.classList.remove("done");
-        button.lastElementChild.textContent = "+";
-      });
-
-      // reset nodes
-      [elements.firewallNode, elements.socNode, elements.honeypotNode, elements.irisNode, elements.dfirNode].forEach(node=>{
-        node.classList.remove("active");
-        node.classList.add("disabled");
-      });
-
-      elements.webNode.classList.remove("protected");
-      elements.webNode.classList.add("vulnerable");
-
-      elements.webSmall.textContent = "Exposed";
-      elements.socSmall.textContent = "SIEM";
-      elements.honeySmall.textContent = "Honeypot";
-
-      // reset lines
-      showLine(elements.lineDirectAttack);
-      hideLine(elements.lineInternetFirewall);
-      hideLine(elements.lineFirewallWeb);
-      hideLine(elements.lineWebSoc);
-      hideLine(elements.lineSocIris);
-      hideLine(elements.lineWebHoney);
-      hideLine(elements.lineHoneyDfir);
-
-      elements.dangerInternet.classList.remove("hidden");
-      elements.dangerWeb.classList.remove("hidden");
-      elements.attackDot.classList.remove("hidden");
-
-      elements.securityProgress.style.width = "5%";
-      elements.securityScore.textContent = "5%";
-
-      elements.riskLabel.textContent = "RISK: CRITICAL";
-      elements.riskLabel.style.borderColor = "rgba(255,75,99,.5)";
-      elements.riskLabel.style.color = "#ff9ca9";
-
-      elements.finalMessage.style.display = "none";
-    }
-
-    showStep(0);
-    startPlay();
-  </script>
+
+<!-- =====================================================
+NAV
+===================================================== -->
+
+<nav>
+
+<div class="nav-wrap">
+
+<div class="logo">
+
+GG //<span> CYBERLAB</span>
+
+</div>
+
+
+<div class="nav-links">
+
+<a href="#about">
+Sobre
+</a>
+
+<a href="#journey">
+Journey
+</a>
+
+<a href="#incident">
+Incident
+</a>
+
+<a href="#builder">
+Build Your Defense
+</a>
+
+<a href="README.md">
+Docs
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="container">
+
+
+<div class="kicker">
+
+BLUE TEAM / SOC / DFIR / DEVSECOPS
+
+</div>
+
+
+<h1>
+
+ATTACK.
+
+<br>
+
+<span class="gradient">
+
+DETECT. RESPOND.
+
+</span>
+
+</h1>
+
+
+<p>
+
+Uma experiência interativa mostrando a construção do
+GG CyberLab e o ciclo completo de um evento de segurança,
+desde a infraestrutura até a investigação forense.
+
+</p>
+
+
+<button
+class="btn primary"
+onclick="startJourney()">
+
+▶ INICIAR JORNADA
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+SOBRE
+===================================================== -->
+
+<section
+class="section"
+id="about">
+
+<div class="container">
+
+
+<div class="about-grid">
+
+
+<div class="about-info">
+
+
+<div class="kicker">
+
+ABOUT THE PROJECT
+
+</div>
+
+
+<h2 class="section-title">
+
+GG CyberLab
+
+</h2>
+
+
+<p>
+
+Laboratório autoral desenvolvido por
+
+<strong>
+
+Geovanni Andrade
+
+</strong>
+
+com foco em Blue Team, SOC, DFIR,
+Incident Response, Network Security,
+Active Directory e DevSecOps.
+
+</p>
+
+
+<p>
+
+O projeto reproduz uma infraestrutura corporativa
+segmentada e permite acompanhar um evento de segurança
+desde sua geração até sua detecção, documentação,
+resposta e investigação.
+
+</p>
+
+
+<p>
+
+<strong>
+
+Prevent → Detect → Respond → Investigate
+
+</strong>
+
+</p>
+
+
+<div class="about-tags">
+
+<span>
+Blue Team
+</span>
+
+<span>
+SOC
+</span>
+
+<span>
+DFIR
+</span>
+
+<span>
+Incident Response
+</span>
+
+<span>
+Active Directory
+</span>
+
+<span>
+Network Security
+</span>
+
+<span>
+DevSecOps
+</span>
+
+</div>
+
+
+<a
+class="btn"
+href="https://github.com/geovanniandrade"
+target="_blank"
+rel="noopener">
+
+GitHub ↗
+
+</a>
+
+
+</div>
+
+
+
+<div class="about-topology">
+
+
+<div class="topology-label">
+
+LAB ARCHITECTURE
+
+</div>
+
+
+<img
+src="images/topologia-gg-cyberlab.png"
+alt="Topologia do GG CyberLab">
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+JOURNEY
+===================================================== -->
+
+<section
+class="section"
+id="journey">
+
+
+<div class="container">
+
+
+<h2 class="section-title">
+
+CyberLab Journey
+
+</h2>
+
+
+<p class="section-sub">
+
+A apresentação roda continuamente em loop.
+Quando a atividade ofensiva começa, a interface muda
+para vermelho. Durante detecção, resposta e DFIR,
+o ambiente muda para azul.
+
+</p>
+
+
+<div
+class="timeline"
+id="timeline">
+</div>
+
+
+
+<div
+class="journey-card"
+id="journeyCard">
+
+
+<div class="journey-grid">
+
+
+<div class="journey-info">
+
+
+<div
+class="step"
+id="stepNumber">
+</div>
+
+
+<h2 id="journeyTitle">
+</h2>
+
+
+<p id="journeyDescription">
+</p>
+
+
+<div
+class="tags"
+id="journeyTags">
+</div>
+
+
+<div class="attack-status">
+
+<span class="attack-dot">
+</span>
+
+SECURITY EVENT IN PROGRESS
+
+</div>
+
+
+<div class="journey-controls">
+
+
+<button
+class="btn"
+onclick="previousStep()">
+
+←
+
+</button>
+
+
+<button
+class="btn primary"
+id="playBtn"
+onclick="togglePlay()">
+
+⏸ Pause
+
+</button>
+
+
+<button
+class="btn"
+onclick="nextStep()">
+
+→
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="journey-media">
+
+
+<div class="media-overlay">
+</div>
+
+
+<div class="attack-banner">
+
+SSH ATTEMPT DETECTED
+•
+SOURCE 10.10.99.161
+
+</div>
+
+
+<img
+id="journeyImage"
+alt="Evidência GG CyberLab">
+
+
+<div
+class="image-placeholder"
+id="imagePlaceholder"
+style="display:none">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+INCIDENT
+===================================================== -->
+
+<section
+class="section"
+id="incident">
+
+
+<div class="container">
+
+
+<h2 class="section-title">
+
+Incident Story
+
+</h2>
+
+
+<p class="section-sub">
+
+Fluxo validado no laboratório,
+da atividade ofensiva à investigação forense.
+
+</p>
+
+
+<div class="incident-box">
+
+
+<div class="incident-flow">
+
+
+<div class="flow-node attack">
+
+KALI
+
+<small>
+
+10.10.99.161
+
+</small>
+
+</div>
+
+
+<div class="flow-arrow">
+→
+</div>
+
+
+<div class="flow-node attack">
+
+COWRIE
+
+<small>
+
+SSH Honeypot
+
+</small>
+
+</div>
+
+
+<div class="flow-arrow">
+→
+</div>
+
+
+<div class="flow-node defense">
+
+WAZUH
+
+<small>
+
+Rule 100200
+
+</small>
+
+</div>
+
+
+<div class="flow-arrow">
+→
+</div>
+
+
+<div class="flow-node defense">
+
+IRIS
+
+<small>
+
+Case #5
+
+</small>
+
+</div>
+
+
+<div class="flow-arrow">
+→
+</div>
+
+
+<div class="flow-node defense">
+
+VELOCIRAPTOR
+
+<small>
+
+DFIR
+
+</small>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+BUILD YOUR DEFENSE
+===================================================== -->
+
+<section
+class="section"
+id="builder">
+
+
+<div class="container">
+
+
+<h2 class="section-title">
+
+Build Your Defense
+
+</h2>
+
+
+<p class="section-sub">
+
+O ambiente começa com um serviço exposto e um caminho
+direto de ataque. Adicione controles e veja a arquitetura
+se transformar em um ambiente segmentado, monitorado e
+preparado para resposta a incidentes.
+
+Passe o mouse ou toque nos ativos para visualizar
+informações técnicas resumidas.
+
+</p>
+
+
+
+<div class="builder">
+
+
+<!-- =====================================================
+TOPOLOGIA
+===================================================== -->
+
+<div class="network-panel">
+
+
+<div class="network-head">
+
+
+<strong>
+
+LAB NETWORK
+
+</strong>
+
+
+<span
+class="risk"
+id="riskLabel">
+
+RISK: CRITICAL
+
+</span>
+
+
+</div>
+
+
+
+<div class="topology-wrap">
+
+
+<div class="lab-topology">
+
+
+
+<svg
+class="lab-svg"
+viewBox="0 0 820 560">
+
+
+
+<!-- internet -> web vulnerável -->
+
+<line
+id="directAttack"
+x1="410"
+y1="85"
+x2="410"
+y2="235"
+class="netline danger-line">
+</line>
+
+
+
+<!-- internet -> firewall -->
+
+<line
+id="internetFirewall"
+x1="410"
+y1="85"
+x2="410"
+y2="110"
+class="netline safe-line line-hidden">
+</line>
+
+
+
+<!-- firewall -> web -->
+
+<line
+id="firewallWeb"
+x1="410"
+y1="210"
+x2="410"
+y2="235"
+class="netline safe-line line-hidden">
+</line>
+
+
+
+<!-- web -> wazuh -->
+
+<line
+id="webWazuh"
+x1="323"
+y1="285"
+x2="227"
+y2="285"
+class="netline monitor-line line-hidden">
+</line>
+
+
+
+<!-- wazuh -> iris -->
+
+<line
+id="wazuhIris"
+x1="140"
+y1="335"
+x2="140"
+y2="380"
+class="netline monitor-line line-hidden">
+</line>
+
+
+
+<!-- web -> cowrie -->
+
+<line
+id="webCowrie"
+x1="497"
+y1="285"
+x2="593"
+y2="285"
+class="netline safe-line line-hidden">
+</line>
+
+
+
+<!-- cowrie -> wazuh -->
+
+<path
+id="cowrieWazuh"
+d="
+M593 300
+C500 360
+320 360
+227 300
+"
+class="netline monitor-line line-hidden">
+</path>
+
+
+
+<!-- iris -> velociraptor -->
+
+<path
+id="irisVelociraptor"
+d="
+M227 430
+C350 475
+470 475
+593 430
+"
+class="netline monitor-line line-hidden">
+</path>
+
+
+
+<!-- velociraptor -> web -->
+
+<path
+id="dfirWeb"
+d="
+M680 380
+C620 340
+540 320
+497 300
+"
+class="netline monitor-line line-hidden">
+</path>
+
+
+
+<!-- attacker -> web -->
+
+<line
+id="attackerWeb"
+x1="410"
+y1="460"
+x2="410"
+y2="335"
+class="netline danger-line">
+</line>
+
+
+</svg>
+
+
+
+<div
+class="attack-symbol"
+id="openPath">
+
+☠ OPEN PATH
+
+</div>
+
+
+<div
+class="attack-symbol"
+id="webRisk">
+
+⚠ EXPOSED
+
+</div>
+
+
+<div
+class="attack-symbol"
+id="attackerRisk">
+
+☠ ATTACKER
+
+</div>
+
+
+
+<!-- INTERNET -->
+
+<div
+class="lab-node active n-internet"
+tabindex="0">
+
+
+<strong>
+
+🌐 Internet
+
+</strong>
+
+
+<small>
+
+External Network
+
+</small>
+
+
+<div class="tooltip">
+
+<strong>
+
+Internet
+
+</strong>
+
+Entrada externa do ambiente.
+
+<br>
+
+<b>
+
+Risco inicial:
+
+</b>
+
+acesso direto ao serviço publicado.
+
+</div>
+
+
+</div>
+
+
+
+<!-- FIREWALL -->
+
+<div
+class="lab-node disabled n-firewall"
+id="firewallNode"
+tabindex="0">
+
+
+<strong>
+
+🔥 OPNsense
+
+</strong>
+
+
+<small>
+
+Firewall / Router
+
+</small>
+
+
+<div class="tooltip">
+
+<strong>
+
+OPNsense
+
+</strong>
+
+Firewall e roteador central.
+
+<br>
+
+<b>
+
+Funções:
+
+</b>
+
+VLANs, regras de firewall,
+roteamento e segmentação.
+
+</div>
+
+
+</div>
+
+
+
+<!-- WEB -->
+
+<div
+class="lab-node active vulnerable n-web"
+id="webNode"
+tabindex="0">
+
+
+<strong>
+
+🌐 GG_LN05
+
+</strong>
+
+
+<small id="webStatus">
+
+Web Server • Exposed
+
+</small>
+
+
+<div class="tooltip">
+
+<strong>
+
+GG_LN05 — DMZ
+
+</strong>
+
+IP: 10.10.50.10
+
+<br>
+
+Nginx:
+<b>80/tcp</b>
+
+<br>
+
+Juice Shop:
+<b>127.0.0.1:3000</b>
+
+<br>
+
+Cowrie:
+<b>22 → 2222</b>
+
+</div>
+
+
+</div>
+
+
+
+<!-- WAZUH -->
+
+<div
+class="lab-node disabled n-wazuh"
+id="wazuhNode"
+tabindex="0">
+
+
+<strong>
+
+📊 Wazuh
+
+</strong>
+
+
+<small id="wazuhStatus">
+
+GG_LN01
+
+</small>
+
+
+<div class="tooltip">
+
+<strong>
+
+Wazuh SIEM / XDR
+
+</strong>
+
+IP:
+10.10.30.10
+
+<br>
+
+VLAN 30 — SOC
+
+<br>
+
+Funções:
+
+monitoramento,
+correlação,
+Threat Hunting
+e regras customizadas.
+
+</div>
+
+
+</div>
+
+
+
+<!-- COWRIE -->
+
+<div
+class="lab-node disabled n-cowrie"
+id="cowrieNode"
+tabindex="0">
+
+
+<strong>
+
+🍯 Cowrie
+
+</strong>
+
+
+<small id="cowrieStatus">
+
+Honeypot
+
+</small>
+
+
+<div class="tooltip">
+
+<strong>
+
+Cowrie Honeypot
+
+</strong>
+
+Executado no GG_LN05.
+
+<br>
+
+IP:
+10.10.50.10
+
+<br>
+
+Porta externa:
+<b>22/tcp</b>
+
+<br>
+
+Container:
+<b>2222/tcp</b>
+
+</div>
+
+
+</div>
+
+
+
+<!-- IRIS -->
+
+<div
+class="lab-node disabled n-iris"
+id="irisNode"
+tabindex="0">
+
+
+<strong>
+
+🚨 DFIR-IRIS
+
+</strong>
+
+
+<small>
+
+Incident Response
+
+</small>
+
+
+<div class="tooltip">
+
+<strong>
+
+IRIS
+
+</strong>
+
+GG_LN03
+
+<br>
+
+IP:
+10.10.30.30
+
+<br>
+
+HTTPS do laboratório:
+<b>8444 → 443</b>
+
+<br>
+
+Case Management,
+IOC,
+Assets,
+Evidence
+e Timeline.
+
+</div>
+
+
+</div>
+
+
+
+<!-- VELOCIRAPTOR -->
+
+<div
+class="lab-node disabled n-velociraptor"
+id="velociraptorNode"
+tabindex="0">
+
+
+<strong>
+
+🔎 Velociraptor
+
+</strong>
+
+
+<small>
+
+DFIR
+
+</small>
+
+
+<div class="tooltip">
+
+<strong>
+
+Velociraptor
+
+</strong>
+
+GG_LN02
+
+<br>
+
+IP:
+10.10.30.20
+
+<br>
+
+GUI via tunnel:
+<b>8889</b>
+
+<br>
+
+Coleta de artefatos
+e investigação DFIR.
+
+</div>
+
+
+</div>
+
+
+
+<!-- ATTACKER -->
+
+<div
+class="lab-node active vulnerable n-attacker"
+id="attackerNode"
+tabindex="0">
+
+
+<strong>
+
+☠ Kali Linux
+
+</strong>
+
+
+<small>
+
+10.10.99.161
+
+</small>
+
+
+<div class="tooltip">
+
+<strong>
+
+Attack Lab
+
+</strong>
+
+VLAN 99
+
+<br>
+
+IP observado:
+10.10.99.161
+
+<br>
+
+Utilizado exclusivamente
+para testes controlados
+contra o CyberLab.
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+CONTROLES
+===================================================== -->
+
+<div class="controls-panel">
+
+
+<h3>
+
+Adicionar controles
+
+</h3>
+
+
+<div class="builder-buttons">
+
+
+<button
+class="protect-btn"
+data-control="firewall">
+
+<span>
+🔥 Adicionar Firewall
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+
+<button
+class="protect-btn"
+data-control="vlans">
+
+<span>
+🔀 Adicionar VLANs
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+
+<button
+class="protect-btn"
+data-control="dmz">
+
+<span>
+🌐 Criar DMZ
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+
+<button
+class="protect-btn"
+data-control="wazuh">
+
+<span>
+📊 Adicionar Wazuh
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+
+<button
+class="protect-btn"
+data-control="honeypot">
+
+<span>
+🍯 Adicionar Honeypot
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+
+<button
+class="protect-btn"
+data-control="iris">
+
+<span>
+🚨 Adicionar IRIS
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+
+<button
+class="protect-btn"
+data-control="dfir">
+
+<span>
+🔎 Adicionar Velociraptor
+</span>
+
+<span>
++
+</span>
+
+</button>
+
+
+</div>
+
+
+
+<div class="progress-box">
+
+
+<div class="progress">
+
+<div id="securityProgress">
+</div>
+
+</div>
+
+
+<div class="score-row">
+
+
+<span>
+
+Security Maturity
+
+</span>
+
+
+<strong id="securityScore">
+
+5%
+
+</strong>
+
+
+</div>
+
+</div>
+
+
+
+<div
+class="final-message"
+id="finalMessage">
+
+✓ Ambiente segmentado, monitorado e preparado
+para detecção, resposta e investigação.
+
+</div>
+
+
+
+<div style="margin-top:18px">
+
+
+<button
+class="btn"
+onclick="resetBuilder()">
+
+↺ Resetar Ambiente
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+GG // CYBERLAB
+
+<br><br>
+
+Detect • Investigate • Respond • Improve
+
+<br><br>
+
+Geovanni Andrade
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================================================
+JOURNEY
+========================================================= */
+
+
+const stages = [
+
+
+{
+
+title:
+"Arquitetura",
+
+description:
+"Construção da base do GG CyberLab com VirtualBox, OPNsense, Open vSwitch e segmentação lógica.",
+
+tags:[
+"VirtualBox",
+"OPNsense",
+"VLANs",
+"Network Security"
+],
+
+image:
+"images/topologia-gg-cyberlab.png",
+
+mode:
+"normal"
+
+},
+
+
+
+{
+
+title:
+"Active Directory",
+
+description:
+"Implementação do domínio gglab.corp e da camada corporativa de identidade, autenticação, DNS e servidores Windows.",
+
+tags:[
+"Active Directory",
+"Windows Server",
+"DNS",
+"Identity"
+],
+
+image:
+"images/active-directory/windows-servers-wazuh-agents.png",
+
+mode:
+"normal"
+
+},
+
+
+
+{
+
+title:
+"SOC & Detection",
+
+description:
+"O Wazuh centraliza a telemetria dos ativos e atua como núcleo do SOC para monitoramento, correlação e Threat Hunting.",
+
+tags:[
+"Wazuh",
+"SIEM",
+"XDR",
+"Threat Hunting"
+],
+
+image:
+"images/wazuh/wazuh-agents.png",
+
+mode:
+"defense"
+
+},
+
+
+
+{
+
+title:
+"Honeypot",
+
+description:
+"O Cowrie é executado no GG_LN05 para simular um serviço SSH e registrar atividades controladas contra o ambiente.",
+
+tags:[
+"Cowrie",
+"SSH",
+"Honeypot",
+"DMZ"
+],
+
+image:
+"images/honeypot/cowrie-event-details-wazuh.png",
+
+mode:
+"normal"
+
+},
+
+
+
+{
+
+title:
+"Web Security",
+
+description:
+"Nginx atua como reverse proxy enquanto o OWASP Juice Shop permanece no backend local do servidor.",
+
+tags:[
+"Nginx",
+"Juice Shop",
+"Docker",
+"Web Security"
+],
+
+image:
+"images/web-security/nginx-http-200.png",
+
+mode:
+"normal"
+
+},
+
+
+
+{
+
+title:
+"ATTACK DETECTED",
+
+description:
+"A máquina Kali 10.10.99.161 gera uma tentativa controlada de autenticação SSH contra o Cowrie. O Wazuh detecta o evento através da Rule 100200.",
+
+tags:[
+"Kali",
+"10.10.99.161",
+"SSH Attempt",
+"Rule 100200"
+],
+
+image:
+"images/wazuh/wazuh-rule-100200.png",
+
+mode:
+"attack"
+
+},
+
+
+
+{
+
+title:
+"Incident Response",
+
+description:
+"O alerta do Wazuh é convertido em um caso estruturado no DFIR-IRIS com IOC, Asset, evidências, tarefas e timeline.",
+
+tags:[
+"DFIR-IRIS",
+"Case #5",
+"IOC",
+"Incident Response"
+],
+
+image:
+"images/incident-response/iris-case-5-summary.png",
+
+mode:
+"defense"
+
+},
+
+
+
+{
+
+title:
+"DFIR Investigation",
+
+description:
+"O Velociraptor coleta artefatos do GG_LN05 para analisar processos, conexões, persistência, usuários e autenticações.",
+
+tags:[
+"Velociraptor",
+"DFIR",
+"Artifacts",
+"Investigation"
+],
+
+image:
+"images/velociraptor/velociraptor-dfir-analysis.png",
+
+mode:
+"defense"
+
+},
+
+
+
+{
+
+title:
+"Investigation Complete ✓",
+
+description:
+"Nenhum indicador de comprometimento foi identificado nos artefatos coletados. A atividade permaneceu restrita ao honeypot.",
+
+tags:[
+"Analysis Complete",
+"No IOC",
+"Blue Team",
+"Resolved"
+],
+
+image:
+"images/velociraptor/velociraptor-dfir-analysis.png",
+
+mode:
+"success"
+
+},
+
+
+
+{
+
+title:
+"DevSecOps",
+
+description:
+"Gitea, pipeline, act_runner e Trivy adicionam segurança preventiva ao ciclo de desenvolvimento.",
+
+tags:[
+"Gitea",
+"Trivy",
+"Pipeline",
+"Shift Left"
+],
+
+image:
+"images/devsecops/gitea-repository.png",
+
+mode:
+"normal"
+
+}
+
+
+];
+
+
+
+let currentStep = 0;
+
+let playing = true;
+
+let timer = null;
+
+
+
+const timeline =
+document.getElementById(
+"timeline"
+);
+
+
+const journeyCard =
+document.getElementById(
+"journeyCard"
+);
+
+
+const journeyImage =
+document.getElementById(
+"journeyImage"
+);
+
+
+const imagePlaceholder =
+document.getElementById(
+"imagePlaceholder"
+);
+
+
+const playBtn =
+document.getElementById(
+"playBtn"
+);
+
+
+
+stages.forEach(
+(stage,index)=>{
+
+
+const button =
+document.createElement(
+"button"
+);
+
+
+button.innerHTML =
+`${String(index+1).padStart(2,"0")}<br>${stage.title}`;
+
+
+button.addEventListener(
+"click",
+()=>{
+
+showStep(index);
+
+}
+
+);
+
+
+timeline.appendChild(
+button
+);
+
+
+}
+
+);
+
+
+
+function showStep(index){
+
+
+currentStep =
+index;
+
+
+const stage =
+stages[index];
+
+
+document.getElementById(
+"stepNumber"
+).textContent =
+
+`STEP ${String(index+1).padStart(2,"0")} / ${String(stages.length).padStart(2,"0")}`;
+
+
+
+document.getElementById(
+"journeyTitle"
+).textContent =
+stage.title;
+
+
+
+document.getElementById(
+"journeyDescription"
+).textContent =
+stage.description;
+
+
+
+const tagsBox =
+document.getElementById(
+"journeyTags"
+);
+
+
+tagsBox.innerHTML =
+"";
+
+
+stage.tags.forEach(
+tag=>{
+
+
+const el =
+document.createElement(
+"span"
+);
+
+
+el.className =
+"tag";
+
+
+el.textContent =
+tag;
+
+
+tagsBox.appendChild(
+el
+);
+
+
+}
+
+);
+
+
+
+journeyImage.style.display =
+"block";
+
+
+imagePlaceholder.style.display =
+"none";
+
+
+journeyImage.src =
+stage.image;
+
+
+
+journeyImage.onerror =
+()=>{
+
+
+journeyImage.style.display =
+"none";
+
+
+imagePlaceholder.style.display =
+"block";
+
+
+imagePlaceholder.innerHTML =
+
+`
+<strong>${stage.title}</strong>
+
+Arquivo não encontrado:
+
+<code>${stage.image}</code>
+`;
+
+
+};
+
+
+
+document.body.classList.remove(
+"attack",
+"defense"
+);
+
+
+journeyCard.classList.remove(
+"attack-card",
+"defense-card"
+);
+
+
+
+if(
+stage.mode ===
+"attack"
+){
+
+
+document.body.classList.add(
+"attack"
+);
+
+
+journeyCard.classList.add(
+"attack-card"
+);
+
+
+}
+
+
+else if(
+stage.mode ===
+"defense"
+||
+stage.mode ===
+"success"
+){
+
+
+document.body.classList.add(
+"defense"
+);
+
+
+journeyCard.classList.add(
+"defense-card"
+);
+
+
+}
+
+
+
+[
+...timeline.children
+].forEach(
+(btn,i)=>{
+
+
+btn.classList.toggle(
+"active",
+i === index
+);
+
+
+}
+
+);
+
+
+}
+
+
+
+function nextStep(){
+
+
+showStep(
+(currentStep + 1)
+%
+stages.length
+);
+
+
+}
+
+
+
+function previousStep(){
+
+
+showStep(
+
+currentStep === 0
+
+?
+
+stages.length - 1
+
+:
+
+currentStep - 1
+
+);
+
+
+}
+
+
+
+function startPlay(){
+
+
+playing =
+true;
+
+
+playBtn.textContent =
+"⏸ Pause";
+
+
+clearInterval(
+timer
+);
+
+
+timer =
+setInterval(
+()=>{
+
+
+nextStep();
+
+
+},
+4500
+);
+
+
+}
+
+
+
+function stopPlay(){
+
+
+playing =
+false;
+
+
+playBtn.textContent =
+"▶ Play";
+
+
+clearInterval(
+timer
+);
+
+
+}
+
+
+
+function togglePlay(){
+
+
+if(
+playing
+){
+
+
+stopPlay();
+
+
+}
+
+
+else{
+
+
+startPlay();
+
+
+}
+
+
+}
+
+
+
+function startJourney(){
+
+
+document.getElementById(
+"journey"
+).scrollIntoView(
+{
+behavior:"smooth"
+}
+);
+
+
+showStep(
+0
+);
+
+
+startPlay();
+
+
+}
+
+
+
+/* =========================================================
+BUILDER
+========================================================= */
+
+
+const activeControls =
+new Set();
+
+
+
+const scores = {
+
+firewall:15,
+
+vlans:15,
+
+dmz:15,
+
+wazuh:15,
+
+honeypot:10,
+
+iris:10,
+
+dfir:15
+
+};
+
+
+
+function $(
+id
+){
+
+return document.getElementById(
+id
+);
+
+}
+
+
+
+const nodes = {
+
+firewall:
+$("firewallNode"),
+
+web:
+$("webNode"),
+
+wazuh:
+$("wazuhNode"),
+
+cowrie:
+$("cowrieNode"),
+
+iris:
+$("irisNode"),
+
+velociraptor:
+$("velociraptorNode")
+
+};
+
+
+
+const lines = {
+
+directAttack:
+$("directAttack"),
+
+internetFirewall:
+$("internetFirewall"),
+
+firewallWeb:
+$("firewallWeb"),
+
+webWazuh:
+$("webWazuh"),
+
+wazuhIris:
+$("wazuhIris"),
+
+webCowrie:
+$("webCowrie"),
+
+cowrieWazuh:
+$("cowrieWazuh"),
+
+irisVelociraptor:
+$("irisVelociraptor"),
+
+dfirWeb:
+$("dfirWeb"),
+
+attackerWeb:
+$("attackerWeb")
+
+};
+
+
+
+function activateNode(
+node
+){
+
+
+node.classList.remove(
+"disabled"
+);
+
+
+node.classList.add(
+"active"
+);
+
+
+}
+
+
+
+function showLine(
+line
+){
+
+
+line.classList.remove(
+"line-hidden"
+);
+
+
+}
+
+
+
+function hideLine(
+line
+){
+
+
+line.classList.add(
+"line-hidden"
+);
+
+
+}
+
+
+
+/* tooltip toque mobile */
+
+
+document.querySelectorAll(
+".lab-node"
+).forEach(
+node=>{
+
+
+node.addEventListener(
+"click",
+event=>{
+
+
+event.stopPropagation();
+
+
+document.querySelectorAll(
+".lab-node"
+).forEach(
+other=>{
+
+
+if(
+other !== node
+){
+
+
+other.classList.remove(
+"show-tip"
+);
+
+
+}
+
+
+}
+
+);
+
+
+node.classList.toggle(
+"show-tip"
+);
+
+
+}
+
+);
+
+
+}
+
+);
+
+
+
+document.addEventListener(
+"click",
+()=>{
+
+
+document.querySelectorAll(
+".lab-node"
+).forEach(
+node=>{
+
+
+node.classList.remove(
+"show-tip"
+);
+
+
+}
+
+);
+
+
+}
+
+);
+
+
+
+document.querySelectorAll(
+".protect-btn"
+).forEach(
+button=>{
+
+
+button.addEventListener(
+"click",
+()=>{
+
+
+const control =
+button.dataset.control;
+
+
+if(
+activeControls.has(
+control
+)
+){
+
+return;
+
+}
+
+
+activeControls.add(
+control
+);
+
+
+button.classList.add(
+"done"
+);
+
+
+button.lastElementChild.textContent =
+"✓";
+
+
+applyProtection(
+control
+);
+
+
+updateScore();
+
+
+}
+
+);
+
+
+}
+
+);
+
+
+
+function applyProtection(
+control
+){
+
+
+
+if(
+control ===
+"firewall"
+){
+
+
+activateNode(
+nodes.firewall
+);
+
+
+hideLine(
+lines.directAttack
+);
+
+
+showLine(
+lines.internetFirewall
+);
+
+
+showLine(
+lines.firewallWeb
+);
+
+
+$("openPath").classList.add(
+"hidden"
+);
+
+
+}
+
+
+
+if(
+control ===
+"vlans"
+){
+
+
+$("webStatus").textContent =
+"VLAN 50";
+
+
+}
+
+
+
+if(
+control ===
+"dmz"
+){
+
+
+$("webStatus").textContent =
+"DMZ • VLAN 50";
+
+
+$("webRisk").classList.add(
+"hidden"
+);
+
+
+}
+
+
+
+if(
+control ===
+"wazuh"
+){
+
+
+activateNode(
+nodes.wazuh
+);
+
+
+showLine(
+lines.webWazuh
+);
+
+
+}
+
+
+
+if(
+control ===
+"honeypot"
+){
+
+
+activateNode(
+nodes.cowrie
+);
+
+
+showLine(
+lines.webCowrie
+);
+
+
+if(
+activeControls.has(
+"wazuh"
+)
+){
+
+
+showLine(
+lines.cowrieWazuh
+);
+
+
+}
+
+
+}
+
+
+
+if(
+control ===
+"iris"
+){
+
+
+activateNode(
+nodes.iris
+);
+
+
+if(
+activeControls.has(
+"wazuh"
+)
+){
+
+
+showLine(
+lines.wazuhIris
+);
+
+
+}
+
+
+}
+
+
+
+if(
+control ===
+"dfir"
+){
+
+
+activateNode(
+nodes.velociraptor
+);
+
+
+showLine(
+lines.dfirWeb
+);
+
+
+if(
+activeControls.has(
+"iris"
+)
+){
+
+
+showLine(
+lines.irisVelociraptor
+);
+
+
+}
+
+
+}
+
+
+
+/* reavaliar dependências */
+
+
+if(
+activeControls.has("wazuh")
+&&
+activeControls.has("honeypot")
+){
+
+showLine(
+lines.cowrieWazuh
+);
+
+}
+
+
+if(
+activeControls.has("wazuh")
+&&
+activeControls.has("iris")
+){
+
+showLine(
+lines.wazuhIris
+);
+
+}
+
+
+if(
+activeControls.has("iris")
+&&
+activeControls.has("dfir")
+){
+
+showLine(
+lines.irisVelociraptor
+);
+
+}
+
+
+}
+
+
+
+function updateScore(){
+
+
+let score =
+5;
+
+
+activeControls.forEach(
+control=>{
+
+
+score +=
+scores[
+control
+];
+
+
+}
+
+);
+
+
+score =
+Math.min(
+score,
+100
+);
+
+
+
+$("securityProgress").style.width =
+score + "%";
+
+
+$("securityScore").textContent =
+score + "%";
+
+
+
+if(
+score < 35
+){
+
+
+$("riskLabel").textContent =
+"RISK: CRITICAL";
+
+
+}
+
+
+else if(
+score < 70
+){
+
+
+$("riskLabel").textContent =
+"RISK: MEDIUM";
+
+
+$("riskLabel").style.color =
+"var(--orange)";
+
+
+}
+
+
+else{
+
+
+$("riskLabel").textContent =
+"RISK: CONTROLLED";
+
+
+$("riskLabel").style.color =
+"var(--green)";
+
+
+nodes.web.classList.remove(
+"vulnerable"
+);
+
+
+nodes.web.classList.add(
+"protected"
+);
+
+
+$("webRisk").classList.add(
+"hidden"
+);
+
+
+$("attackerRisk").classList.add(
+"hidden"
+);
+
+
+hideLine(
+lines.attackerWeb
+);
+
+
+}
+
+
+
+if(
+activeControls.size ===
+7
+){
+
+
+$("finalMessage").style.display =
+"block";
+
+
+}
+
+
+}
+
+
+
+function resetBuilder(){
+
+
+activeControls.clear();
+
+
+
+document.querySelectorAll(
+".protect-btn"
+).forEach(
+button=>{
+
+
+button.classList.remove(
+"done"
+);
+
+
+button.lastElementChild.textContent =
+"+";
+
+
+}
+
+);
+
+
+
+[
+nodes.firewall,
+nodes.wazuh,
+nodes.cowrie,
+nodes.iris,
+nodes.velociraptor
+].forEach(
+node=>{
+
+
+node.classList.remove(
+"active"
+);
+
+
+node.classList.add(
+"disabled"
+);
+
+
+}
+
+);
+
+
+
+nodes.web.classList.add(
+"vulnerable"
+);
+
+
+nodes.web.classList.remove(
+"protected"
+);
+
+
+
+$("webStatus").textContent =
+"Web Server • Exposed";
+
+
+
+showLine(
+lines.directAttack
+);
+
+
+showLine(
+lines.attackerWeb
+);
+
+
+
+hideLine(
+lines.internetFirewall
+);
+
+
+hideLine(
+lines.firewallWeb
+);
+
+
+hideLine(
+lines.webWazuh
+);
+
+
+hideLine(
+lines.wazuhIris
+);
+
+
+hideLine(
+lines.webCowrie
+);
+
+
+hideLine(
+lines.cowrieWazuh
+);
+
+
+hideLine(
+lines.irisVelociraptor
+);
+
+
+hideLine(
+lines.dfirWeb
+);
+
+
+
+$("openPath").classList.remove(
+"hidden"
+);
+
+
+$("webRisk").classList.remove(
+"hidden"
+);
+
+
+$("attackerRisk").classList.remove(
+"hidden"
+);
+
+
+
+$("securityProgress").style.width =
+"5%";
+
+
+$("securityScore").textContent =
+"5%";
+
+
+$("riskLabel").textContent =
+"RISK: CRITICAL";
+
+
+$("riskLabel").style.color =
+"#ff9baa";
+
+
+$("finalMessage").style.display =
+"none";
+
+
+}
+
+
+
+/* =========================================================
+START
+========================================================= */
+
+
+showStep(
+0
+);
+
+
+startPlay();
+
+
+</script>
+
 
 </body>
+
 </html>
