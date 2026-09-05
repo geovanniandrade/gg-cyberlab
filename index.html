@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GG // CyberLab Experience</title>
+
+<style>
+:root{
+    --bg:#070b12;
+    --panel:#0d1420;
+    --panel2:#111b2b;
+    --border:#233247;
+    --text:#e8f0fa;
+    --muted:#8292a8;
+    --blue:#27a8ff;
+    --blue2:#58d6ff;
+    --red:#ff3d55;
+    --green:#35e59b;
+    --orange:#ffad42;
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    margin:0;
+    background:
+        radial-gradient(circle at 50% -20%,#122338 0,#070b12 42%);
+    color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
+    transition:background .8s;
+}
+
+body.attack{
+    background:
+        radial-gradient(circle at 50% 20%,rgba(255,40,70,.18),transparent 35%),
+        #08080d;
+}
+
+body.defense{
+    background:
+        radial-gradient(circle at 50% 20%,rgba(39,168,255,.14),transparent 38%),
+        #070b12;
+}
+
+a{color:inherit}
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:17px 7%;
+    background:rgba(7,11,18,.88);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+.logo{
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.logo span{color:var(--blue)}
+
+.navlinks{
+    display:flex;
+    gap:22px;
+}
+
+.navlinks a{
+    text-decoration:none;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.container{
+    width:min(1180px,90%);
+    margin:auto;
+}
+
+.hero{
+    min-height:680px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.kicker{
+    color:var(--blue2);
+    font-family:monospace;
+    letter-spacing:4px;
+    font-size:13px;
+}
+
+h1{
+    margin:18px 0;
+    font-size:clamp(48px,8vw,96px);
+    line-height:.95;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#fff,var(--blue2));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:720px;
+    margin:25px auto;
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.7;
+}
+
+.btn{
+    border:1px solid var(--border);
+    background:var(--panel);
+    color:white;
+    padding:14px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:700;
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    border-color:var(--blue);
+}
+
+.btn.primary{
+    background:var(--blue);
+    border-color:var(--blue);
+    color:#00111e;
+}
+
+.section{
+    padding:85px 0;
+}
+
+.section-title{
+    margin-bottom:10px;
+    font-size:38px;
+}
+
+.section-sub{
+    color:var(--muted);
+    line-height:1.6;
+    margin-bottom:40px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:24px;
+}
+
+.stat b{
+    display:block;
+    font-size:35px;
+    color:var(--blue2);
+}
+
+.stat span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.timeline{
+    display:flex;
+    gap:8px;
+    margin:35px 0;
+    overflow:auto;
+    padding-bottom:8px;
+}
+
+.timeline button{
+    min-width:120px;
+    background:#0c131e;
+    color:var(--muted);
+    border:1px solid var(--border);
+    padding:12px;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.timeline button.active{
+    color:white;
+    border-color:var(--blue);
+    box-shadow:0 0 24px rgba(39,168,255,.15);
+}
+
+.journey{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:var(--panel);
+}
+
+.journey.attack-card{
+    border-color:rgba(255,61,85,.7);
+    box-shadow:0 0 70px rgba(255,61,85,.12);
+}
+
+.journey.defense-card{
+    border-color:rgba(39,168,255,.55);
+    box-shadow:0 0 70px rgba(39,168,255,.10);
+}
+
+.journey-grid{
+    display:grid;
+    grid-template-columns:1fr 1.15fr;
+    min-height:500px;
+}
+
+.journey-info{
+    padding:45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.step{
+    font-family:monospace;
+    color:var(--blue2);
+    letter-spacing:2px;
+    font-size:13px;
+}
+
+#journeyTitle{
+    font-size:43px;
+    margin:12px 0;
+}
+
+#journeyDescription{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+.tags{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:20px 0;
+}
+
+.tag{
+    font-family:monospace;
+    color:#b6d2e7;
+    border:1px solid var(--border);
+    padding:7px 10px;
+    border-radius:7px;
+    font-size:12px;
+}
+
+.controls{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.journey-media{
+    position:relative;
+    background:#05080d;
+    min-height:470px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.journey-media img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    max-height:540px;
+}
+
+.image-placeholder{
+    text-align:center;
+    color:var(--muted);
+    padding:40px;
+}
+
+.image-placeholder strong{
+    display:block;
+    color:white;
+    margin-bottom:8px;
+}
+
+.alert-overlay{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:0;
+}
+
+.attack-card .alert-overlay{
+    opacity:1;
+    background:
+        linear-gradient(90deg,transparent 48%,rgba(255,35,65,.11) 50%,transparent 52%);
+    animation:scan 2s linear infinite;
+}
+
+@keyframes scan{
+    0%{transform:translateX(-70%)}
+    100%{transform:translateX(70%)}
+}
+
+.attack-label{
+    display:none;
+    color:var(--red);
+    font-family:monospace;
+    font-weight:bold;
+    margin-top:15px;
+    animation:pulse 1s infinite;
+}
+
+.attack-card .attack-label{display:block}
+
+@keyframes pulse{
+    50%{opacity:.35}
+}
+
+.incident-flow{
+    margin-top:40px;
+    padding:24px;
+    background:#080d15;
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:auto;
+}
+
+.flow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    min-width:760px;
+}
+
+.flow-node{
+    padding:14px 16px;
+    background:var(--panel2);
+    border:1px solid var(--border);
+    border-radius:10px;
+    text-align:center;
+    min-width:120px;
+}
+
+.flow-node.attack-node{
+    border-color:var(--red);
+    color:#ff8c9b;
+}
+
+.flow-node.defense-node{
+    border-color:var(--blue);
+    color:#75d7ff;
+}
+
+.arrow{color:var(--muted)}
+
+.builder{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:25px;
+}
+
+.network-panel,.controls-panel{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:30px;
+}
+
+.network-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.risk{
+    font-family:monospace;
+    padding:7px 10px;
+    border-radius:7px;
+    border:1px solid var(--red);
+    color:#ff7c8e;
+}
+
+.topology{
+    position:relative;
+    min-height:420px;
+    margin-top:25px;
+}
+
+.node{
+    position:absolute;
+    transform:translate(-50%,-50%);
+    min-width:125px;
+    padding:14px;
+    text-align:center;
+    border:1px solid var(--border);
+    background:#0a111b;
+    border-radius:11px;
+    transition:.5s;
+}
+
+.node small{
+    display:block;
+    color:var(--muted);
+    margin-top:4px;
+}
+
+.internet{left:50%;top:8%}
+.firewall{left:50%;top:27%;display:none}
+.web{left:50%;top:55%}
+.soc{left:19%;top:55%;display:none}
+.iris{left:19%;top:77%;display:none}
+.dfir{left:81%;top:77%;display:none}
+.honeypot{left:81%;top:55%;display:none}
+
+.node.vulnerable{
+    border-color:var(--red);
+    box-shadow:0 0 30px rgba(255,61,85,.18);
+}
+
+.node.protected{
+    border-color:var(--green);
+}
+
+.connection{
+    position:absolute;
+    width:2px;
+    background:var(--border);
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.c1{top:12%;height:36%}
+
+.attack-dot{
+    position:absolute;
+    left:50%;
+    top:16%;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 20px var(--red);
+    animation:attackTravel 2s infinite linear;
+}
+
+@keyframes attackTravel{
+    from{top:15%}
+    to{top:50%}
+}
+
+.builder-buttons{
+    display:grid;
+    gap:10px;
+}
+
+.protect-btn{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0b121c;
+    border:1px solid var(--border);
+    color:white;
+    border-radius:10px;
+    padding:14px;
+    cursor:pointer;
+}
+
+.protect-btn.done{
+    border-color:var(--green);
+    color:var(--green);
+}
+
+.progress-box{
+    margin-top:25px;
+}
+
+.progress{
+    height:9px;
+    background:#172131;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress > div{
+    height:100%;
+    width:5%;
+    background:linear-gradient(90deg,var(--red),var(--orange),var(--green));
+    transition:.5s;
+}
+
+.score-row{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+    color:var(--muted);
+}
+
+.final-message{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:12px;
+    background:rgba(53,229,155,.08);
+    border:1px solid rgba(53,229,155,.5);
+    color:var(--green);
+}
+
+footer{
+    text-align:center;
+    color:var(--muted);
+    padding:55px;
+    border-top:1px solid var(--border);
+}
+
+@media(max-width:850px){
+    .journey-grid,.builder{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .navlinks{display:none}
+
+    .journey-info{padding:30px}
+
+    #journeyTitle{font-size:34px}
+}
+
+@media(max-width:500px){
+    .stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">GG //<span> CYBERLAB</span></div>
+
+    <div class="navlinks">
+        <a href="#journey">Journey</a>
+        <a href="#incident">Incident</a>
+        <a href="#builder">Build Your Defense</a>
+        <a href="README.md">Docs</a>
+    </div>
+</nav>
+
+<main>
+
+<section class="hero">
+<div class="container">
+
+    <div class="kicker">BLUE TEAM / SOC / DFIR / DEVSECOPS</div>
+
+    <h1>
+        ATTACK.<br>
+        <span class="gradient">DETECT. RESPOND.</span>
+    </h1>
+
+    <p>
+        Uma experiência interativa mostrando a construção do GG CyberLab,
+        desde a infraestrutura até a detecção, resposta a incidentes e investigação forense.
+    </p>
+
+    <button class="btn primary" onclick="startJourney()">
+        ▶ INICIAR JORNADA
+    </button>
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container">
+
+<div class="stats">
+    <div class="stat"><b>6</b><span>VLANs principais</span></div>
+    <div class="stat"><b>8+</b><span>Tecnologias integradas</span></div>
+    <div class="stat"><b>2</b><span>Regras Wazuh validadas</span></div>
+    <div class="stat"><b>1</b><span>Incidente investigado ponta a ponta</span></div>
+</div>
+
+</div>
+</section>
+
+
+<section class="section" id="journey">
+<div class="container">
+
+<h2 class="section-title">CyberLab Journey</h2>
+<p class="section-sub">
+Acompanhe a evolução do laboratório. A apresentação pode rodar automaticamente ou ser navegada manualmente.
+</p>
+
+<div class="timeline" id="timeline"></div>
+
+<div class="journey" id="journeyCard">
+
+<div class="journey-grid">
+
+<div class="journey-info">
+
+    <div class="step" id="stepNumber"></div>
+
+    <h2 id="journeyTitle"></h2>
+
+    <p id="journeyDescription"></p>
+
+    <div class="tags" id="journeyTags"></div>
+
+    <div class="attack-label">
+        ● SECURITY EVENT IN PROGRESS
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="previousStep()">←</button>
+        <button class="btn primary" id="playBtn" onclick="togglePlay()">▶ Play</button>
+        <button class="btn" onclick="nextStep()">→</button>
+    </div>
+
+</div>
+
+<div class="journey-media">
+
+    <div class="alert-overlay"></div>
+
+    <img id="journeyImage" alt="Evidência do GG CyberLab">
+
+    <div id="imagePlaceholder" class="image-placeholder"></div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+
+<section class="section" id="incident">
+<div class="container">
+
+<h2 class="section-title">Incident Story</h2>
+
+<p class="section-sub">
+Do evento ofensivo à investigação forense.
+</p>
+
+<div class="incident-flow">
+
+<div class="flow">
+
+<div class="flow-node attack-node">
+KALI
+<small>10.10.99.161</small>
+</div>
+
+<div class="arrow">→ SSH →</div>
+
+<div class="flow-node attack-node">
+COWRIE
+<small>Honeypot</small>
+</div>
+
+<div class="arrow">→ EVENT →</div>
+
+<div class="flow-node defense-node">
+WAZUH
+<small>Rule 100200</small>
+</div>
+
+<div class="arrow">→ CASE →</div>
+
+<div class="flow-node defense-node">
+IRIS
+<small>Case #5</small>
+</div>
+
+<div class="arrow">→ DFIR →</div>
+
+<div class="flow-node defense-node">
+VELOCIRAPTOR
+<small>Investigation</small>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section class="section" id="builder">
+<div class="container">
+
+<h2 class="section-title">Build Your Defense</h2>
+
+<p class="section-sub">
+O servidor começa exposto. Adicione controles de segurança e fortaleça a arquitetura.
+</p>
+
+<div class="builder">
+
+<div class="network-panel">
+
+<div class="network-title">
+    <strong>LAB NETWORK</strong>
+    <span class="risk" id="riskLabel">RISK: CRITICAL</span>
+</div>
+
+<div class="topology">
+
+<div class="connection c1"></div>
+
+<div class="attack-dot" id="attackDot"></div>
+
+<div class="node internet">
+🌐 Internet
+</div>
+
+<div class="node firewall" id="firewallNode">
+🔥 OPNsense
+<small>Firewall</small>
+</div>
+
+<div class="node web vulnerable" id="webNode">
+🌐 Web Server
+<small>Exposed</small>
+</div>
+
+<div class="node soc" id="socNode">
+📊 Wazuh
+<small>SIEM</small>
+</div>
+
+<div class="node iris" id="irisNode">
+🚨 IRIS
+<small>Incident Response</small>
+</div>
+
+<div class="node dfir" id="dfirNode">
+🔎 Velociraptor
+<small>DFIR</small>
+</div>
+
+<div class="node honeypot" id="honeypotNode">
+🍯 Cowrie
+<small>Honeypot</small>
+</div>
+
+</div>
+</div>
+
+
+<div class="controls-panel">
+
+<h3>Adicionar controles</h3>
+
+<div class="builder-buttons">
+
+<button class="protect-btn" data-control="firewall">
+<span>🔥 Adicionar Firewall</span><span>+</span>
+</button>
+
+<button class="protect-btn" data-control="vlans">
+<span>🔀 Adicionar VLANs</span><span>+</span>
+</button>
+
+<button class="protect-btn" data-control="dmz">
+<span>🌐 Criar DMZ</span><span>+</span>
+</button>
+
+<button class="protect-btn" data-control="wazuh">
+<span>📊 Adicionar Wazuh</span><span>+</span>
+</button>
+
+<button class="protect-btn" data-control="honeypot">
+<span>🍯 Adicionar Honeypot</span><span>+</span>
+</button>
+
+<button class="protect-btn" data-control="iris">
+<span>🚨 Adicionar IRIS</span><span>+</span>
+</button>
+
+<button class="protect-btn" data-control="dfir">
+<span>🔎 Adicionar Velociraptor</span><span>+</span>
+</button>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress">
+<div id="securityProgress"></div>
+</div>
+
+<div class="score-row">
+<span>Security Maturity</span>
+<strong id="securityScore">5%</strong>
+</div>
+
+</div>
+
+<div class="final-message" id="finalMessage">
+✓ Ambiente segmentado, monitorado e preparado para resposta a incidentes.
+</div>
+
+<br>
+
+<button class="btn" onclick="resetBuilder()">↺ Resetar Ambiente</button>
+
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+
+<footer>
+GG // CYBERLAB<br><br>
+Detect • Investigate • Respond • Improve
+</footer>
+
+
+<script>
+
+const stages = [
+
+{
+    title:"Arquitetura",
+    description:"Construção da base do GG CyberLab utilizando VirtualBox, OPNsense, Open vSwitch e segmentação lógica.",
+    tags:["VirtualBox","OPNsense","VLANs","Network Security"],
+    image:"images/topologia-gg-cyberlab.png",
+    mode:"normal"
+},
+
+{
+    title:"Active Directory",
+    description:"Implementação do domínio gglab.corp e da camada corporativa de identidade, DNS e servidores Windows.",
+    tags:["Windows Server","Active Directory","DNS","Identity"],
+    image:"images/active-directory/windows-servers-wazuh-agents.png",
+    mode:"normal"
+},
+
+{
+    title:"SOC & Detection",
+    description:"O Wazuh passa a centralizar a telemetria dos ativos e atuar como núcleo de detecção do SOC.",
+    tags:["Wazuh","SIEM","XDR","Threat Hunting"],
+    image:"images/wazuh/wazuh-agents.png",
+    mode:"defense"
+},
+
+{
+    title:"Honeypot",
+    description:"Cowrie é implantado na DMZ para capturar tentativas controladas de autenticação SSH.",
+    tags:["Cowrie","SSH","Deception","DMZ"],
+    image:"images/honeypot/cowrie-event-details-wazuh.png",
+    mode:"normal"
+},
+
+{
+    title:"Web Security",
+    description:"Nginx atua como reverse proxy para o OWASP Juice Shop, mantendo a aplicação atrás da camada Web.",
+    tags:["Nginx","Juice Shop","Docker","Web Security"],
+    image:"images/web-security/nginx-http-200.png",
+    mode:"normal"
+},
+
+{
+    title:"ATTACK DETECTED",
+    description:"A máquina Kali 10.10.99.161 gera uma tentativa SSH contra o Cowrie. O evento é identificado pelo Wazuh.",
+    tags:["Kali","10.10.99.161","SSH Attempt","Rule 100200"],
+    image:"images/wazuh/wazuh-rule-100200.png",
+    mode:"attack"
+},
+
+{
+    title:"Incident Response",
+    description:"O alerta é transformado em um caso estruturado no DFIR-IRIS com IOC, ativo, evidências e timeline.",
+    tags:["IRIS","Case #5","IOC","Incident Response"],
+    image:"images/incident-response/iris-case-5-summary.png",
+    mode:"defense"
+},
+
+{
+    title:"DFIR Investigation",
+    description:"Velociraptor coleta artefatos do GG_LN05 para investigar processos, conexões, persistência e autenticações.",
+    tags:["Velociraptor","DFIR","Artifacts","Investigation"],
+    image:"images/velociraptor/velociraptor-dfir-analysis.png",
+    mode:"defense"
+},
+
+{
+    title:"Investigation Complete ✓",
+    description:"Nenhum indicador de comprometimento foi identificado nos artefatos coletados. A atividade permaneceu restrita ao honeypot.",
+    tags:["Analysis Complete","No IOC","Blue Team","Resolved"],
+    image:"images/velociraptor/velociraptor-server-dashboard.png",
+    mode:"success"
+},
+
+{
+    title:"DevSecOps",
+    description:"Gitea, pipelines e Trivy adicionam segurança preventiva ao ciclo de desenvolvimento.",
+    tags:["Gitea","Trivy","Pipeline","Shift Left"],
+    image:"images/devsecops/gitea-repository.png",
+    mode:"normal"
+}
+
+];
+
+let currentStep = 0;
+let playing = false;
+let timer = null;
+
+const timeline = document.getElementById("timeline");
+
+stages.forEach((stage,index)=>{
+
+    const button = document.createElement("button");
+
+    button.innerHTML =
+    `${String(index+1).padStart(2,"0")}<br>${stage.title}`;
+
+    button.onclick=()=>{
+        stopPlay();
+        showStep(index);
+    };
+
+    timeline.appendChild(button);
+
+});
+
+
+function showStep(index){
+
+    currentStep=index;
+
+    const stage=stages[index];
+
+    document.getElementById("stepNumber").textContent =
+    `STEP ${String(index+1).padStart(2,"0")} / ${String(stages.length).padStart(2,"0")}`;
+
+    document.getElementById("journeyTitle").textContent=stage.title;
+
+    document.getElementById("journeyDescription").textContent=
+    stage.description;
+
+    const tags=document.getElementById("journeyTags");
+
+    tags.innerHTML="";
+
+    stage.tags.forEach(tag=>{
+        const span=document.createElement("span");
+        span.className="tag";
+        span.textContent=tag;
+        tags.appendChild(span);
+    });
+
+
+    const image=document.getElementById("journeyImage");
+    const placeholder=document.getElementById("imagePlaceholder");
+
+    image.style.display="block";
+    placeholder.style.display="none";
+
+    image.src=stage.image;
+
+    image.onerror=()=>{
+        image.style.display="none";
+        placeholder.style.display="block";
+        placeholder.innerHTML=
+        `<strong>${stage.title}</strong>
+        Evidência será exibida quando o arquivo estiver disponível em:<br><br>
+        <code>${stage.image}</code>`;
+    };
+
+
+    document.body.classList.remove("attack","defense");
+
+    const card=document.getElementById("journeyCard");
+
+    card.classList.remove("attack-card","defense-card");
+
+    if(stage.mode==="attack"){
+        document.body.classList.add("attack");
+        card.classList.add("attack-card");
+    }
+
+    if(stage.mode==="defense"){
+        document.body.classList.add("defense");
+        card.classList.add("defense-card");
+    }
+
+    if(stage.mode==="success"){
+        document.body.classList.add("defense");
+    }
+
+
+    [...timeline.children].forEach((btn,i)=>{
+        btn.classList.toggle("active",i===index);
+    });
+
+}
+
+
+function nextStep(){
+
+    const next=(currentStep+1)%stages.length;
+    showStep(next);
+
+}
+
+function previousStep(){
+
+    const previous=
+    currentStep===0
+    ? stages.length-1
+    : currentStep-1;
+
+    showStep(previous);
+
+}
+
+function startJourney(){
+
+    document.getElementById("journey")
+    .scrollIntoView({behavior:"smooth"});
+
+    setTimeout(()=>{
+        showStep(0);
+        startPlay();
+    },600);
+
+}
+
+function startPlay(){
+
+    playing=true;
+
+    document.getElementById("playBtn").textContent="⏸ Pause";
+
+    clearInterval(timer);
+
+    timer=setInterval(()=>{
+
+        if(currentStep>=stages.length-1){
+            stopPlay();
+            return;
+        }
+
+        showStep(currentStep+1);
+
+    },4500);
+
+}
+
+function stopPlay(){
+
+    playing=false;
+
+    document.getElementById("playBtn").textContent="▶ Play";
+
+    clearInterval(timer);
+
+}
+
+function togglePlay(){
+
+    if(playing){
+        stopPlay();
+    }else{
+        startPlay();
+    }
+
+}
+
+
+const activeControls = new Set();
+
+const controlScores = {
+    firewall:15,
+    vlans:15,
+    dmz:15,
+    wazuh:15,
+    honeypot:10,
+    iris:10,
+    dfir:15
+};
+
+
+document.querySelectorAll(".protect-btn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+    const control=button.dataset.control;
+
+    if(activeControls.has(control)) return;
+
+    activeControls.add(control);
+
+    button.classList.add("done");
+
+    button.lastElementChild.textContent="✓";
+
+    applyProtection(control);
+
+    updateScore();
+
+});
+
+});
+
+
+function applyProtection(control){
+
+    if(control==="firewall"){
+        document.getElementById("firewallNode").style.display="block";
+    }
+
+    if(control==="vlans"){
+        document.getElementById("webNode")
+        .querySelector("small").textContent="VLAN 50";
+    }
+
+    if(control==="dmz"){
+        document.getElementById("webNode")
+        .querySelector("small").textContent="DMZ • VLAN 50";
+    }
+
+    if(control==="wazuh"){
+        document.getElementById("socNode").style.display="block";
+    }
+
+    if(control==="honeypot"){
+        document.getElementById("honeypotNode").style.display="block";
+    }
+
+    if(control==="iris"){
+        document.getElementById("irisNode").style.display="block";
+    }
+
+    if(control==="dfir"){
+        document.getElementById("dfirNode").style.display="block";
+    }
+
+}
+
+
+function updateScore(){
+
+    let score=5;
+
+    activeControls.forEach(control=>{
+        score+=controlScores[control];
+    });
+
+    score=Math.min(score,100);
+
+    document.getElementById("securityScore")
+    .textContent=score+"%";
+
+    document.getElementById("securityProgress")
+    .style.width=score+"%";
+
+
+    const risk=document.getElementById("riskLabel");
+
+    if(score<35){
+
+        risk.textContent="RISK: CRITICAL";
+        risk.style.borderColor="var(--red)";
+        risk.style.color="#ff7c8e";
+
+    }else if(score<70){
+
+        risk.textContent="RISK: MEDIUM";
+        risk.style.borderColor="var(--orange)";
+        risk.style.color="var(--orange)";
+
+    }else{
+
+        risk.textContent="RISK: CONTROLLED";
+        risk.style.borderColor="var(--green)";
+        risk.style.color="var(--green)";
+
+        document.getElementById("webNode")
+        .classList.remove("vulnerable");
+
+        document.getElementById("webNode")
+        .classList.add("protected");
+
+        document.getElementById("attackDot")
+        .style.display="none";
+
+    }
+
+
+    if(activeControls.size===7){
+
+        document.getElementById("finalMessage")
+        .style.display="block";
+
+    }
+
+}
+
+
+function resetBuilder(){
+
+    activeControls.clear();
+
+    document.querySelectorAll(".protect-btn")
+    .forEach(button=>{
+        button.classList.remove("done");
+        button.lastElementChild.textContent="+";
+    });
+
+    ["firewallNode","socNode","irisNode","dfirNode","honeypotNode"]
+    .forEach(id=>{
+        document.getElementById(id).style.display="none";
+    });
+
+    const web=document.getElementById("webNode");
+
+    web.classList.add("vulnerable");
+    web.classList.remove("protected");
+
+    web.querySelector("small").textContent="Exposed";
+
+    document.getElementById("attackDot").style.display="block";
+
+    document.getElementById("securityProgress").style.width="5%";
+    document.getElementById("securityScore").textContent="5%";
+
+    const risk=document.getElementById("riskLabel");
+
+    risk.textContent="RISK: CRITICAL";
+    risk.style.borderColor="var(--red)";
+    risk.style.color="#ff7c8e";
+
+    document.getElementById("finalMessage").style.display="none";
+
+}
+
+
+showStep(0);
+
+</script>
+
+</body>
+</html>
