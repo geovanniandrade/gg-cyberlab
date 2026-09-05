@@ -54,6 +54,17 @@ DFIR Analysis
 
 ---
 
+### 📸 Evidência — Velociraptor
+
+<p align="center">
+  <img src="../images/velociraptor/velociraptor-server-dashboard.png" alt="Velociraptor Dashboard" width="100%">
+</p>
+
+<p align="center">
+  <i>Console do Velociraptor utilizado para gerenciamento e investigação dos endpoints do GG CyberLab.</i>
+</p>
+
+---
 # 🌐 Acesso ao Velociraptor
 
 A interface Web do Velociraptor permanece disponível localmente no servidor.
@@ -512,7 +523,15 @@ Conexão anômala
 ```
 
 Os serviços observados estavam de acordo com o esperado para o GG_LN05.
+### 📸 Evidência — Análise DFIR do GG_LN05
 
+<p align="center">
+  <img src="../images/velociraptor/velociraptor-dfir-analysis.png" alt="Velociraptor DFIR Analysis" width="100%">
+</p>
+
+<p align="center">
+  <i>Coletas e artefatos utilizados durante a investigação forense do GG_LN05-HONEYPOT.</i>
+</p>
 ---
 
 # 🧠 Conclusão DFIR
