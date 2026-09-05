@@ -47,6 +47,17 @@ OWASP Juice Shop
 
 ---
 
+### 📸 Evidência — Serviço Web acessível via Nginx
+
+<p align="center">
+  <img src="../images/web-security/nginx-http-200.png" alt="Resposta HTTP 200 através do Nginx" width="100%">
+</p>
+
+<p align="center">
+  <i>Validação do serviço Web publicado pelo Nginx no GG_LN05, confirmando resposta HTTP bem-sucedida na DMZ.</i>
+</p>
+
+---
 # 🌐 DMZ
 
 Rede:
