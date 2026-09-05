@@ -114,7 +114,15 @@ Processo associado:
 ```text
 nginx
 ```
+### 📸 Evidência — Serviço Web via Nginx
 
+<p align="center">
+  <img src="../images/web-security/nginx-http-200.png" alt="Nginx HTTP 200" width="100%">
+</p>
+
+<p align="center">
+  <i>Validação do serviço Web publicado pelo Nginx no GG_LN05, confirmando resposta HTTP bem-sucedida.</i>
+</p>
 ---
 
 # 🔄 Reverse Proxy
@@ -238,6 +246,15 @@ CLOSED / não exposta externamente
 
 Esse comportamento confirma que o Juice Shop é acessado externamente somente através do Nginx.
 
+### 📸 Evidência — Portas da DMZ
+
+<p align="center">
+  <img src="../images/web-security/nmap-dmz-ports.png" alt="Portas da DMZ" width="100%">
+</p>
+
+<p align="center">
+  <i>Validação a partir do Attack Lab confirmando a exposição dos serviços previstos na DMZ.</i>
+</p>
 ---
 
 # 🐉 Attack Lab
@@ -327,6 +344,15 @@ Nginx / Sistema Operacional
 
 No cenário documentado do CyberLab, a correlação customizada mais detalhada foi validada principalmente com os eventos do Cowrie.
 
+### 📸 Evidência — Logs de acesso do Nginx
+
+<p align="center">
+  <img src="../images/web-security/nginx-access-log-attacks.png" alt="Logs de acesso Nginx" width="100%">
+</p>
+
+<p align="center">
+  <i>Registros HTTP observados no Nginx durante os testes controlados realizados contra a aplicação Web.</i>
+</p>
 ---
 
 # 🔎 DFIR com Velociraptor
